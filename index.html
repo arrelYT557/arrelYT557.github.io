@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>arrelYT557_ | Official Liquid Portfolio</title>
+    <title>arrelYT557_ | Official Portfolio</title>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -51,7 +51,7 @@
 
         .blob-1 { top: -10%; left: -10%; width: 500px; height: 500px; background: #6a0dad; }
         .blob-2 { bottom: -15%; right: -10%; width: 550px; height: 550px; background: #00d4ff; animation-delay: -6s; }
-        .blob-3 { top: 45%; left: 25%; width: 400px; height: 400px; background: #b900b4; animation-delay: -3s; }
+        .blob-3 { top: 45%; left: 25%; width: 350px; height: 350px; background: #b900b4; animation-delay: -3s; }
 
         @keyframes floatBlob {
             0% { transform: translate(0, 0) scale(1); }
@@ -190,11 +190,10 @@
 
         .grid-box {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 16px;
         }
 
-        /* Interaktywne kafelki rozwijane */
         .expand-card {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -265,10 +264,21 @@
         }
 
         .expand-card.open .details-content {
-            max-height: 500px;
+            max-height: 800px;
             margin-top: 14px;
             border-top-width: 1px;
             padding-top: 12px;
+        }
+
+        .device-summary {
+            font-size: 13px;
+            color: #d8c7ff;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 3px solid #00d4ff;
         }
 
         .spec-list {
@@ -357,7 +367,7 @@
                 <a href="#o-mnie">O mnie</a>
                 <a href="#gry">Gry</a>
                 <a href="#administracja">Serwery</a>
-                <a href="#sprzet">Sprzęt</a>
+                <a href="#sprzet">Specyfikacja</a>
                 <a href="#kontakt">Kontakt</a>
             </div>
         </div>
@@ -378,10 +388,10 @@
         <section id="o-mnie">
             <h2>📜 O mnie i Historia</h2>
             <p style="margin-bottom: 10px;">
-                Moja przygoda na Discordzie rozpoczęła się <strong>16 kwietnia 2025 roku</strong>. Rozwijam serwery, realizuję partnerstwa i dbam o porządek w społecznościach.
+                Moja przygoda na Discordzie rozpoczęła się <strong>16 kwietnia 2025 roku</strong>[span_0](start_span)[span_0](end_span). Rozwijam serwery, realizuję partnerstwa i dbam o porządek w społecznościach[span_1](start_span)[span_1](end_span).
             </p>
             <p>
-                W realnym świecie pasjonuję się mechaniką samochodową, silnikami oraz graniem w symulatory.
+                W realnym świecie pasjonuję się mechaniką samochodową, silnikami oraz graniem w symulatory[span_2](start_span)[span_2](end_span).
             </p>
         </section>
 
@@ -449,7 +459,7 @@
             </div>
         </section>
 
-        <!-- Administracja i Serwery z grafikami -->
+        <!-- Administracja i Serwery -->
         <section id="administracja">
             <h2>🛡️ Administracja & Serwery (Kliknij, aby rozwinąć)</h2>
             <div class="grid-box">
@@ -513,36 +523,47 @@
             <h2>💻 Sprzęt & Pełna Specyfikacja (Kliknij, aby rozwinąć)</h2>
             <div class="grid-box">
                 
+                <!-- Realme GT Neo 2 -->
                 <div class="expand-card" onclick="toggleCard(this)">
                     <div class="expand-header">
                         <h3>📱 Realme GT Neo 2</h3>
                         <span class="arrow-hint">▼ Kliknij</span>
                     </div>
-                    <div class="short-desc">12 GB RAM / 256 GB Pamięci</div>
+                    <div class="short-desc">12 GB RAM / 256 GB / Chłodzenie VC</div>
                     <div class="details-content">
+                        <div class="device-summary">
+                            📱 <strong>Opis urządzenia:</strong> Flagowy pogromca wydajności. Posiada diamentowy system chłodzenia cieczą (Vapor Chamber), dzięki czemu nie nagrzewa się nawet przy wielogodzinnym zarządzaniu serwerami czy graniu.
+                        </div>
                         <ul class="spec-list">
                             <li><span>Pamięć RAM:</span> <strong>12 GB LPDDR5</strong></li>
                             <li><span>Pamięć wewnętrzna:</span> <strong>256 GB UFS 3.1</strong></li>
-                            <li><span>Procesor:</span> <strong>Snapdragon 870 5G</strong></li>
-                            <li><span>Ekran:</span> <strong>AMOLED 120Hz (6.62")</strong></li>
-                            <li><span>Ładowanie:</span> <strong>SuperDart 65W</strong></li>
+                            <li><span>Chłodzenie:</span> <strong>Stalowe chłodzenie parowe (VC)</strong></li>
+                            <li><span>Procesor:</span> <strong>Snapdragon 870 5G (3.2 GHz)</strong></li>
+                            <li><span>Ekran:</span> <strong>AMOLED E4 120Hz (6.62")</strong></li>
+                            <li><span>Ładowanie:</span> <strong>SuperDart 65W (100% w 36 min)</strong></li>
+                            <li><span>Bateria:</span> <strong>5000 mAh</strong></li>
                         </ul>
                     </div>
                 </div>
 
-                                <div class="expand-card" onclick="toggleCard(this)">
+                <!-- ASUS TUF Gaming F16 -->
+                <div class="expand-card" onclick="toggleCard(this)">
                     <div class="expand-header">
                         <h3>💻 ASUS TUF Gaming F16</h3>
                         <span class="arrow-hint">▼ Kliknij</span>
                     </div>
-                    <div class="short-desc">NVIDIA GeForce RTX 3050</div>
+                    <div class="short-desc">RTX 3050 / Arc Flow Fans</div>
                     <div class="details-content">
+                        <div class="device-summary">
+                            💻 <strong>Opis urządzenia:</strong> Prawdziwa maszyna bojowa do symulatorów gier i pracy projektowej. Posiada pancerną obudowę spełniającą normy wojskowe oraz podwójne wentylatory Arc Flow Fans.
+                        </div>
                         <ul class="spec-list">
                             <li><span>Karta Graficzna:</span> <strong>NVIDIA GeForce RTX 3050</strong></li>
+                            <li><span>Chłodzenie:</span> <strong>Podwójne Arc Flow Fans</strong></li>
                             <li><span>Procesor:</span> <strong>Intel Core i7 / i5</strong></li>
-                            <li><span>Ekran:</span> <strong>16" FHD+ 165Hz</strong></li>
-                            <li><span>Chłodzenie:</span> <strong>TUF Arc Flow Fans</strong></li>
-                            <li><span>Obudowa:</span> <strong>MIL-STD-810H</strong></li>
+                            <li><span>Ekran:</span> <strong>16" FHD+ 165Hz (16:10)</strong></li>
+                            <li><span>Standard obudowy:</span> <strong>Wojskowy MIL-STD-810H</strong></li>
+                            <li><span>Klawiatura:</span> <strong>RGB z podświetleniem TUF</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -556,20 +577,19 @@
             <div class="contact-box">
                 <p>Masz pytanie lub propozycję partnerstwa? Napisz śmiało!</p>
                 <div class="contact-nick">arrelYT557</div>
-                <p style="font-size: 13px; color: #00ff88; margin-bottom: 15px;">💬 DM otwarty – zawsze odpisuję</p>
+                <p style="font-size: 13px; color: #00ff88; margin-bottom: 15px;">💬 DM otwarty – zawsze odpisuję[span_3](start_span)[span_3](end_span)</p>
                 <button class="btn-action btn-discord" style="max-width: 250px; margin: 0 auto;" onclick="navigator.clipboard.writeText('arrelYT557'); alert('Skopiowano nick: arrelYT557');">
                     📋 Skopiuj nick Discord
                 </button>
             </div>
         </section>
 
-        <!-- Stopka -->
         <div class="footer">
             &copy; 2026 arrelYT557. Liquid Glass Interactive Edition.
         </div>
     </div>
 
-    <!-- Skrypt do rozwijania wszystkich kafelków po kliknięciu -->
+    <!-- Skrypt rozwijający kafelki na telefonie -->
     <script>
         function toggleCard(card) {
             card.classList.toggle('open');
