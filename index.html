@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>arrelYT557 | Portfolio & Administracja</title>
-    <!-- Metatagi zapobiegające zapamiętywaniu starych wersji w telefonie -->
+    <title>arrelYT557 | Portfolio, Historia i Administracja</title>
+    <!-- Blokada pamięci podręcznej, żeby strona od razu się aktualizowała -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -14,6 +14,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,7 +29,7 @@
             background: #161b22;
             padding: 30px;
             border-radius: 16px;
-            max-width: 650px;
+            max-width: 700px;
             width: 100%;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
             border: 1px solid #30363d;
@@ -59,11 +60,11 @@
             font-size: 14px;
             margin-bottom: 20px;
         }
-        /* Pasek nawigacyjny z podstronami/przyciskami głównymi */
+        /* Nawigacja – przyciski podstron */
         .nav-buttons {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             margin-bottom: 25px;
             flex-wrap: wrap;
         }
@@ -71,9 +72,9 @@
             background: #21262d;
             color: #58a6ff;
             border: 1px solid #30363d;
-            padding: 8px 14px;
+            padding: 8px 12px;
             border-radius: 20px;
-            font-size: 13px;
+            font-size: 12px;
             text-decoration: none;
             font-weight: 600;
             transition: 0.2s;
@@ -81,57 +82,77 @@
         .nav-btn:hover {
             background: #30363d;
             color: #ffffff;
+            border-color: #58a6ff;
+        }
+        section {
+            margin-bottom: 30px;
         }
         h2 {
             color: #58a6ff;
             font-size: 18px;
-            margin-top: 25px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             border-bottom: 1px solid #30363d;
-            padding-bottom: 5px;
+            padding-bottom: 6px;
         }
         p {
             font-size: 15px;
             line-height: 1.6;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #adbac7;
         }
+        /* Grid na umiejętności / zainteresowania */
+        .grid-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .grid-item {
+            background: #21262d;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+            font-size: 14px;
+            color: #c9d1d9;
+        }
+        .grid-item strong {
+            color: #58a6ff;
+            display: block;
+            margin-bottom: 4px;
+        }
+        /* Serwery */
         .server-list {
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin-top: 15px;
+            margin-top: 10px;
         }
         .server-card {
             background: #21262d;
             padding: 15px;
             border-radius: 10px;
             border: 1px solid #30363d;
-            transition: transform 0.2s;
-        }
-        .server-card:hover {
-            border-color: #58a6ff;
         }
         .server-name {
             font-weight: bold;
             color: #ffffff;
             font-size: 16px;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
         .server-role {
             color: #238636;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .btn {
             display: inline-block;
-            padding: 8px 14px;
+            padding: 7px 12px;
             background: #238636;
             color: white;
             text-decoration: none;
             border-radius: 6px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
             transition: background 0.2s;
         }
@@ -140,7 +161,7 @@
         }
         .footer {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 20px;
             font-size: 12px;
             color: #8b949e;
             border-top: 1px solid #30363d;
@@ -153,26 +174,67 @@
     <div class="container">
         <div class="avatar">A</div>
         <h1>arrelYT557</h1>
-        <div class="tagline">Właściciel & Administrator Discord</div>
+        <div class="tagline">Właściciel & Administrator Discord | Developer</div>
         
-        <!-- Przyciski nawigacyjne na górze -->
+        <!-- Pasek nawigacyjny -->
         <div class="nav-buttons">
-            <a href="#o-mnie" class="nav-btn">O mnie</a>
-            <a href="#serwery" class="nav-btn">Serwery i Rangi</a>
-            <a href="#kontakt" class="nav-btn">Kontakt</a>
+            <a href="#historia" class="nav-btn">Historia</a>
+            <a href="#umiejetnosci" class="nav-btn">Umiejętności</a>
+            <a href="#zainteresowania" class="nav-btn">Zainteresowania</a>
+            <a href="#serwery" class="nav-btn">Serwery</a>
         </div>
 
-        <div id="o-mnie">
-            <h2>O mnie i moja historia</h2>
+        <!-- Sekcja 1: Historia -->
+        <section id="historia">
+            <h2>Moja Historia</h2>
             <p>
-                Cześć! Jestem osobą, która mocno angażuje się w społeczności na platformie Discord. Moja przygoda z zarządzaniem i tworzeniem projektów nauczyła mnie, jak dbać o porządek, organizować społeczność oraz współpracować z ludźmi na najwyższym poziomie.
+                Cześć! Moja przygoda ze światem online i platformą Discord zaczęła się od ciekawości tego, jak działają społeczności. Z biegiem czasu z zwykłego użytkownika stałem się osobą, która tworzy własne projekty od zera.
             </p>
             <p>
-                Stale rozwijam swoje umiejętności i buduję własne miejsca w sieci, pomagając jednocześnie w rozwoju innych wspaniałych społeczności.
+                Przez lata pracy na różnych serwerach zdobyłem cenne doświadczenie w zarządzaniu ludźmi, rozwiązywaniu konfliktów oraz koordynowaniu partnerstw, co doprowadziło mnie do miejsc, w których dziś pełnię wysokie funkcje administracyjne.
             </p>
-        </div>
+        </section>
 
-        <div id="serwery">
+        <!-- Sekcja 2: Umiejętności -->
+        <section id="umiejetnosci">
+            <h2>Umiejętności</h2>
+            <div class="grid-box">
+                <div class="grid-item">
+                    <strong>Zarządzanie społecznością</strong>
+                    Skuteczna moderacja i dbanie o aktywność na serwerach.
+                </div>
+                <div class="grid-item">
+                    <strong>Realizacja partnerstw</strong>
+                    Profesjonalne nawiązywanie i koordynowanie współpracy między projektami.
+                </div>
+                <div class="grid-item">
+                    <strong>Administracja Discord</strong>
+                    Konfiguracja rang, uprawnień, botów i bezpieczeństwa.
+                </div>
+                <div class="grid-item">
+                    <strong>Podstawy kodu i stron</strong>
+                    Tworzenie stron w HTML/CSS i obsługa platform takich jak GitHub.
+                </div>
+            </div>
+        </section>
+
+        <!-- Sekcja 3: Zainteresowania -->
+        <section id="zainteresowania">
+            <h2>Zainteresowania</h2>
+            <div class="grid-box">
+                <div class="grid-item">
+                    <strong>Technologia i IT</strong>
+                    Interesuję się nowinkami technicznymi, wsparciem dla techników oraz oprogramowaniem.
+                </div>
+                <div class="grid-item">
+                    <strong>Rozwój projektów</strong>
+                    Tworzenie i rozkręcanie nowych miejsc w sieci, takich jak serwery tematyczne i minecraftowe.
+                </div>
+            </div>
+        </section>
+
+        <!-- Sekcja 4: Serwery / Administracja -->
+        <section id="serwery">
             <h2>Gdzie pełnię funkcje (Administracja)</h2>
             <div class="server-list">
                 <!-- Serwer 1 -->
@@ -196,12 +258,7 @@
                     <a href="https://discord.gg/pAFMdN4HdM" target="_blank" class="btn">Dołącz na serwer</a>
                 </div>
             </div>
-        </div>
-
-        <div id="kontakt">
-            <h2>Kontakt</h2>
-            <p>Najlepiej skontaktować się ze mną bezpośrednio na wyżej wymienionych serwerach Discord, na których pełnię administrację.</p>
-        </div>
+        </section>
 
         <div class="footer">
             &copy; 2026 arrelYT557. Wszystkie prawa zastrzeżone.
