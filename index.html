@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>arrelYT557 _</title>
-    <!-- Blokada pamięci podręcznej, żeby strona od razu się zaktualizowała -->
+    <title>arrelYT557_ | Portfolio</title>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -29,17 +28,22 @@
             background: #131022;
             padding: 40px 30px;
             border-radius: 20px;
-            max-width: 700px;
+            max-width: 750px;
             width: 100%;
-            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.15);
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.25);
             border: 1px solid #282142;
+            animation: fadeIn 0.8s ease-in-out;
         }
-        /* Górne menu nawigacyjne w stylu z obrazka */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Górne menu */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             border-bottom: 1px solid #282142;
             padding-bottom: 15px;
             flex-wrap: wrap;
@@ -53,7 +57,7 @@
         }
         .nav-links {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
         }
         .nav-links a {
@@ -65,7 +69,7 @@
         .nav-links a:hover {
             color: #b19cd9;
         }
-        /* Awatar z fioletową poświatą */
+        /* Awatar */
         .avatar-container {
             text-align: center;
             margin-bottom: 30px;
@@ -82,31 +86,34 @@
             font-size: 40px;
             color: white;
             font-weight: bold;
-            box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+            box-shadow: 0 0 25px rgba(138, 43, 226, 0.5);
             border: 2px solid #b19cd9;
+            transition: transform 0.3s;
+        }
+        .avatar:hover {
+            transform: scale(1.08) rotate(3deg);
         }
         h1 {
             color: #b19cd9;
             text-align: center;
             margin-bottom: 5px;
             font-size: 32px;
-            letter-spacing: 1px;
         }
         .tagline {
             color: #9a95b8;
             text-align: center;
-            font-size: 16px;
+            font-size: 15px;
             margin-bottom: 15px;
         }
         .bio-text {
             text-align: center;
             color: #b8b5cc;
             font-size: 15px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             line-height: 1.6;
         }
         section {
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
         h2 {
             color: #b19cd9;
@@ -121,7 +128,7 @@
             margin-bottom: 15px;
             color: #b8b5cc;
         }
-        /* Kafelki zainteresowań i umiejętności */
+        /* Kafelki */
         .grid-box {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -130,11 +137,16 @@
         }
         .grid-item {
             background: #1b1630;
-            padding: 15px;
+            padding: 16px;
             border-radius: 12px;
             border: 1px solid #2f2552;
             font-size: 14px;
             color: #d1d0e0;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .grid-item:hover {
+            transform: translateY(-4px);
+            border-color: #8a2be2;
         }
         .grid-item strong {
             color: #b19cd9;
@@ -142,7 +154,7 @@
             margin-bottom: 6px;
             font-size: 15px;
         }
-        /* Lista serwerów administracyjnych */
+        /* Serwery */
         .server-list {
             display: flex;
             flex-direction: column;
@@ -154,10 +166,11 @@
             padding: 18px;
             border-radius: 12px;
             border: 1px solid #2f2552;
-            transition: border-color 0.2s;
+            transition: all 0.2s;
         }
         .server-card:hover {
             border-color: #8a2be2;
+            transform: translateX(5px);
         }
         .server-name {
             font-weight: bold;
@@ -180,10 +193,11 @@
             border-radius: 8px;
             font-size: 13px;
             font-weight: bold;
-            transition: background 0.2s;
+            transition: background 0.2s, transform 0.2s;
         }
         .btn:hover {
             background: #8a2be2;
+            transform: scale(1.03);
         }
         .footer {
             text-align: center;
@@ -203,58 +217,61 @@
             <a href="#" class="nav-logo">arrelYT557_</a>
             <div class="nav-links">
                 <a href="#o-mnie">O mnie</a>
-                <a href="#zainteresowania">Zainteresowania</a>
-                <a href="#historia">Historia</a>
+                <a href="#sprzet">Sprzęt</a>
+                <a href="#gry">Gry</a>
                 <a href="#administracja">Administracja</a>
             </div>
         </div>
 
-        <!-- Główny nagłówek / Profil -->
+        <!-- Profil -->
         <div class="avatar-container">
             <div class="avatar">A</div>
             <h1>arrelYT557_</h1>
-            <div class="tagline">Właściciel & Administrator Discord | Pasjonat Mechaniki</div>
+            <div class="tagline">Właściciel & Administrator Discord | Mechanika & Gaming</div>
             <div class="bio-text">
-                Pasjonat zarządzania społecznościami, technologii oraz mechaniki samochodowej z wieloletnim zaangażowaniem w projekty sieciowe.
+                Zawsze gotowy do pomocy. Twórca społeczności i pasjonat motoryzacji.
             </div>
         </div>
 
         <!-- Sekcja O mnie -->
         <section id="o-mnie">
-            <h2>O mnie</h2>
+            <h2>O mnie i historia</h2>
             <p>
-                Cześć! Jestem twórcą i administratorem, który mocno angażuje się w rozwój ciekawych projektów na platformie Discord. Poza światem cyfrowym pasjonuję się motoryzacją i mechaniką samochodową, co pozwala mi łączyć logiczne myślenie z praktycznymi umiejętnościami.
+                Cześć! Moja przygoda w sieci trwa już od dłuższego czasu. Specjalizuję się w zarządzaniu serwerami Discord, dbaniu o porządek i realizacji partnerstw. Poza komputerem interesuję się mechaniką samochodową.
             </p>
         </section>
 
-        <!-- Sekcja Zainteresowania -->
-        <section id="zainteresowania">
-            <h2>Zainteresowania</h2>
+        <!-- Sekcja Sprzęt -->
+        <section id="sprzet">
+            <h2>Mój Sprzęt</h2>
             <div class="grid-box">
                 <div class="grid-item">
-                    <strong>🚗 Mechanika Samochodowa</strong>
-                    Moja wielka pasja poza komputerem – interesuję się budową aut, naprawą oraz diagnostyką pojazdów.
+                    <strong>📱 Realme GT Neo 2</strong>
+                    Smartfon stworzony do działania – posiada <strong>12 GB RAM</strong> oraz <strong>256 GB pamięci</strong>.
                 </div>
                 <div class="grid-item">
-                    <strong>🌐 Społeczności Discord</strong>
-                    Tworzenie, rozwijanie i koordynowanie dużych projektów oraz serwerów tematycznych.
-                </div>
-                <div class="grid-item">
-                    <strong>💻 Technologie i IT</strong>
-                    Tworzenie stron internetowych, wsparcie techniczne i obsługa systemów.
+                    <strong>💻 ASUS TUF Gaming F16</strong>
+                    Wydajny laptop z kartą graficzną <strong>NVIDIA GeForce RTX 3050</strong> do gier i zadań technicznych.
                 </div>
             </div>
         </section>
 
-        <!-- Sekcja Historia -->
-        <section id="historia">
-            <h2>Historia i Doświadczenie</h2>
-            <p>
-                Moja przygoda rozpoczęła się od prostych aktywności w sieci, które przerodziły się w profesjonalne zarządzanie społecznościami. Dzięki konsekwencji, umiejętności rozwiązywania konfliktów i dbaniu o partnerstwa, zyskałem zaufanie jako administrator w wielu miejscach.
-            </p>
+        <!-- Sekcja Gry -->
+        <section id="gry">
+            <h2>Ulubione Gry</h2>
+            <div class="grid-box">
+                <div class="grid-item">
+                    <strong>🚗 BeamNG.drive</strong>
+                    Moja absolutnie ulubiona gra symulacyjna o fizyce pojazdów i wypadkach.
+                </div>
+                <div class="grid-item">
+                    <strong>🛠️ Symulatory i Mechanika</strong>
+                    Wszystkie gry w stylu <em>Car Mechanic Simulator</em>, <em>My Summer Car</em>, <em>Cheap Car Repair</em> i <em>Euro Truck Simulator 2</em>.
+                </div>
+            </div>
         </section>
 
-        <!-- Sekcja Administracja (Serwery) -->
+        <!-- Sekcja Administracja -->
         <section id="administracja">
             <h2>Administracja i Serwery</h2>
             <div class="server-list">
