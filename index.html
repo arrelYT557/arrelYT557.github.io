@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>arrelYT557 | Biografia i Administracja</title>
+    <title>arrelYT557 | Portfolio & Administracja</title>
+    <!-- Metatagi zapobiegające zapamiętywaniu starych wersji w telefonie -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
     <style>
         * {
             box-sizing: border-box;
@@ -23,7 +28,7 @@
             background: #161b22;
             padding: 30px;
             border-radius: 16px;
-            max-width: 600px;
+            max-width: 650px;
             width: 100%;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
             border: 1px solid #30363d;
@@ -52,7 +57,30 @@
             color: #8b949e;
             text-align: center;
             font-size: 14px;
+            margin-bottom: 20px;
+        }
+        /* Pasek nawigacyjny z podstronami/przyciskami głównymi */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
             margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .nav-btn {
+            background: #21262d;
+            color: #58a6ff;
+            border: 1px solid #30363d;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .nav-btn:hover {
+            background: #30363d;
+            color: #ffffff;
         }
         h2 {
             color: #58a6ff;
@@ -79,6 +107,10 @@
             padding: 15px;
             border-radius: 10px;
             border: 1px solid #30363d;
+            transition: transform 0.2s;
+        }
+        .server-card:hover {
+            border-color: #58a6ff;
         }
         .server-name {
             font-weight: bold;
@@ -90,7 +122,7 @@
             color: #238636;
             font-size: 14px;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         .btn {
             display: inline-block;
@@ -106,6 +138,14 @@
         .btn:hover {
             background: #2ea043;
         }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #8b949e;
+            border-top: 1px solid #30363d;
+            padding-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -115,39 +155,58 @@
         <h1>arrelYT557</h1>
         <div class="tagline">Właściciel & Administrator Discord</div>
         
-        <h2>O mnie i moja historia</h2>
-        <p>
-            Cześć! Jestem osobą, która mocno angażuje się w społeczności platformy Discord. Moja przygoda z tworzeniem i zarządzaniem serwerami nauczyła mnie, jak dbać o porządek, organizować społeczność oraz współpracować z ludźmi.
-        </p>
-        <p>
-            Stale rozwijam swoje umiejętności i buduję własne projekty, a także pomagam w prowadzeniu innych ciekawych miejsc w sieci.
-        </p>
+        <!-- Przyciski nawigacyjne na górze -->
+        <div class="nav-buttons">
+            <a href="#o-mnie" class="nav-btn">O mnie</a>
+            <a href="#serwery" class="nav-btn">Serwery i Rangi</a>
+            <a href="#kontakt" class="nav-btn">Kontakt</a>
+        </div>
 
-        <h2>Moje serwery i Administracja</h2>
-        <div class="server-list">
-            <!-- Serwer 1 -->
-            <div class="server-card">
-                <div class="server-name">1. MIGMC</div>
-                <div class="server-role">Rola: Właściciel, Realizator partnerstw</div>
-                <a href="https://discord.gg/W3vyTXeG79" target="_blank" class="btn">Dołącz na serwer</a>
-            </div>
+        <div id="o-mnie">
+            <h2>O mnie i moja historia</h2>
+            <p>
+                Cześć! Jestem osobą, która mocno angażuje się w społeczności na platformie Discord. Moja przygoda z zarządzaniem i tworzeniem projektów nauczyła mnie, jak dbać o porządek, organizować społeczność oraz współpracować z ludźmi na najwyższym poziomie.
+            </p>
+            <p>
+                Stale rozwijam swoje umiejętności i buduję własne miejsca w sieci, pomagając jednocześnie w rozwoju innych wspaniałych społeczności.
+            </p>
+        </div>
 
-            <!-- Serwer 2 -->
-            <div class="server-card">
-                <div class="server-name">2. Dzielnica Promocji</div>
-                <div class="server-role">Rola: Młodszy Head Admin, Realizator partnerstw</div>
-                <a href="https://discord.gg/nG32jzYY63" target="_blank" class="btn">Dołącz na serwer</a>
-            </div>
+        <div id="serwery">
+            <h2>Gdzie pełnię funkcje (Administracja)</h2>
+            <div class="server-list">
+                <!-- Serwer 1 -->
+                <div class="server-card">
+                    <div class="server-name">1. MIGMC</div>
+                    <div class="server-role">Rola: Właściciel, Realizator partnerstw</div>
+                    <a href="https://discord.gg/W3vyTXeG79" target="_blank" class="btn">Dołącz na serwer</a>
+                </div>
 
-            <!-- Serwer 3 -->
-            <div class="server-card">
-                <div class="server-name">3. Serwer Wsparcia Dla Techników</div>
-                <div class="server-role">Rola: Młodszy pomocnik, Realizator partnerstw</div>
-                <a href="https://discord.gg/pAFMdN4HdM" target="_blank" class="btn">Dołącz na serwer</a>
+                <!-- Serwer 2 -->
+                <div class="server-card">
+                    <div class="server-name">2. Dzielnica Promocji</div>
+                    <div class="server-role">Rola: Młodszy Head Admin, Realizator partnerstw</div>
+                    <a href="https://discord.gg/nG32jzYY63" target="_blank" class="btn">Dołącz na serwer</a>
+                </div>
+
+                <!-- Serwer 3 -->
+                <div class="server-card">
+                    <div class="server-name">3. Serwer Wsparcia Dla Techników</div>
+                    <div class="server-role">Rola: Młodszy pomocnik, Realizator partnerstw</div>
+                    <a href="https://discord.gg/pAFMdN4HdM" target="_blank" class="btn">Dołącz na serwer</a>
+                </div>
             </div>
+        </div>
+
+        <div id="kontakt">
+            <h2>Kontakt</h2>
+            <p>Najlepiej skontaktować się ze mną bezpośrednio na wyżej wymienionych serwerach Discord, na których pełnię administrację.</p>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 arrelYT557. Wszystkie prawa zastrzeżone.
         </div>
     </div>
 
 </body>
 </html>
-
