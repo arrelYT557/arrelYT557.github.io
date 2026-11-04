@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>arrelYT557 | Biografia</title>
+    <title>arrelYT557 | Biografia i Administracja</title>
     <style>
         * {
             box-sizing: border-box;
@@ -16,25 +16,24 @@
             color: #c9d1d9;
             display: flex;
             justify-content: center;
-            align-items: center;
+            padding: 20px;
             min-height: 100vh;
         }
         .container {
             background: #161b22;
-            padding: 40px;
+            padding: 30px;
             border-radius: 16px;
-            text-align: center;
-            max-width: 450px;
-            width: 90%;
+            max-width: 600px;
+            width: 100%;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
             border: 1px solid #30363d;
         }
         .avatar {
-            width: 100px;
-            height: 100px;
+            width: 90px;
+            height: 90px;
             background: linear-gradient(135deg, #238636, #58a6ff);
             border-radius: 50%;
-            margin: 0 auto 20px auto;
+            margin: 0 auto 15px auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -45,48 +44,66 @@
         }
         h1 {
             color: #58a6ff;
-            margin-bottom: 8px;
-            font-size: 24px;
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 26px;
         }
         .tagline {
             color: #8b949e;
+            text-align: center;
             font-size: 14px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        h2 {
+            color: #58a6ff;
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 5px;
         }
         p {
             font-size: 15px;
             line-height: 1.6;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             color: #adbac7;
         }
-        .links {
+        .server-list {
             display: flex;
             flex-direction: column;
             gap: 12px;
+            margin-top: 15px;
+        }
+        .server-card {
+            background: #21262d;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #30363d;
+        }
+        .server-name {
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        .server-role {
+            color: #238636;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
         .btn {
-            display: block;
-            padding: 12px;
-            background: #21262d;
-            color: #c9d1d9;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            border: 1px solid #30363d;
-            transition: all 0.2s ease;
-        }
-        .btn:hover {
-            background: #30363d;
-            border-color: #8b949e;
-            color: #ffffff;
-            transform: translateY(-2px);
-        }
-        .btn-primary {
+            display: inline-block;
+            padding: 8px 14px;
             background: #238636;
             color: white;
-            border: none;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: background 0.2s;
         }
-        .btn-primary:hover {
+        .btn:hover {
             background: #2ea043;
         }
     </style>
@@ -94,20 +111,40 @@
 <body>
 
     <div class="container">
-        <!-- Awatar (możesz tu wstawić też obrazek) -->
         <div class="avatar">A</div>
-        
         <h1>arrelYT557</h1>
-        <div class="tagline">Twórca / Developer / Gracze</div>
+        <div class="tagline">Właściciel & Administrator Discord</div>
         
+        <h2>O mnie i moja historia</h2>
         <p>
-            Cześć! Witaj na mojej osobistej stronie. Zastąpiłem tradycyjny profil z Discorda czymś o wiele lepszym i w pełni spersonalizowanym. Znajdziesz tu najważniejsze linki do moich mediów.
+            Cześć! Jestem osobą, która mocno angażuje się w społeczności platformy Discord. Moja przygoda z tworzeniem i zarządzaniem serwerami nauczyła mnie, jak dbać o porządek, organizować społeczność oraz współpracować z ludźmi.
+        </p>
+        <p>
+            Stale rozwijam swoje umiejętności i buduję własne projekty, a także pomagam w prowadzeniu innych ciekawych miejsc w sieci.
         </p>
 
-        <div class="links">
-            <a href="https://discord.com" target="_blank" class="btn btn-primary">Mój Discord</a>
-            <a href="https://github.com/arrelYT557" target="_blank" class="btn">GitHub</a>
-            <a href="https://youtube.com" target="_blank" class="btn">YouTube</a>
+        <h2>Moje serwery i Administracja</h2>
+        <div class="server-list">
+            <!-- Serwer 1 -->
+            <div class="server-card">
+                <div class="server-name">1. MIGMC</div>
+                <div class="server-role">Rola: Właściciel, Realizator partnerstw</div>
+                <a href="https://discord.gg/W3vyTXeG79" target="_blank" class="btn">Dołącz / Sprawdź serwer</a>
+            </div>
+
+            <!-- Serwer 2 -->
+            <div class="server-card">
+                <div class="server-name">2. Dzielnica Promocji</div>
+                <div class="server-role">Rola: Młodszy Head Admin, Realizator partnerstw</div>
+                <a href="https://discord.gg/nG32jzYY63" target="_blank" class="btn">Dołącz / Sprawdź serwer</a>
+            </div>
+
+            <!-- Serwer 3 -->
+            <div class="server-card">
+                <div class="server-name">3. Serwer Wsparcia Dla Techników</div>
+                <div class="server-role">Rola: Młodszy pomocnik, Realizator partnerstw</div>
+                <a href="https://discord.gg/pAFMdN4HdM" target="_blank" class="btn">Dołącz / Sprawdź serwer</a>
+            </div>
         </div>
     </div>
 
