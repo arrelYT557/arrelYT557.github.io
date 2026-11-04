@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>arrelYT557_ | Oficjalne Portfolio</title>
-    <!-- Blokada cache, aby strona natychmiast się aktualizowała -->
+    <title>arrelYT557_ | Official Liquid Glass Portfolio</title>
+    <!-- Blokada cache -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=display');
 
         * {
             box-sizing: border-box;
@@ -20,259 +20,283 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #07050d;
-            color: #e2defa;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #030207;
+            color: #f0ecfc;
             display: flex;
             justify-content: center;
+            align-items: center;
             padding: 30px 15px;
             min-height: 100vh;
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(138, 43, 226, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(75, 0, 130, 0.15) 0%, transparent 40%);
-        }
-
-        .container {
-            background: rgba(19, 16, 34, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            padding: 50px 40px;
-            border-radius: 24px;
-            max-width: 850px;
-            width: 100%;
-            box-shadow: 0 20px 50px rgba(138, 43, 226, 0.25);
-            border: 1px solid rgba(177, 156, 217, 0.15);
-            animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(40px); scale: 0.98; }
-            to { opacity: 1; transform: translateY(0); scale: 1; }
-        }
-
-        /* Górny pasek nawigacyjny */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 45px;
-            border-bottom: 1px solid rgba(177, 156, 217, 0.1);
-            padding-bottom: 20px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .nav-logo {
-            color: #d1b3ff;
-            font-weight: 700;
-            font-size: 20px;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-            text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            color: #9a93c7;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
             position: relative;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
+        /* Dynamiczne tło Liquid Mesh */
+        .liquid-bg {
+            position: fixed;
+            top: 0;
             left: 0;
-            background-color: #b19cd9;
-            transition: width 0.3s ease;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: #05030a;
         }
 
-        .nav-links a:hover {
-            color: #d1b3ff;
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.6;
+            animation: floatBlob 12s infinite alternate ease-in-out;
         }
 
-        .nav-links a:hover::after {
+        .blob-1 {
+            top: -10%;
+            left: -10%;
+            width: 450px;
+            height: 450px;
+            background: #6a0dad;
+        }
+
+        .blob-2 {
+            bottom: -15%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: #00d4ff;
+            animation-delay: -5s;
+        }
+
+        .blob-3 {
+            top: 40%;
+            left: 30%;
+            width: 350px;
+            height: 350px;
+            background: #b900b4;
+            animation-delay: -3s;
+        }
+
+        @keyframes floatBlob {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(60px, 40px) scale(1.15); }
+        }
+
+        /* Kontener główny - Liquid Glass Container */
+        .container {
+            background: rgba(18, 14, 33, 0.45);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            padding: 45px 35px;
+            border-radius: 32px;
+            max-width: 800px;
             width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            animation: glassIn 1s ease-out;
         }
 
-        /* Sekcja profilowa (Awatar) */
-        .profile-section {
+        @keyframes glassIn {
+            from { opacity: 0; transform: translateY(30px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* Profil i Liquid Avatar */
+        .profile-header {
             text-align: center;
-            margin-bottom: 40px;
-            position: relative;
+            margin-bottom: 35px;
         }
 
-        .avatar-glow {
+        .avatar-wrapper {
+            position: relative;
             width: 120px;
             height: 120px;
             margin: 0 auto 20px auto;
-            position: relative;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #4b0082, #9400d3, #00ffff);
-            padding: 3px;
-            animation: rotateGlow 6s linear infinite;
         }
 
-        @keyframes rotateGlow {
-            0% { filter: hue-rotate(0deg); }
-            100% { filter: hue-rotate(360deg); }
-        }
-
-        .avatar {
+        .avatar-glass {
             width: 100%;
             height: 100%;
-            background: #110d21;
             border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 45px;
-            color: #ffffff;
+            font-size: 50px;
             font-weight: 800;
+            color: #ffffff;
+            box-shadow: 0 0 30px rgba(185, 0, 180, 0.5);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .avatar-wrapper:hover .avatar-glass {
+            transform: scale(1.08) rotate(5deg);
+            box-shadow: 0 0 45px rgba(0, 212, 255, 0.7);
         }
 
         h1 {
-            color: #ffffff;
-            font-size: 36px;
+            font-size: 34px;
             font-weight: 800;
+            background: linear-gradient(135deg, #ffffff, #c0a8ff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 8px;
-            letter-spacing: 0.5px;
+            letter-spacing: -0.5px;
         }
 
-        .badge-role {
-            display: inline-block;
-            background: rgba(138, 43, 226, 0.15);
-            color: #d1b3ff;
-            border: 1px solid rgba(138, 43, 226, 0.4);
-            padding: 6px 16px;
-            border-radius: 20px;
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             font-size: 13px;
             font-weight: 600;
+            color: #d8c7ff;
             margin-bottom: 15px;
         }
 
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #00ff88;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ff88;
+        }
+
         .bio-lead {
-            color: #b2abdb;
-            font-size: 16px;
-            max-width: 600px;
+            font-size: 15px;
+            color: #b5a9d6;
+            max-width: 620px;
             margin: 0 auto;
             line-height: 1.6;
         }
 
-        /* Styl sekcji */
-        section {
-            margin-bottom: 45px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: revealSection 0.8s forwards;
+        /* Rozwijane Sekcje (Accordion Styles) */
+        .accordion-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
-        section:nth-child(2) { animation-delay: 0.2s; }
-        section:nth-child(3) { animation-delay: 0.3s; }
-        section:nth-child(4) { animation-delay: 0.4s; }
-        section:nth-child(5) { animation-delay: 0.5s; }
-
-        @keyframes revealSection {
-            to { opacity: 1; transform: translateY(0); }
+        .accordion-item:hover {
+            border-color: rgba(192, 168, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
-        h2 {
-            color: #d1b3ff;
-            font-size: 22px;
+        .accordion-header {
+            width: 100%;
+            padding: 20px 25px;
+            background: none;
+            border: none;
+            outline: none;
+            color: #ffffff;
+            font-size: 18px;
             font-weight: 700;
-            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            transition: color 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            color: #00d4ff;
+        }
+
+        .accordion-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid rgba(177, 156, 217, 0.1);
-            padding-bottom: 10px;
+            justify-content: center;
+            font-size: 14px;
+            transition: transform 0.4s ease, background 0.3s ease;
         }
 
-        p {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #b2abdb;
-            margin-bottom: 15px;
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+            background: #6a0dad;
+            color: #ffffff;
         }
 
-        /* Kafelki (Grid) */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+            padding: 0 25px;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 1200px;
+            padding: 0 25px 25px 25px;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        /* Kafelki wewnątrz rozwijanych sekcji */
         .grid-box {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
         }
 
-        .card {
-            background: rgba(27, 22, 48, 0.6);
-            border: 1px solid rgba(138, 43, 226, 0.2);
-            padding: 22px;
+        .liquid-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
             border-radius: 16px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
         }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #8a2be2, #00ffff);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .liquid-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
 
-        .card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(138, 43, 226, 0.6);
-            box-shadow: 0 10px 25px rgba(138, 43, 226, 0.15);
-            background: rgba(35, 28, 64, 0.8);
-        }
-
-        .card:hover::before {
-            opacity: 1;
-        }
-
-        .card h3 {
-            color: #ffffff;
-            font-size: 17px;
-            font-weight: 600;
+        .liquid-card h4 {
+            color: #00d4ff;
+            font-size: 16px;
+            font-weight: 700;
             margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        .card p {
+        .liquid-card p {
             font-size: 14px;
-            color: #9a93c7;
-            margin-bottom: 0;
+            color: #b5a9d6;
+            line-height: 1.6;
         }
 
-        /* Karty serwerów administracyjnych */
+        /* Karty serwerów */
         .server-list {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
+            margin-top: 10px;
         }
 
         .server-card {
-            background: rgba(27, 22, 48, 0.7);
-            border: 1px solid rgba(138, 43, 226, 0.25);
-            padding: 22px 25px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
             border-radius: 16px;
             display: flex;
             justify-content: space-between;
@@ -283,184 +307,215 @@
         }
 
         .server-card:hover {
-            border-color: #9400d3;
+            border-color: #b900b4;
+            background: rgba(255, 255, 255, 0.08);
             transform: translateX(6px);
-            box-shadow: 0 8px 25px rgba(138, 43, 226, 0.2);
-            background: rgba(35, 28, 64, 0.9);
         }
 
-        .server-info h3 {
-            color: #ffffff;
-            font-size: 18px;
+        .server-title {
+            font-size: 17px;
             font-weight: 700;
-            margin-bottom: 5px;
+            color: #ffffff;
         }
 
         .server-role {
-            color: #d1b3ff;
-            font-size: 14px;
+            font-size: 13px;
+            color: #c0a8ff;
             font-weight: 600;
+            margin-top: 4px;
         }
 
-        .btn-discord {
-            background: linear-gradient(135deg, #7289da, #5865f2);
-            color: white;
-            padding: 10px 22px;
-            border-radius: 10px;
+        .btn-glass {
+            background: linear-gradient(135deg, rgba(106, 13, 173, 0.8), rgba(0, 212, 255, 0.8));
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 12px;
             text-decoration: none;
             font-size: 13px;
             font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        .btn-discord:hover {
+        .btn-glass:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(88, 101, 242, 0.6);
-            background: linear-gradient(135deg, #7991eb, #6370f5);
+            box-shadow: 0 6px 25px rgba(0, 212, 255, 0.5);
+            border-color: #ffffff;
         }
 
         /* Stopka */
         .footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 35px;
             font-size: 13px;
-            color: #6c6499;
-            border-top: 1px solid rgba(177, 156, 217, 0.1);
-            padding-top: 25px;
+            color: #8578aa;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 20px;
         }
 
         @media (max-width: 600px) {
-            .container {
-                padding: 25px 15px;
-            }
-            .server-card {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .btn-discord {
-                width: 100%;
-                justify-content: center;
-            }
+            .container { padding: 30px 18px; }
+            .server-card { flex-direction: column; align-items: flex-start; }
+            .btn-glass { width: 100%; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Nawigacja -->
-        <div class="navbar">
-            <a href="#" class="nav-logo">arrelYT557_</a>
-            <div class="nav-links">
-                <a href="#o-mnie">O mnie</a>
-                <a href="#sprzet">Sprzęt</a>
-                <a href="#zainteresowania">Zainteresowania</a>
-                <a href="#administracja">Administracja</a>
-            </div>
-        </div>
+    <!-- Liquid Tło z pływającymi kulami -->
+    <div class="liquid-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
 
-        <!-- Sekcja Profilowa -->
-        <div class="profile-section">
-            <div class="avatar-glow">
-                <div class="avatar">A</div>
+    <!-- Szklany Kontener Główny -->
+    <div class="container">
+        
+        <!-- Górna sekcja profilowa -->
+        <div class="profile-header">
+            <div class="avatar-wrapper">
+                <div class="avatar-glass">A</div>
             </div>
             <h1>arrelYT557_</h1>
-            <div class="badge-role">Właściciel & Administrator Discord</div>
+            <div class="status-badge">
+                <span class="status-dot"></span> Status: Zawsze gotowy do pomocy
+            </div>
             <p class="bio-lead">
-                Cześć! Jestem twórcą projektów społecznościowych, administratorem oraz pasjonatem technologii i motoryzacji. Zawsze gotowy do pomocy.
+                Właściciel & Administrator Discord | Pasjonat Mechaniki Samochodowej oraz Nowych Technologii.
             </p>
         </div>
 
-        <!-- O mnie i Historia -->
-        <section id="o-mnie">
-            <h2>📜 O mnie i Historia</h2>
-            <p>
-                Moja przygoda z platformą Discord oraz światem cyfrowym rozpoczęła się na dobre 16 kwietnia 2025 roku. Od tamtego momentu stale rozwijam swoje projekty, dbam o wysoki poziom bezpieczeństwa na serwerach, organizuję struktury administracyjne oraz koordynuję kluczowe partnerstwa.
-            </p>
-            <p>
-                Cechuje mnie pełne zaangażowanie, otwartość na pytania (DM zawsze otwarty!) oraz profesjonalne podejście do każdego powierzonego zadania.
-            </p>
-        </section>
+        <!-- Rozwijana Sekcja 1: O Mnie i Historia -->
+        <div class="accordion-item active">
+            <button class="accordion-header">
+                <span>📜 O mnie & Historia</span>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <p style="margin-bottom: 12px; font-size: 14px; color: #b5a9d6; line-height: 1.7;">
+                    Moja przygoda ze światem cyfrowym i prowadzeniem projektów na Discordzie rozpoczęła się <strong>16 kwietnia 2025 r.</strong> Od tamtego momentu rozwijam społeczności, zajmuję się koordynacją partnerstw oraz budowaniem sprawnie działających struktur administracyjnych.
+                </p>
+                <p style="font-size: 14px; color: #b5a9d6; line-height: 1.7;">
+                    W moich działaniach stawiam na sprawiedliwość, porządek i otwartą komunikację – mój DM jest zawsze otwarty na pytania!
+                </p>
+            </div>
+        </div>
 
-        <!-- Sprzęt i Specyfikacja -->
-        <section id="sprzet">
-            <h2>💻 Sprzęt i Specyfikacja</h2>
-            <div class="grid-box">
-                <div class="card">
-                    <h3>📱 Realme GT Neo 2</h3>
-                    <p>Wydajny smartfon wyposażony w potężne <strong>12 GB pamięci RAM</strong> oraz <strong>256 GB pamięci wbudowanej</strong>. Zapewnia błyskawiczne działanie w każdej sytuacji.</p>
-                </div>
-                <div class="card">
-                    <h3>💻 ASUS TUF Gaming F16</h3>
-                    <p>Zaawansowany laptop gamingowy napędzany kartą graficzną <strong>NVIDIA GeForce RTX 3050</strong>. Stworzony do płynnej pracy, montażu, obsługi projektów oraz wymagających gier.</p>
+        <!-- Rozwijana Sekcja 2: Mój Sprzęt (Specyfikacja) -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>💻 Mój Sprzęt (Specyfikacja)</span>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <div class="grid-box">
+                    <div class="liquid-card">
+                        <h4>📱 Realme GT Neo 2</h4>
+                        <p><strong>Pamięć RAM:</strong> 12 GB</p>
+                        <p><strong>Pamięć wbudowana:</strong> 256 GB</p>
+                        <p>Błyskawicznie działający smartfon do zarządzania projektami w dowolnym miejscu.</p>
+                    </div>
+                    <div class="liquid-card">
+                        <h4>💻 ASUS TUF Gaming F16</h4>
+                        <p><strong>Karta graficzna:</strong> NVIDIA GeForce RTX 3050</p>
+                        <p>Wydajny laptop gamingowy radzący sobie bez problemu z wymagającymi symulatorami i pracą techniczną.</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Zainteresowania i Gry -->
-        <section id="zainteresowania">
-            <h2>🎮 Zainteresowania i Gry</h2>
-            <div class="grid-box">
-                <div class="card">
-                    <h3>🚗 Mechanika Samochodowa</h3>
-                    <p>Moja wielka pasja w świecie realnym – zgłębianie tajników budowy silników, naprawy oraz diagnostyki pojazdów.</p>
-                </div>
-                <div class="card">
-                    <h3>🕹️ BeamNG.drive</h3>
-                    <p>Moja absolutnie ulubiona gra symulacyjna skupiająca się na niesamowitej, realistycznej fizyce ciał miękkich i wypadków.</p>
-                </div>
-                <div class="card">
-                    <h3>🛠️ Symulatory warsztatowe</h3>
-                    <p>Uwielbiam tytuły takie jak <em>Car Mechanic Simulator</em>, <em>My Summer Car</em>, <em>Cheap Car Repair</em> czy <em>Euro Truck Simulator 2</em>.</p>
-                </div>
-                <div class="card">
-                    <h3>🌐 Społeczności i IT</h3>
-                    <p>Tworzenie nowoczesnych stron internetowych, rozwijanie serwerów Minecraft oraz wsparcie techniczne.</p>
+        <!-- Rozwijana Sekcja 3: Zainteresowania & Ulubione Gry -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>🎮 Zainteresowania & Gry</span>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <div class="grid-box">
+                    <div class="liquid-card">
+                        <h4>🚗 Mechanika Samochodowa</h4>
+                        <p>Moje główne hobby poza komputerem. Budowa silników, diagnostyka i mechanika pojazdów.</p>
+                    </div>
+                    <div class="liquid-card">
+                        <h4>🔥 BeamNG.drive</h4>
+                        <p>Moja absolutnie ulubiona gra – niezrównana symulacja fizyki zniszczeń i zachowania aut.</p>
+                    </div>
+                    <div class="liquid-card">
+                        <h4>🛠️ Symulatory Motoryzacyjne</h4>
+                        <p>Car Mechanic Simulator, My Summer Car, My Winter Car, Cheap Car Repair, ETS2, Farming Simulator 22, OHV.</p>
+                    </div>
+                    <div class="liquid-card">
+                        <h4>🎯 Inne Ulubione Tytuły</h4>
+                        <p>Minecraft (Java Edition), Counter-Strike 2.</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Administracja i Serwery -->
-        <section id="administracja">
-            <h2>🛡️ Administracja i Serwery</h2>
-            <div class="server-list">
-                <!-- Serwer 1 -->
-                <div class="server-card">
-                    <div class="server-info">
-                        <h3>1. MIGMC</h3>
-                        <div class="server-role">Rola: Właściciel, Realizator partnerstw</div>
+        <!-- Rozwijana Sekcja 4: Administracja i Serwery -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>🛡️ Administracja & Serwery</span>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+                <div class="server-list">
+                    <!-- Serwer 1 -->
+                    <div class="server-card">
+                        <div>
+                            <div class="server-title">1. MIGMC</div>
+                            <div class="server-role">Rola: Właściciel, Realizator partnerstw</div>
+                        </div>
+                        <a href="https://discord.gg/W3vyTXeG79" target="_blank" class="btn-glass">Dołącz na serwer</a>
                     </div>
-                    <a href="https://discord.gg/W3vyTXeG79" target="_blank" class="btn-discord">Dołącz na serwer</a>
-                </div>
 
-                <!-- Serwer 2 -->
-                <div class="server-card">
-                    <div class="server-info">
-                        <h3>2. Dzielnica Promocji</h3>
-                        <div class="server-role">Rola: Młodszy Head Admin, Realizator partnerstw</div>
+                    <!-- Serwer 2 -->
+                    <div class="server-card">
+                        <div>
+                            <div class="server-title">2. Dzielnica Promocji</div>
+                            <div class="server-role">Rola: Młodszy Head Admin, Realizator partnerstw</div>
+                        </div>
+                        <a href="https://discord.gg/nG32jzYY63" target="_blank" class="btn-glass">Dołącz na serwer</a>
                     </div>
-                    <a href="https://discord.gg/nG32jzYY63" target="_blank" class="btn-discord">Dołącz na serwer</a>
-                </div>
 
-                <!-- Serwer 3 -->
-                <div class="server-card">
-                    <div class="server-info">
-                        <h3>3. Serwer Wsparcia Dla Techników</h3>
-                        <div class="server-role">Rola: Młodszy pomocnik, Realizator partnerstw</div>
+                    <!-- Serwer 3 -->
+                    <div class="server-card">
+                        <div>
+                            <div class="server-title">3. Serwer Wsparcia Dla Techników</div>
+                            <div class="server-role">Rola: Młodszy pomocnik, Realizator partnerstw</div>
+                        </div>
+                        <a href="https://discord.gg/pAFMdN4HdM" target="_blank" class="btn-glass">Dołącz na serwer</a>
                     </div>
-                    <a href="https://discord.gg/pAFMdN4HdM" target="_blank" class="btn-discord">Dołącz na serwer</a>
                 </div>
             </div>
-        </section>
+        </div>
 
         <!-- Stopka -->
         <div class="footer">
-            &copy; 2026 arrelYT557. Wszystkie prawa zastrzeżone. Projekt wykonany z efektem WOW.
+            &copy; 2026 arrelYT557_. Liquid Glass Edition.
         </div>
     </div>
 
+    <!-- Skrypt do rozwijania sekcji (Accordion JS) -->
+    <script>
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                
+                // Opcjonalnie: zamyka inne sekcje przy otwarciu nowej
+                document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+
+                item.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
