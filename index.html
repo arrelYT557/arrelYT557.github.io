@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>arrelYT557 | Portfolio, Historia i Administracja</title>
-    <!-- Blokada pamięci podręcznej, żeby strona od razu się aktualizowała -->
+    <title>arrelYT557 _</title>
+    <!-- Blokada pamięci podręcznej, żeby strona od razu się zaktualizowała -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -18,224 +18,245 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
+            background-color: #0b0914;
+            color: #d1d0e0;
             display: flex;
             justify-content: center;
             padding: 20px;
             min-height: 100vh;
         }
         .container {
-            background: #161b22;
-            padding: 30px;
-            border-radius: 16px;
+            background: #131022;
+            padding: 40px 30px;
+            border-radius: 20px;
             max-width: 700px;
             width: 100%;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-            border: 1px solid #30363d;
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.15);
+            border: 1px solid #282142;
+        }
+        /* Górne menu nawigacyjne w stylu z obrazka */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #282142;
+            padding-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .nav-logo {
+            color: #b19cd9;
+            font-weight: bold;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #9a95b8;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #b19cd9;
+        }
+        /* Awatar z fioletową poświatą */
+        .avatar-container {
+            text-align: center;
+            margin-bottom: 30px;
         }
         .avatar {
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, #238636, #58a6ff);
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #4b0082, #8a2be2);
             border-radius: 50%;
-            margin: 0 auto 15px auto;
+            margin: 0 auto 20px auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 36px;
+            font-size: 40px;
             color: white;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+            border: 2px solid #b19cd9;
         }
         h1 {
-            color: #58a6ff;
+            color: #b19cd9;
             text-align: center;
             margin-bottom: 5px;
-            font-size: 26px;
+            font-size: 32px;
+            letter-spacing: 1px;
         }
         .tagline {
-            color: #8b949e;
+            color: #9a95b8;
             text-align: center;
-            font-size: 14px;
-            margin-bottom: 20px;
+            font-size: 16px;
+            margin-bottom: 15px;
         }
-        /* Nawigacja – przyciski podstron */
-        .nav-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-        .nav-btn {
-            background: #21262d;
-            color: #58a6ff;
-            border: 1px solid #30363d;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.2s;
-        }
-        .nav-btn:hover {
-            background: #30363d;
-            color: #ffffff;
-            border-color: #58a6ff;
+        .bio-text {
+            text-align: center;
+            color: #b8b5cc;
+            font-size: 15px;
+            margin-bottom: 35px;
+            line-height: 1.6;
         }
         section {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         h2 {
-            color: #58a6ff;
-            font-size: 18px;
-            margin-bottom: 12px;
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 6px;
+            color: #b19cd9;
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #282142;
+            padding-bottom: 8px;
         }
         p {
             font-size: 15px;
             line-height: 1.6;
-            margin-bottom: 12px;
-            color: #adbac7;
+            margin-bottom: 15px;
+            color: #b8b5cc;
         }
-        /* Grid na umiejętności / zainteresowania */
+        /* Kafelki zainteresowań i umiejętności */
         .grid-box {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            margin-top: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
         }
         .grid-item {
-            background: #21262d;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #30363d;
+            background: #1b1630;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #2f2552;
             font-size: 14px;
-            color: #c9d1d9;
+            color: #d1d0e0;
         }
         .grid-item strong {
-            color: #58a6ff;
+            color: #b19cd9;
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
+            font-size: 15px;
         }
-        /* Serwery */
+        /* Lista serwerów administracyjnych */
         .server-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-top: 10px;
+            gap: 15px;
+            margin-top: 15px;
         }
         .server-card {
-            background: #21262d;
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #30363d;
+            background: #1b1630;
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid #2f2552;
+            transition: border-color 0.2s;
+        }
+        .server-card:hover {
+            border-color: #8a2be2;
         }
         .server-name {
             font-weight: bold;
             color: #ffffff;
-            font-size: 16px;
+            font-size: 17px;
             margin-bottom: 4px;
         }
         .server-role {
-            color: #238636;
-            font-size: 13px;
+            color: #b19cd9;
+            font-size: 14px;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
         .btn {
             display: inline-block;
-            padding: 7px 12px;
-            background: #238636;
+            padding: 8px 16px;
+            background: #6a0dad;
             color: white;
             text-decoration: none;
-            border-radius: 6px;
-            font-size: 12px;
+            border-radius: 8px;
+            font-size: 13px;
             font-weight: bold;
             transition: background 0.2s;
         }
         .btn:hover {
-            background: #2ea043;
+            background: #8a2be2;
         }
         .footer {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
             font-size: 12px;
-            color: #8b949e;
-            border-top: 1px solid #30363d;
-            padding-top: 15px;
+            color: #79739c;
+            border-top: 1px solid #282142;
+            padding-top: 20px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="avatar">A</div>
-        <h1>arrelYT557</h1>
-        <div class="tagline">Właściciel & Administrator Discord | Developer</div>
-        
-        <!-- Pasek nawigacyjny -->
-        <div class="nav-buttons">
-            <a href="#historia" class="nav-btn">Historia</a>
-            <a href="#umiejetnosci" class="nav-btn">Umiejętności</a>
-            <a href="#zainteresowania" class="nav-btn">Zainteresowania</a>
-            <a href="#serwery" class="nav-btn">Serwery</a>
+        <!-- Górne menu -->
+        <div class="navbar">
+            <a href="#" class="nav-logo">arrelYT557_</a>
+            <div class="nav-links">
+                <a href="#o-mnie">O mnie</a>
+                <a href="#zainteresowania">Zainteresowania</a>
+                <a href="#historia">Historia</a>
+                <a href="#administracja">Administracja</a>
+            </div>
         </div>
 
-        <!-- Sekcja 1: Historia -->
-        <section id="historia">
-            <h2>Moja Historia</h2>
-            <p>
-                Cześć! Moja przygoda ze światem online i platformą Discord zaczęła się od ciekawości tego, jak działają społeczności. Z biegiem czasu z zwykłego użytkownika stałem się osobą, która tworzy własne projekty od zera.
-            </p>
-            <p>
-                Przez lata pracy na różnych serwerach zdobyłem cenne doświadczenie w zarządzaniu ludźmi, rozwiązywaniu konfliktów oraz koordynowaniu partnerstw, co doprowadziło mnie do miejsc, w których dziś pełnię wysokie funkcje administracyjne.
-            </p>
-        </section>
-
-        <!-- Sekcja 2: Umiejętności -->
-        <section id="umiejetnosci">
-            <h2>Umiejętności</h2>
-            <div class="grid-box">
-                <div class="grid-item">
-                    <strong>Zarządzanie społecznością</strong>
-                    Skuteczna moderacja i dbanie o aktywność na serwerach.
-                </div>
-                <div class="grid-item">
-                    <strong>Realizacja partnerstw</strong>
-                    Profesjonalne nawiązywanie i koordynowanie współpracy między projektami.
-                </div>
-                <div class="grid-item">
-                    <strong>Administracja Discord</strong>
-                    Konfiguracja rang, uprawnień, botów i bezpieczeństwa.
-                </div>
-                <div class="grid-item">
-                    <strong>Podstawy kodu i stron</strong>
-                    Tworzenie stron w HTML/CSS i obsługa platform takich jak GitHub.
-                </div>
+        <!-- Główny nagłówek / Profil -->
+        <div class="avatar-container">
+            <div class="avatar">A</div>
+            <h1>arrelYT557_</h1>
+            <div class="tagline">Właściciel & Administrator Discord | Pasjonat Mechaniki</div>
+            <div class="bio-text">
+                Pasjonat zarządzania społecznościami, technologii oraz mechaniki samochodowej z wieloletnim zaangażowaniem w projekty sieciowe.
             </div>
+        </div>
+
+        <!-- Sekcja O mnie -->
+        <section id="o-mnie">
+            <h2>O mnie</h2>
+            <p>
+                Cześć! Jestem twórcą i administratorem, który mocno angażuje się w rozwój ciekawych projektów na platformie Discord. Poza światem cyfrowym pasjonuję się motoryzacją i mechaniką samochodową, co pozwala mi łączyć logiczne myślenie z praktycznymi umiejętnościami.
+            </p>
         </section>
 
-        <!-- Sekcja 3: Zainteresowania -->
+        <!-- Sekcja Zainteresowania -->
         <section id="zainteresowania">
             <h2>Zainteresowania</h2>
             <div class="grid-box">
                 <div class="grid-item">
-                    <strong>Technologia i IT</strong>
-                    Interesuję się nowinkami technicznymi, wsparciem dla techników oraz oprogramowaniem.
+                    <strong>🚗 Mechanika Samochodowa</strong>
+                    Moja wielka pasja poza komputerem – interesuję się budową aut, naprawą oraz diagnostyką pojazdów.
                 </div>
                 <div class="grid-item">
-                    <strong>Rozwój projektów</strong>
-                    Tworzenie i rozkręcanie nowych miejsc w sieci, takich jak serwery tematyczne i minecraftowe.
+                    <strong>🌐 Społeczności Discord</strong>
+                    Tworzenie, rozwijanie i koordynowanie dużych projektów oraz serwerów tematycznych.
+                </div>
+                <div class="grid-item">
+                    <strong>💻 Technologie i IT</strong>
+                    Tworzenie stron internetowych, wsparcie techniczne i obsługa systemów.
                 </div>
             </div>
         </section>
 
-        <!-- Sekcja 4: Serwery / Administracja -->
-        <section id="serwery">
-            <h2>Gdzie pełnię funkcje (Administracja)</h2>
+        <!-- Sekcja Historia -->
+        <section id="historia">
+            <h2>Historia i Doświadczenie</h2>
+            <p>
+                Moja przygoda rozpoczęła się od prostych aktywności w sieci, które przerodziły się w profesjonalne zarządzanie społecznościami. Dzięki konsekwencji, umiejętności rozwiązywania konfliktów i dbaniu o partnerstwa, zyskałem zaufanie jako administrator w wielu miejscach.
+            </p>
+        </section>
+
+        <!-- Sekcja Administracja (Serwery) -->
+        <section id="administracja">
+            <h2>Administracja i Serwery</h2>
             <div class="server-list">
                 <!-- Serwer 1 -->
                 <div class="server-card">
