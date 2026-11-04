@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>arrelYT557_ | Official Portfolio</title>
+    <title>arrelYT557 | Official Portfolio</title>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -30,6 +30,7 @@
             position: relative;
         }
 
+        /* Dynamiczne tło Liquid */
         .liquid-bg {
             position: fixed;
             top: 0;
@@ -51,7 +52,7 @@
 
         .blob-1 { top: -10%; left: -10%; width: 500px; height: 500px; background: #6a0dad; }
         .blob-2 { bottom: -15%; right: -10%; width: 550px; height: 550px; background: #00d4ff; animation-delay: -6s; }
-        .blob-3 { top: 45%; left: 25%; width: 350px; height: 350px; background: #b900b4; animation-delay: -3s; }
+        .blob-3 { top: 45%; left: 25%; width: 400px; height: 400px; background: #b900b4; animation-delay: -3s; }
 
         @keyframes floatBlob {
             0% { transform: translate(0, 0) scale(1); }
@@ -59,7 +60,7 @@
         }
 
         .container {
-            background: rgba(18, 14, 33, 0.55);
+            background: rgba(18, 14, 33, 0.6);
             backdrop-filter: blur(25px) saturate(180%);
             -webkit-backdrop-filter: blur(25px) saturate(180%);
             padding: 45px 35px;
@@ -67,7 +68,7 @@
             max-width: 850px;
             width: 100%;
             border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
         }
 
         .navbar {
@@ -137,6 +138,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 6px;
+            min-height: 42px;
         }
 
         .status-badge {
@@ -190,7 +192,7 @@
 
         .grid-box {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 16px;
         }
 
@@ -201,14 +203,13 @@
             border-radius: 18px;
             backdrop-filter: blur(10px);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
         .expand-card:hover {
             background: rgba(255, 255, 255, 0.08);
             border-color: rgba(0, 212, 255, 0.4);
             transform: translateY(-4px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
         }
 
         .expand-header {
@@ -264,21 +265,10 @@
         }
 
         .expand-card.open .details-content {
-            max-height: 800px;
+            max-height: 600px;
             margin-top: 14px;
             border-top-width: 1px;
             padding-top: 12px;
-        }
-
-        .device-summary {
-            font-size: 13px;
-            color: #d8c7ff;
-            margin-bottom: 12px;
-            line-height: 1.5;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 10px;
-            border-radius: 8px;
-            border-left: 3px solid #00d4ff;
         }
 
         .spec-list {
@@ -317,13 +307,11 @@
             background: linear-gradient(135deg, #171a21, #2a475e);
             color: #c6d4df;
         }
-        .btn-steam:hover { background: linear-gradient(135deg, #2a475e, #66c0f4); color: #fff; }
 
         .btn-discord {
             background: linear-gradient(135deg, #6a0dad, #00d4ff);
             color: #ffffff;
         }
-        .btn-discord:hover { box-shadow: 0 4px 20px rgba(0, 212, 255, 0.5); }
 
         .contact-box {
             background: rgba(255, 255, 255, 0.04);
@@ -339,6 +327,22 @@
             color: #ffffff;
             margin: 10px 0;
             text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        }
+
+        #toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(106, 13, 173, 0.9);
+            border: 1px solid #00d4ff;
+            color: #ffffff;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            display: none;
+            z-index: 1000;
         }
 
         .footer {
@@ -362,12 +366,15 @@
     <div class="container">
         
         <div class="navbar">
-            <a href="#" class="nav-logo">arrelYT557_</a>
+            <a href="#" class="nav-logo">arrelYT557</a>
             <div class="nav-links">
                 <a href="#o-mnie">O mnie</a>
+                <a href="#staz">Staż</a>
                 <a href="#gry">Gry</a>
                 <a href="#administracja">Serwery</a>
-                <a href="#sprzet">Specyfikacja</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#sprzet">Sprzęt</a>
+                <a href="#faq">FAQ</a>
                 <a href="#kontakt">Kontakt</a>
             </div>
         </div>
@@ -376,30 +383,53 @@
             <div class="avatar-glass">
                 <img src="avatar.jpg" alt="Avatar arrelYT557" onerror="this.style.display='none'; this.parentNode.innerText='A';">
             </div>
-            <h1>arrelYT557_</h1>
+            <h1 id="typewriter-title"></h1>
             <div class="status-badge">
-                <span class="status-dot"></span> Status: Zawsze gotowy do pomocy
+                <span class="status-dot" id="status-dot-color"></span> <span id="discord-status">Ładowanie statusu...</span>
             </div>
             <p class="bio-lead">
                 Właściciel & Administrator Discord | Pasjonat Mechaniki Samochodowej oraz Nowych Technologii.
             </p>
         </div>
 
+        <!-- O Mnie -->
         <section id="o-mnie">
             <h2>📜 O mnie i Historia</h2>
             <p style="margin-bottom: 10px;">
-                Moja przygoda na Discordzie rozpoczęła się <strong>16 kwietnia 2025 roku</strong>[span_0](start_span)[span_0](end_span). Rozwijam serwery, realizuję partnerstwa i dbam o porządek w społecznościach[span_1](start_span)[span_1](end_span).
+                Cześć! Jestem twórcą i administratorem projektów sieciowych. Prowadzę własne serwery oraz pomagam w rozwoju większych społeczności.
             </p>
             <p>
-                W realnym świecie pasjonuję się mechaniką samochodową, silnikami oraz graniem w symulatory[span_2](start_span)[span_2](end_span).
+                Moją największą pasją poza komputerem jest <strong>mechanika samochodowa</strong>, budowa silników oraz spędzanie czasu przy rozbudowanych symulatorach pojazdów.
             </p>
+        </section>
+
+        <!-- Staż -->
+        <section id="staz">
+            <h2>⏱️ Mój Staż</h2>
+            <div class="grid-box">
+                <div class="expand-card">
+                    <h3>💬 Discord</h3>
+                    <div class="short-desc">Pierwsze konto założyłem: <strong>12.06.2022 r.</strong></div>
+                </div>
+                <div class="expand-card">
+                    <h3>⛏️ MIGMC</h3>
+                    <div class="short-desc">Właściciel serwera od: <strong>27.06.2024 r.</strong></div>
+                </div>
+                <div class="expand-card">
+                    <h3>📢 Dzielnica Promocji</h3>
+                    <div class="short-desc">Młodszy Head Admin od: <strong>02.07.2026 r.</strong></div>
+                </div>
+                <div class="expand-card">
+                    <h3>🛠️ SWDT</h3>
+                    <div class="short-desc">Młodszy Pomocnik od: <strong>31.10.2026 r.</strong></div>
+                </div>
+            </div>
         </section>
 
         <!-- Gry -->
         <section id="gry">
             <h2>🎮 Ulubione Gry & Steam (Kliknij, aby rozwinąć)</h2>
             <div class="grid-box">
-                
                 <div class="expand-card" onclick="toggleCard(this)">
                     <div class="expand-header">
                         <h3>🚗 BeamNG.drive</h3>
@@ -407,7 +437,7 @@
                     </div>
                     <div class="short-desc">Ulubiony symulator zniszczeń i fizyki aut</div>
                     <div class="details-content">
-                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 10px;">Niezrównany symulator oferujący realistyczną fizykę ciał miękkich. Idealny dla fanów motoryzacji!</p>
+                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 10px;">Niezrównany symulator oferujący realistyczną fizykę ciał miękkich.</p>
                         <a href="https://store.steampowered.com/app/284160/BeamNGdrive/" target="_blank" class="btn-action btn-steam" onclick="event.stopPropagation();">
                             🎮 Pokaż na Steam
                         </a>
@@ -421,7 +451,7 @@
                     </div>
                     <div class="short-desc">Składanie auta śrubka po śrubce</div>
                     <div class="details-content">
-                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 10px;">Gra o budowaniu samochodu od zera, mechanice i przetrwaniu w fińskim klimacie.</p>
+                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 10px;">Budowanie samochodu od podstaw i dbanie o każdy detal mechaniczny.</p>
                         <a href="https://store.steampowered.com/app/516750/My_Summer_Car/" target="_blank" class="btn-action btn-steam" onclick="event.stopPropagation();">
                             🎮 Pokaż na Steam
                         </a>
@@ -435,7 +465,7 @@
                     </div>
                     <div class="short-desc">Warsztat i naprawa silników</div>
                     <div class="details-content">
-                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 10px;">Rozwijanie własnego warsztatu, diagnozowanie usterek i tuning maszyn.</p>
+                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 10px;">Diagnozowanie usterek, rozbieranie silników i tuning maszyn.</p>
                         <a href="https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018/" target="_blank" class="btn-action btn-steam" onclick="event.stopPropagation();">
                             🎮 Pokaż na Steam
                         </a>
@@ -449,13 +479,12 @@
                     </div>
                     <div class="short-desc">Trasy ciężarówkami po Europie</div>
                     <div class="details-content">
-                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 10px;">Przewóz ładunków po całej Europie, rozbudowa własnej firmy transportowej.</p>
+                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 10px;">Przewóz ładunków po całej Europie i prowadzenie firmy.</p>
                         <a href="https://store.steampowered.com/app/227300/Euro_Truck_Simulator_2/" target="_blank" class="btn-action btn-steam" onclick="event.stopPropagation();">
                             🎮 Pokaż na Steam
                         </a>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -463,7 +492,6 @@
         <section id="administracja">
             <h2>🛡️ Administracja & Serwery (Kliknij, aby rozwinąć)</h2>
             <div class="grid-box">
-                
                 <div class="expand-card" onclick="toggleCard(this)">
                     <div class="expand-header">
                         <div class="card-title-group">
@@ -475,6 +503,9 @@
                     <div class="short-desc">Rola: Właściciel & Realizator Partnerstw</div>
                     <div class="details-content">
                         <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 10px;">Oficjalny serwer Minecraft oraz społeczność Discord.</p>
+                        <button class="btn-action btn-discord" onclick="event.stopPropagation(); copyText('migmc.pl', 'Skopiowano IP serwera Minecraft: migmc.pl');">
+                            ⛏️ Skopiuj IP: migmc.pl
+                        </button>
                         <a href="https://discord.gg/W3vyTXeG79" target="_blank" class="btn-action btn-discord" onclick="event.stopPropagation();">
                             💬 Dołącz na Discord
                         </a>
@@ -491,7 +522,7 @@
                     </div>
                     <div class="short-desc">Rola: Młodszy Head Admin & Partnerstwa</div>
                     <div class="details-content">
-                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 10px;">Miejsce do promowania swoich serwerów i projektów w sieci.</p>
+                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 10px;">Miejsce do reklamowania i promowania swoich projektów.</p>
                         <a href="https://discord.gg/nG32jzYY63" target="_blank" class="btn-action btn-discord" onclick="event.stopPropagation();">
                             💬 Dołącz na Discord
                         </a>
@@ -508,22 +539,30 @@
                     </div>
                     <div class="short-desc">Rola: Młodszy Pomocnik & Partnerstwa</div>
                     <div class="details-content">
-                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 10px;">Serwer Wsparcia Dla Techników – pomoc IT, boty oraz struktury.</p>
+                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 10px;">Serwer Wsparcia Dla Techników – boty, porady i pomoc IT.</p>
                         <a href="https://discord.gg/pAFMdN4HdM" target="_blank" class="btn-action btn-discord" onclick="event.stopPropagation();">
                             💬 Dołącz na Discord
                         </a>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- Sprzęt i Specyfikacja (Przed Kontaktem) -->
-        <section id="sprzet">
-            <h2>💻 Sprzęt & Pełna Specyfikacja (Kliknij, aby rozwinąć)</h2>
+        <!-- Galeria -->
+        <section id="galeria">
+            <h2>🖼️ Galeria Zrzutów i Zdjęć</h2>
             <div class="grid-box">
-                
-                <!-- Realme GT Neo 2 -->
+                <div class="expand-card">
+                    <img src="galeria/foto1.jpg" alt="Screen 1" style="width:100%; border-radius:10px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none; font-size:13px; color:#8578aa;">📁 Folder galeria/ (Wgraj tu pliki zdjęć)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sprzęt -->
+        <section id="sprzet">
+            <h2>💻 Sprzęt & Specyfikacja (Kliknij, aby rozwinąć)</h2>
+            <div class="grid-box">
                 <div class="expand-card" onclick="toggleCard(this)">
                     <div class="expand-header">
                         <h3>📱 Realme GT Neo 2</h3>
@@ -531,69 +570,158 @@
                     </div>
                     <div class="short-desc">12 GB RAM / 256 GB / Chłodzenie VC</div>
                     <div class="details-content">
-                        <div class="device-summary">
-                            📱 <strong>Opis urządzenia:</strong> Flagowy pogromca wydajności. Posiada diamentowy system chłodzenia cieczą (Vapor Chamber), dzięki czemu nie nagrzewa się nawet przy wielogodzinnym zarządzaniu serwerami czy graniu.
-                        </div>
                         <ul class="spec-list">
-                            <li><span>Pamięć RAM:</span> <strong>12 GB LPDDR5</strong></li>
-                            <li><span>Pamięć wewnętrzna:</span> <strong>256 GB UFS 3.1</strong></li>
-                            <li><span>Chłodzenie:</span> <strong>Stalowe chłodzenie parowe (VC)</strong></li>
-                            <li><span>Procesor:</span> <strong>Snapdragon 870 5G (3.2 GHz)</strong></li>
-                            <li><span>Ekran:</span> <strong>AMOLED E4 120Hz (6.62")</strong></li>
-                            <li><span>Ładowanie:</span> <strong>SuperDart 65W (100% w 36 min)</strong></li>
-                            <li><span>Bateria:</span> <strong>5000 mAh</strong></li>
+                            <li><span>RAM:</span> <strong>12 GB LPDDR5</strong></li>
+                            <li><span>Pamięć:</span> <strong>256 GB UFS 3.1</strong></li>
+                            <li><span>Chłodzenie:</span> <strong>Stalowe parowe (VC)</strong></li>
+                            <li><span>Procesor:</span> <strong>Snapdragon 870 5G</strong></li>
+                            <li><span>Ekran:</span> <strong>AMOLED 120Hz (6.62")</strong></li>
+                            <li><span>Bateria:</span> <strong>5000 mAh (SuperDart 65W)</strong></li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- ASUS TUF Gaming F16 -->
                 <div class="expand-card" onclick="toggleCard(this)">
                     <div class="expand-header">
                         <h3>💻 ASUS TUF Gaming F16</h3>
                         <span class="arrow-hint">▼ Kliknij</span>
                     </div>
-                    <div class="short-desc">RTX 3050 / Arc Flow Fans</div>
+                    <div class="short-desc">NVIDIA RTX 3050 / Arc Flow Fans</div>
                     <div class="details-content">
-                        <div class="device-summary">
-                            💻 <strong>Opis urządzenia:</strong> Prawdziwa maszyna bojowa do symulatorów gier i pracy projektowej. Posiada pancerną obudowę spełniającą normy wojskowe oraz podwójne wentylatory Arc Flow Fans.
-                        </div>
                         <ul class="spec-list">
                             <li><span>Karta Graficzna:</span> <strong>NVIDIA GeForce RTX 3050</strong></li>
-                            <li><span>Chłodzenie:</span> <strong>Podwójne Arc Flow Fans</strong></li>
+                            <li><span>Chłodzenie:</span> <strong>Arc Flow Fans</strong></li>
                             <li><span>Procesor:</span> <strong>Intel Core i7 / i5</strong></li>
-                            <li><span>Ekran:</span> <strong>16" FHD+ 165Hz (16:10)</strong></li>
-                            <li><span>Standard obudowy:</span> <strong>Wojskowy MIL-STD-810H</strong></li>
-                            <li><span>Klawiatura:</span> <strong>RGB z podświetleniem TUF</strong></li>
+                            <li><span>Ekran:</span> <strong>16" FHD+ 165Hz</strong></li>
+                            <li><span>Obudowa:</span> <strong>MIL-STD-810H</strong></li>
                         </ul>
                     </div>
                 </div>
 
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <h3>🎧 Słuchawki</h3>
+                        <span class="arrow-hint">▼ Kliknij</span>
+                    </div>
+                    <div class="short-desc">Baseus Bass BH 1 Lite</div>
+                    <div class="details-content">
+                        <ul class="spec-list">
+                            <li><span>Model:</span> <strong>Baseus Bass BH 1 Lite</strong></li>
+                            <li><span>Typ:</span> <strong>Bezprzewodowe / Wokółuszne</strong></li>
+                            <li><span>Brzmienie:</span> <strong>Głęboki bass / Niska latencja</strong></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Sekcja Kontaktowa (Na samym końcu) -->
+        <!-- FAQ -->
+        <section id="faq">
+            <h2>❓ Najczęściej Zadawane Pytania (FAQ)</h2>
+            <div class="grid-box">
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <h3>Jak zrealizować partnerstwo?</h3>
+                        <span class="arrow-hint">▼ Kliknij</span>
+                    </div>
+                    <div class="details-content">
+                        <p style="font-size:13px;">Napisz do mnie bezpośrednio na Discordzie (DM otwarty). Umówimy szczegóły i warunki współpracy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontakt -->
         <section id="kontakt">
             <h2>📬 Kontakt</h2>
             <div class="contact-box">
                 <p>Masz pytanie lub propozycję partnerstwa? Napisz śmiało!</p>
                 <div class="contact-nick">arrelYT557</div>
-                <p style="font-size: 13px; color: #00ff88; margin-bottom: 15px;">💬 DM otwarty – zawsze odpisuję[span_3](start_span)[span_3](end_span)</p>
-                <button class="btn-action btn-discord" style="max-width: 250px; margin: 0 auto;" onclick="navigator.clipboard.writeText('arrelYT557'); alert('Skopiowano nick: arrelYT557');">
+                <p style="font-size: 13px; color: #00ff88; margin-bottom: 15px;">💬 DM otwarty – odpowiedź zazwyczaj natychmiastowa</p>
+                <button class="btn-action btn-discord" style="max-width: 250px; margin: 0 auto;" onclick="copyText('arrelYT557', 'Skopiowano nick Discord: arrelYT557');">
                     📋 Skopiuj nick Discord
                 </button>
             </div>
         </section>
 
         <div class="footer">
-            &copy; 2026 arrelYT557. Liquid Glass Interactive Edition.
+            &copy; 2026 arrelYT557. Wszystkie prawa zastrzeżone. | Odwiedzin strony: <span id="visit-count">1</span>
         </div>
     </div>
 
-    <!-- Skrypt rozwijający kafelki na telefonie -->
+    <div id="toast"></div>
+
     <script>
         function toggleCard(card) {
             card.classList.toggle('open');
         }
+
+        const text = "arrelYT557";
+        let index = 0;
+        function typeWriter() {
+            if (index < text.length) {
+                document.getElementById("typewriter-title").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 120);
+            }
+        }
+        window.onload = function() {
+            typeWriter();
+            fetchDiscordStatus();
+        };
+
+        function copyText(textToCopy, message) {
+            navigator.clipboard.writeText(textToCopy);
+            const toast = document.getElementById("toast");
+            toast.innerText = message;
+            toast.style.display = "block";
+            setTimeout(() => { toast.style.display = "none"; }, 3000);
+        }
+
+        /* Status z Twoim podmienionym ID */
+        function fetchDiscordStatus() {
+            const discordID = "1362042994781585678";
+            fetch(`https://api.lanyard.rest/v1/users/${discordID}`)
+                .then(response => response.json())
+                .then(data => {
+                    const statusElem = document.getElementById("discord-status");
+                    const dotElem = document.getElementById("status-dot-color");
+
+                    if (data.success && data.data) {
+                        const status = data.data.discord_status;
+                        let customText = "";
+
+                        if (data.data.activities && data.data.activities.length > 0) {
+                            const game = data.data.activities.find(act => act.type === 0);
+                            if (game) customText = ` (Gra w: ${game.name})`;
+                        }
+
+                        if (status === "online") {
+                            statusElem.innerHTML = `Status: Online 🟢${customText}`;
+                            dotElem.style.background = "#00ff88";
+                        } else if (status === "idle") {
+                            statusElem.innerHTML = `Status: Zaraz wracam 🌙${customText}`;
+                            dotElem.style.background = "#ffbb00";
+                        } else if (status === "dnd") {
+                            statusElem.innerHTML = `Status: Nie przeszkadzać ⛔${customText}`;
+                            dotElem.style.background = "#ff4444";
+                        } else {
+                            statusElem.innerHTML = "Status: Offline ⚪";
+                            dotElem.style.background = "#888888";
+                        }
+                    } else {
+                        statusElem.innerHTML = "Status: Zawsze gotowy do pomocy";
+                    }
+                })
+                .catch(() => {
+                    document.getElementById("discord-status").innerHTML = "Status: Zawsze gotowy do pomocy";
+                });
+        }
+
+        let visits = localStorage.getItem("visits_count") || 1;
+        visits = parseInt(visits) + 1;
+        localStorage.setItem("visits_count", visits);
+        document.getElementById("visit-count").innerText = visits;
     </script>
 </body>
 </html>
