@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>arrelYT557_ | Official Liquid Glass Portfolio</title>
-    <!-- Blokada cache -->
+    <title>arrelYT557_ | Official Liquid Portfolio</title>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=display');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
         * {
             box-sizing: border-box;
@@ -21,18 +20,17 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: #030207;
+            background: #040208;
             color: #f0ecfc;
             display: flex;
             justify-content: center;
-            align-items: center;
             padding: 30px 15px;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* Dynamiczne tło Liquid Mesh */
+        /* Płynne tło Liquid Glowing Blobs */
         .liquid-bg {
             position: fixed;
             top: 0;
@@ -41,102 +39,112 @@
             height: 100vh;
             z-index: -1;
             overflow: hidden;
-            background: #05030a;
+            background: #040208;
         }
 
         .blob {
             position: absolute;
             border-radius: 50%;
-            filter: blur(90px);
-            opacity: 0.6;
-            animation: floatBlob 12s infinite alternate ease-in-out;
+            filter: blur(100px);
+            opacity: 0.55;
+            animation: floatBlob 14s infinite alternate ease-in-out;
         }
 
-        .blob-1 {
-            top: -10%;
-            left: -10%;
-            width: 450px;
-            height: 450px;
-            background: #6a0dad;
-        }
-
-        .blob-2 {
-            bottom: -15%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: #00d4ff;
-            animation-delay: -5s;
-        }
-
-        .blob-3 {
-            top: 40%;
-            left: 30%;
-            width: 350px;
-            height: 350px;
-            background: #b900b4;
-            animation-delay: -3s;
-        }
+        .blob-1 { top: -10%; left: -10%; width: 500px; height: 500px; background: #6a0dad; }
+        .blob-2 { bottom: -15%; right: -10%; width: 550px; height: 550px; background: #00d4ff; animation-delay: -6s; }
+        .blob-3 { top: 45%; left: 25%; width: 400px; height: 400px; background: #b900b4; animation-delay: -3s; }
 
         @keyframes floatBlob {
             0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(60px, 40px) scale(1.15); }
+            100% { transform: translate(70px, 50px) scale(1.15); }
         }
 
-        /* Kontener główny - Liquid Glass Container */
+        /* Główny Szklany Kontener */
         .container {
-            background: rgba(18, 14, 33, 0.45);
+            background: rgba(18, 14, 33, 0.5);
             backdrop-filter: blur(25px) saturate(180%);
             -webkit-backdrop-filter: blur(25px) saturate(180%);
             padding: 45px 35px;
             border-radius: 32px;
-            max-width: 800px;
+            max-width: 850px;
             width: 100%;
             border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.6),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            animation: glassIn 1s ease-out;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            animation: glassIn 0.8s ease-out;
         }
 
         @keyframes glassIn {
-            from { opacity: 0; transform: translateY(30px) scale(0.96); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Profil i Liquid Avatar */
+        /* Nav Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 18px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .nav-logo {
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 20px;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            text-shadow: 0 0 12px rgba(185, 0, 180, 0.6);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #b5a9d6;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: #00d4ff; }
+
+        /* Header / Profil z własną grafiką awatara */
         .profile-header {
             text-align: center;
-            margin-bottom: 35px;
-        }
-
-        .avatar-wrapper {
-            position: relative;
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 20px auto;
+            margin-bottom: 40px;
         }
 
         .avatar-glass {
-            width: 100%;
-            height: 100%;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.25);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05));
+            border: 2px solid rgba(255, 255, 255, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 50px;
-            font-weight: 800;
-            color: #ffffff;
-            box-shadow: 0 0 30px rgba(185, 0, 180, 0.5);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 0 35px rgba(185, 0, 180, 0.5);
+            transition: 0.4s ease;
+            overflow: hidden;
         }
 
-        .avatar-wrapper:hover .avatar-glass {
+        .avatar-glass img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .avatar-glass:hover {
             transform: scale(1.08) rotate(5deg);
-            box-shadow: 0 0 45px rgba(0, 212, 255, 0.7);
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.7);
         }
 
         h1 {
@@ -145,16 +153,15 @@
             background: linear-gradient(135deg, #ffffff, #c0a8ff, #00d4ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
+            margin-bottom: 6px;
         }
 
         .status-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 18px;
-            border-radius: 30px;
+            padding: 6px 16px;
+            border-radius: 20px;
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.15);
             font-size: 13px;
@@ -179,204 +186,223 @@
             line-height: 1.6;
         }
 
-        /* Rozwijane Sekcje (Accordion Styles) */
-        .accordion-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            margin-bottom: 16px;
-            overflow: hidden;
-            transition: all 0.3s ease;
+        /* Sekcje */
+        section {
+            margin-bottom: 40px;
         }
 
-        .accordion-item:hover {
-            border-color: rgba(192, 168, 255, 0.3);
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .accordion-header {
-            width: 100%;
-            padding: 20px 25px;
-            background: none;
-            border: none;
-            outline: none;
-            color: #ffffff;
-            font-size: 18px;
+        h2 {
+            font-size: 21px;
             font-weight: 700;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            text-align: left;
-            font-family: inherit;
-            transition: color 0.3s ease;
-        }
-
-        .accordion-header:hover {
-            color: #00d4ff;
-        }
-
-        .accordion-icon {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            transition: transform 0.4s ease, background 0.3s ease;
-        }
-
-        .accordion-item.active .accordion-icon {
-            transform: rotate(180deg);
-            background: #6a0dad;
             color: #ffffff;
+            margin-bottom: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
-            padding: 0 25px;
+        p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #b5a9d6;
         }
 
-        .accordion-item.active .accordion-content {
-            max-height: 1200px;
-            padding: 0 25px 25px 25px;
-            transition: max-height 0.5s ease-in-out;
-        }
-
-        /* Kafelki wewnątrz rozwijanych sekcji */
+        /* Interaktywne Kafelki Glassmorphism */
         .grid-box {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 15px;
-            margin-top: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
         }
 
-        .liquid-card {
+        .expand-card {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 20px;
-            border-radius: 16px;
+            border-radius: 18px;
             backdrop-filter: blur(10px);
+            cursor: pointer;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .liquid-card:hover {
-            transform: translateY(-5px);
+        .expand-card:hover {
             background: rgba(255, 255, 255, 0.08);
             border-color: rgba(0, 212, 255, 0.4);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
         }
 
-        .liquid-card h4 {
+        .expand-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .server-icon-img {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .expand-card h3 {
             color: #00d4ff;
             font-size: 16px;
             font-weight: 700;
-            margin-bottom: 8px;
         }
 
-        .liquid-card p {
-            font-size: 14px;
+        .arrow-hint {
+            font-size: 12px;
+            color: #c0a8ff;
+            transition: transform 0.3s;
+        }
+
+        .expand-card.open .arrow-hint {
+            transform: rotate(180deg);
+            color: #00ff88;
+        }
+
+        .short-desc {
+            font-size: 13px;
             color: #b5a9d6;
-            line-height: 1.6;
+            margin-top: 6px;
         }
 
-        /* Karty serwerów */
-        .server-list {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            margin-top: 10px;
+        /* Ukryta rozwijana zawartość */
+        .details-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-in-out, margin-top 0.3s;
+            margin-top: 0;
+            border-top: 0px solid rgba(255, 255, 255, 0.1);
+            padding-top: 0;
         }
 
-        .server-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 16px;
+        .expand-card.open .details-content {
+            max-height: 500px;
+            margin-top: 14px;
+            border-top-width: 1px;
+            padding-top: 12px;
+        }
+
+        .spec-list {
+            list-style: none;
+            font-size: 13px;
+            color: #e0d8f7;
+        }
+
+        .spec-list li {
+            margin-bottom: 6px;
             display: flex;
             justify-content: space-between;
+        }
+
+        .spec-list li span { color: #8578aa; }
+
+        /* Przyciski Akcji */
+        .btn-action {
+            display: inline-flex;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .server-card:hover {
-            border-color: #b900b4;
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateX(6px);
-        }
-
-        .server-title {
-            font-size: 17px;
-            font-weight: 700;
-            color: #ffffff;
-        }
-
-        .server-role {
-            font-size: 13px;
-            color: #c0a8ff;
-            font-weight: 600;
-            margin-top: 4px;
-        }
-
-        .btn-glass {
-            background: linear-gradient(135deg, rgba(106, 13, 173, 0.8), rgba(0, 212, 255, 0.8));
-            color: #ffffff;
-            padding: 10px 20px;
-            border-radius: 12px;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            margin-top: 12px;
+            padding: 9px 15px;
+            border-radius: 10px;
             text-decoration: none;
             font-size: 13px;
             font-weight: 700;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
         }
 
-        .btn-glass:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px rgba(0, 212, 255, 0.5);
-            border-color: #ffffff;
+        .btn-steam {
+            background: linear-gradient(135deg, #171a21, #2a475e);
+            color: #c6d4df;
         }
 
-        /* Stopka */
+        .btn-steam:hover {
+            background: linear-gradient(135deg, #2a475e, #66c0f4);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(102, 192, 244, 0.4);
+        }
+
+        .btn-discord {
+            background: linear-gradient(135deg, #6a0dad, #00d4ff);
+            color: #ffffff;
+        }
+
+        .btn-discord:hover {
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.5);
+            transform: scale(1.02);
+        }
+
+        /* Sekcja Kontaktowa */
+        .contact-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .contact-nick {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 10px 0;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+
         .footer {
             text-align: center;
-            margin-top: 35px;
+            margin-top: 40px;
             font-size: 13px;
-            color: #8578aa;
+            color: #796d9c;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding-top: 20px;
-        }
-
-        @media (max-width: 600px) {
-            .container { padding: 30px 18px; }
-            .server-card { flex-direction: column; align-items: flex-start; }
-            .btn-glass { width: 100%; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Liquid Tło z pływającymi kulami -->
+    <!-- Liquid Mesh Tło -->
     <div class="liquid-bg">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
         <div class="blob blob-3"></div>
     </div>
 
-    <!-- Szklany Kontener Główny -->
     <div class="container">
         
-        <!-- Górna sekcja profilowa -->
+        <!-- Menu Nawigacji -->
+        <div class="navbar">
+            <a href="#" class="nav-logo">arrelYT557_</a>
+            <div class="nav-links">
+                <a href="#o-mnie">O mnie</a>
+                <a href="#gry">Gry & Steam</a>
+                <a href="#administracja">Administracja</a>
+                <a href="#sprzet">Specyfikacja</a>
+                <a href="#kontakt">Kontakt</a>
+            </div>
+        </div>
+
+        <!-- Profil -->
         <div class="profile-header">
-            <div class="avatar-wrapper">
-                <div class="avatar-glass">A</div>
+            <div class="avatar-glass">
+                <img src="avatar.jpg" alt="Avatar arrelYT557" onerror="this.style.display='none'; this.parentNode.innerText='A';">
             </div>
             <h1>arrelYT557_</h1>
             <div class="status-badge">
@@ -387,135 +413,151 @@
             </p>
         </div>
 
-        <!-- Rozwijana Sekcja 1: O Mnie i Historia -->
-        <div class="accordion-item active">
-            <button class="accordion-header">
-                <span>📜 O mnie & Historia</span>
-                <span class="accordion-icon">▼</span>
-            </button>
-            <div class="accordion-content">
-                <p style="margin-bottom: 12px; font-size: 14px; color: #b5a9d6; line-height: 1.7;">
-                    Moja przygoda ze światem cyfrowym i prowadzeniem projektów na Discordzie rozpoczęła się <strong>16 kwietnia 2025 r.</strong> Od tamtego momentu rozwijam społeczności, zajmuję się koordynacją partnerstw oraz budowaniem sprawnie działających struktur administracyjnych.
-                </p>
-                <p style="font-size: 14px; color: #b5a9d6; line-height: 1.7;">
-                    W moich działaniach stawiam na sprawiedliwość, porządek i otwartą komunikację – mój DM jest zawsze otwarty na pytania!
-                </p>
-            </div>
-        </div>
+        <!-- O mnie i Historia -->
+        <section id="o-mnie">
+            <h2>📜 O mnie i Historia</h2>
+            <p style="margin-bottom: 10px;">
+                Moja przygoda na Discordzie rozpoczęła się <strong>16 kwietnia 2025 roku</strong>. Od tamtej pory stale rozwijam serwery, zajmuję się koordynacją partnerstw i dbam o porządek w społecznościach.
+            </p>
+            <p>
+                W realnym świecie pasjonuję się mechaniką samochodową, budową silników oraz graniem w symulatory.
+            </p>
+        </section>
 
-        <!-- Rozwijana Sekcja 2: Mój Sprzęt (Specyfikacja) -->
-        <div class="accordion-item">
-            <button class="accordion-header">
-                <span>💻 Mój Sprzęt (Specyfikacja)</span>
-                <span class="accordion-icon">▼</span>
-            </button>
-            <div class="accordion-content">
-                <div class="grid-box">
-                    <div class="liquid-card">
-                        <h4>📱 Realme GT Neo 2</h4>
-                        <p><strong>Pamięć RAM:</strong> 12 GB</p>
-                        <p><strong>Pamięć wbudowana:</strong> 256 GB</p>
-                        <p>Błyskawicznie działający smartfon do zarządzania projektami w dowolnym miejscu.</p>
-                    </div>
-                    <div class="liquid-card">
-                        <h4>💻 ASUS TUF Gaming F16</h4>
-                        <p><strong>Karta graficzna:</strong> NVIDIA GeForce RTX 3050</p>
-                        <p>Wydajny laptop gamingowy radzący sobie bez problemu z wymagającymi symulatorami i pracą techniczną.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Rozwijana Sekcja 3: Zainteresowania & Ulubione Gry -->
-        <div class="accordion-item">
-            <button class="accordion-header">
-                <span>🎮 Zainteresowania & Gry</span>
-                <span class="accordion-icon">▼</span>
-            </button>
-            <div class="accordion-content">
-                <div class="grid-box">
-                    <div class="liquid-card">
-                        <h4>🚗 Mechanika Samochodowa</h4>
-                        <p>Moje główne hobby poza komputerem. Budowa silników, diagnostyka i mechanika pojazdów.</p>
-                    </div>
-                    <div class="liquid-card">
-                        <h4>🔥 BeamNG.drive</h4>
-                        <p>Moja absolutnie ulubiona gra – niezrównana symulacja fizyki zniszczeń i zachowania aut.</p>
-                    </div>
-                    <div class="liquid-card">
-                        <h4>🛠️ Symulatory Motoryzacyjne</h4>
-                        <p>Car Mechanic Simulator, My Summer Car, My Winter Car, Cheap Car Repair, ETS2, Farming Simulator 22, OHV.</p>
-                    </div>
-                    <div class="liquid-card">
-                        <h4>🎯 Inne Ulubione Tytuły</h4>
-                        <p>Minecraft (Java Edition), Counter-Strike 2.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Rozwijana Sekcja 4: Administracja i Serwery -->
-        <div class="accordion-item">
-            <button class="accordion-header">
-                <span>🛡️ Administracja & Serwery</span>
-                <span class="accordion-icon">▼</span>
-            </button>
-            <div class="accordion-content">
-                <div class="server-list">
-                    <!-- Serwer 1 -->
-                    <div class="server-card">
-                        <div>
-                            <div class="server-title">1. MIGMC</div>
-                            <div class="server-role">Rola: Właściciel, Realizator partnerstw</div>
-                        </div>
-                        <a href="https://discord.gg/W3vyTXeG79" target="_blank" class="btn-glass">Dołącz na serwer</a>
-                    </div>
-
-                    <!-- Serwer 2 -->
-                    <div class="server-card">
-                        <div>
-                            <div class="server-title">2. Dzielnica Promocji</div>
-                            <div class="server-role">Rola: Młodszy Head Admin, Realizator partnerstw</div>
-                        </div>
-                        <a href="https://discord.gg/nG32jzYY63" target="_blank" class="btn-glass">Dołącz na serwer</a>
-                    </div>
-
-                    <!-- Serwer 3 -->
-                    <div class="server-card">
-                        <div>
-                            <div class="server-title">3. Serwer Wsparcia Dla Techników</div>
-                            <div class="server-role">Rola: Młodszy pomocnik, Realizator partnerstw</div>
-                        </div>
-                        <a href="https://discord.gg/pAFMdN4HdM" target="_blank" class="btn-glass">Dołącz na serwer</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Stopka -->
-        <div class="footer">
-            &copy; 2026 arrelYT557_. Liquid Glass Edition.
-        </div>
-    </div>
-
-    <!-- Skrypt do rozwijania sekcji (Accordion JS) -->
-    <script>
-        const accordionHeaders = document.querySelectorAll('.accordion-header');
-
-        accordionHeaders.forEach(header => {
-            header.addEventListener('click', () => {
-                const item = header.parentElement;
+        <!-- Gry z rozwijaną opcją "Pokaż na Steam" -->
+        <section id="gry">
+            <h2>🎮 Ulubione Gry (Kliknij, aby sprawdzić na Steam)</h2>
+            <div class="grid-box">
                 
-                // Opcjonalnie: zamyka inne sekcje przy otwarciu nowej
-                document.querySelectorAll('.accordion-item').forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                    }
-                });
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <h3>🚗 BeamNG.drive</h3>
+                        <span class="arrow-hint">▼ Kliknij</span>
+                    </div>
+                    <div class="short-desc">Ulubiony symulator zniszczeń i fizyki aut</div>
+                    <div class="details-content">
+                        <p style="font-size: 13px; color: #b5a9d6;">Niezrównany symulator oferujący realistyczną fizykę ciał miękkich. Idealny dla fanów motoryzacji!</p>
+                        <a href="https://store.steampowered.com/app/284160/BeamNGdrive/" target="_blank" class="btn-action btn-steam" onclick="event.stopPropagation();">
+                            🎮 Pokaż na Steam
+                        </a>
+                    </div>
+                </div>
 
-                item.classList.toggle('active');
-            });
-        });
-    </script>
-</body>
-</html>
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <h3>🛠️ My Summer Car</h3>
+                        <span class="arrow-hint">▼ Kliknij</span>
+                    </div>
+                    <div class="short-desc">Składanie auta śrubka po śrubce</div>
+                    <div class="details-content">
+                        <p style="font-size: 13px; color: #b5a9d6;">Gra o budowaniu samochodu od zera, mechanice i przetrwaniu w fińskim klimacie.</p>
+                        <a href="https://store.steampowered.com/app/516750/My_Summer_Car/" target="_blank" class="btn-action btn-steam" onclick="event.stopPropagation();">
+                            🎮 Pokaż na Steam
+                        </a>
+                    </div>
+                </div>
+
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <h3>🔧 Car Mechanic Simulator</h3>
+                        <span class="arrow-hint">▼ Kliknij</span>
+                    </div>
+                    <div class="short-desc">Warsztat i naprawa silników</div>
+                    <div class="details-content">
+                        <p style="font-size: 13px; color: #b5a9d6;">Rozwijanie własnego warsztatu samochodowego, diagnozowanie usterek i tuning maszyn.</p>
+                        <a href="https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018/" target="_blank" class="btn-action btn-steam" onclick="event.stopPropagation();">
+                            🎮 Pokaż na Steam
+                        </a>
+                    </div>
+                </div>
+
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <h3>🚛 Euro Truck Simulator 2</h3>
+                        <span class="arrow-hint">▼ Kliknij</span>
+                    </div>
+                    <div class="short-desc">Trasy ciężarówkami po Europie</div>
+                    <div class="details-content">
+                        <p style="font-size: 13px; color: #b5a9d6;">Przewóz ładunków po całej Europie, rozbudowa własnej firmy transportowej.</p>
+                        <a href="https://store.steampowered.com/app/227300/Euro_Truck_Simulator_2/" target="_blank" class="btn-action btn-steam" onclick="event.stopPropagation();">
+                            🎮 Pokaż na Steam
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Administracja i Serwery -->
+        <section id="administracja">
+            <h2>🛡️ Administracja & Serwery</h2>
+            <div class="grid-box">
+                
+                <!-- MIGMC -->
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <div class="card-title-group">
+                            <img src="migmc.png" alt="MIGMC Logo" class="server-icon-img" onerror="this.style.display='none';">
+                            <h3>1. MIGMC</h3>
+                        </div>
+                        <span class="arrow-hint">▼ Kliknij</span>
+                    </div>
+                    <div class="short-desc">Rola: Właściciel & Realizator Partnerstw</div>
+                    <div class="details-content">
+                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 8px;">Oficjalny serwer Minecraft oraz społeczność Discord.</p>
+                        <a href="https://discord.gg/W3vyTXeG79" target="_blank" class="btn-action btn-discord" onclick="event.stopPropagation();">
+                            💬 Dołącz na Discord
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Dzielnica Promocji -->
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <div class="card-title-group">
+                            <h3>2. Dzielnica Promocji</h3>
+                        </div>
+                        <span class="arrow-hint">▼ Kliknij</span>
+                    </div>
+                    <div class="short-desc">Rola: Młodszy Head Admin & Partnerstwa</div>
+                    <div class="details-content">
+                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 8px;">Miejsce do promowania swoich serwerów i projektów.</p>
+                        <a href="https://discord.gg/nG32jzYY63" target="_blank" class="btn-action btn-discord" onclick="event.stopPropagation();">
+                            💬 Dołącz na Discord
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Serwer Wsparcia dla Techników -->
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <div class="card-title-group">
+                            <img src="swdt.png" alt="SWDT Logo" class="server-icon-img" onerror="this.style.display='none';">
+                            <h3>3. SWDT</h3>
+                        </div>
+                        <span class="arrow-hint">▼ Kliknij</span>
+                    </div>
+                    <div class="short-desc">Rola: Młodszy Pomocnik & Partnerstwa</div>
+                    <div class="details-content">
+                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 8px;">Serwer Wsparcia Dla Techników – pomoc IT, boty oraz struktury.</p>
+                        <a href="https://discord.gg/pAFMdN4HdM" target="_blank" class="btn-action btn-discord" onclick="event.stopPropagation();">
+                            💬 Dołącz na Discord
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sprzęt i Specyfikacja (Przed Kontakiem) -->
+        <section id="sprzet">
+            <h2>💻 Sprzęt & Pełna Specyfikacja (Kliknij po szczegóły)</h2>
+            <div class="grid-box">
+                
+                <!-- Realme GT Neo 2 -->
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <h3>📱 Realme GT Neo 2</h3>
+                        <span class="arrow-hint">▼ Kliknij</span>
+                    </div>
+                 
