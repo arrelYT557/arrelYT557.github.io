@@ -49,9 +49,9 @@
             animation: floatBlob 14s infinite alternate ease-in-out;
         }
 
-        .blob-1 { top: -10%; left: -10%; width: 500px; height: 500px; background: #6a0dad; }
-        .blob-2 { bottom: -15%; right: -10%; width: 550px; height: 550px; background: #00d4ff; animation-delay: -6s; }
-        .blob-3 { top: 45%; left: 25%; width: 400px; height: 400px; background: #b900b4; animation-delay: -3s; }
+        .blob-1 { top: -10%; left: -10%; width: 550px; height: 550px; background: #6a0dad; }
+        .blob-2 { bottom: -15%; right: -10%; width: 600px; height: 600px; background: #00d4ff; animation-delay: -6s; }
+        .blob-3 { top: 45%; left: 25%; width: 450px; height: 450px; background: #b900b4; animation-delay: -3s; }
 
         @keyframes floatBlob {
             0% { transform: translate(0, 0) scale(1); }
@@ -59,15 +59,15 @@
         }
 
         .container {
-            background: rgba(18, 14, 33, 0.6);
+            background: rgba(18, 14, 33, 0.65);
             backdrop-filter: blur(25px) saturate(180%);
             -webkit-backdrop-filter: blur(25px) saturate(180%);
             padding: 45px 35px;
             border-radius: 32px;
-            max-width: 850px;
+            max-width: 900px;
             width: 100%;
             border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
         }
 
         .navbar {
@@ -84,14 +84,14 @@
         .nav-logo {
             color: #ffffff;
             font-weight: 800;
-            font-size: 20px;
+            font-size: 22px;
             text-decoration: none;
-            text-shadow: 0 0 12px rgba(185, 0, 180, 0.6);
+            text-shadow: 0 0 14px rgba(185, 0, 180, 0.7);
         }
 
         .nav-links {
             display: flex;
-            gap: 15px;
+            gap: 16px;
             flex-wrap: wrap;
         }
 
@@ -100,10 +100,13 @@
             text-decoration: none;
             font-size: 13px;
             font-weight: 600;
-            transition: 0.3s;
+            transition: all 0.3s;
         }
 
-        .nav-links a:hover { color: #00d4ff; }
+        .nav-links a:hover {
+            color: #00d4ff;
+            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+        }
 
         .profile-header {
             text-align: center;
@@ -111,8 +114,8 @@
         }
 
         .avatar-glass {
-            width: 110px;
-            height: 110px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05));
             border: 2px solid rgba(255, 255, 255, 0.3);
@@ -131,20 +134,20 @@
         }
 
         h1 {
-            font-size: 34px;
+            font-size: 36px;
             font-weight: 800;
             background: linear-gradient(135deg, #ffffff, #c0a8ff, #00d4ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 6px;
-            min-height: 42px;
+            margin-bottom: 8px;
+            min-height: 44px;
         }
 
         .status-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 6px 16px;
+            padding: 7px 18px;
             border-radius: 20px;
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.15);
@@ -155,8 +158,8 @@
         }
 
         .status-dot {
-            width: 8px;
-            height: 8px;
+            width: 9px;
+            height: 9px;
             background: #00ff88;
             border-radius: 50%;
             box-shadow: 0 0 10px #00ff88;
@@ -165,7 +168,7 @@
         .bio-lead {
             font-size: 15px;
             color: #b5a9d6;
-            max-width: 620px;
+            max-width: 640px;
             margin: 0 auto;
             line-height: 1.6;
         }
@@ -173,90 +176,133 @@
         .quote-box {
             background: rgba(255, 255, 255, 0.03);
             border-left: 4px solid #00d4ff;
-            padding: 15px 20px;
-            border-radius: 12px;
+            padding: 16px 22px;
+            border-radius: 14px;
             margin-bottom: 35px;
             font-style: italic;
             font-size: 14px;
             color: #d8c7ff;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
         section {
-            margin-bottom: 40px;
+            margin-bottom: 42px;
         }
 
         h2 {
-            font-size: 21px;
+            font-size: 22px;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 8px;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         p {
             font-size: 14px;
-            line-height: 1.7;
+            line-height: 1.75;
             color: #b5a9d6;
         }
 
         .grid-box {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 18px;
         }
 
+        /* Standardowe rozwijanie kafelków jak w klasycznej wersji */
         .expand-card {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 18px;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            padding: 22px;
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            cursor: pointer;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .expand-card:hover {
             background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(0, 212, 255, 0.4);
-            transform: translateY(-4px);
+            border-color: rgba(0, 212, 255, 0.45);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .expand-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .server-icon-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .expand-card h3 {
             color: #00d4ff;
             font-size: 16px;
             font-weight: 700;
-            margin-bottom: 6px;
+        }
+
+        .arrow-hint {
+            font-size: 12px;
+            color: #c0a8ff;
+            transition: transform 0.35s;
+            font-weight: 600;
+        }
+
+        .expand-card.open .arrow-hint {
+            transform: rotate(180deg);
+            color: #00ff88;
         }
 
         .short-desc {
             font-size: 13px;
             color: #b5a9d6;
-            margin-bottom: 12px;
+            margin-top: 8px;
         }
 
-        .btn-card-action {
-            display: inline-block;
-            background: rgba(0, 212, 255, 0.15);
-            color: #00d4ff;
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 700;
-            cursor: pointer;
-            margin-right: 6px;
-            margin-top: 6px;
-            transition: 0.2s;
-        }
-        .btn-card-action:hover {
-            background: rgba(0, 212, 255, 0.3);
+        .details-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), margin-top 0.3s;
+            margin-top: 0;
+            border-top: 0px solid rgba(255, 255, 255, 0.1);
+            padding-top: 0;
         }
 
-        .hidden-details {
-            display: none;
-            margin-top: 12px;
-            border-top: 1px dashed rgba(255, 255, 255, 0.1);
-            padding-top: 10px;
+        .expand-card.open .details-content {
+            max-height: 1200px;
+            margin-top: 16px;
+            border-top-width: 1px;
+            padding-top: 14px;
+            transition: max-height 0.7s ease-in-out;
+        }
+
+        .device-summary {
+            font-size: 13px;
+            color: #d8c7ff;
+            margin-bottom: 14px;
+            line-height: 1.6;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 12px;
+            border-radius: 10px;
+            border-left: 3px solid #00d4ff;
         }
 
         .spec-list {
@@ -266,41 +312,22 @@
         }
 
         .spec-list li {
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             display: flex;
             justify-content: space-between;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            padding-bottom: 5px;
+            gap: 10px;
         }
 
-        .spec-list li span { color: #8578aa; }
-
-        .gallery-grid {
-            display: flex;
-            gap: 12px;
-            overflow-x: auto;
-            padding-bottom: 10px;
+        .spec-list li span {
+            color: #8578aa;
+            font-weight: 500;
         }
 
-        .gallery-thumb {
-            min-width: 140px;
-            height: 100px;
-            border-radius: 10px;
-            object-fit: cover;
-            cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: 0.3s;
+        .spec-list li strong {
+            text-align: right;
         }
-        .gallery-thumb:hover { transform: scale(1.05); border-color: #00d4ff; }
-
-        #lightbox {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(0,0,0,0.85);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-        }
-        #lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 12px; border: 2px solid #00d4ff; }
 
         .btn-action {
             display: inline-flex;
@@ -309,57 +336,138 @@
             gap: 8px;
             width: 100%;
             margin-top: 12px;
-            padding: 9px 15px;
-            border-radius: 10px;
+            padding: 10px 16px;
+            border-radius: 12px;
             text-decoration: none;
             font-size: 13px;
             font-weight: 700;
             border: 1px solid rgba(255, 255, 255, 0.2);
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .btn-steam { background: linear-gradient(135deg, #171a21, #2a475e); color: #c6d4df; }
-        .btn-discord { background: linear-gradient(135deg, #6a0dad, #00d4ff); color: #ffffff; }
+        .btn-steam {
+            background: linear-gradient(135deg, #171a21, #2a475e);
+            color: #c6d4df;
+        }
+
+        .btn-steam:hover {
+            background: linear-gradient(135deg, #2a475e, #66c0f4);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(102, 192, 244, 0.4);
+        }
+
+        .btn-discord {
+            background: linear-gradient(135deg, #6a0dad, #00d4ff);
+            color: #ffffff;
+        }
+
+        .btn-discord:hover {
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Galeria z podglądem w rzędzie */
+        .gallery-grid {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+            padding-bottom: 12px;
+        }
+
+        .gallery-thumb {
+            min-width: 160px;
+            height: 110px;
+            border-radius: 12px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .gallery-thumb:hover {
+            transform: scale(1.05);
+            border-color: #00d4ff;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            backdrop-filter: blur(10px);
+        }
+
+        #lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 16px;
+            border: 2px solid #00d4ff;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+        }
 
         .contact-box {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 20px;
-            padding: 25px;
+            border-radius: 24px;
+            padding: 30px;
             text-align: center;
         }
 
         .contact-nick {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 800;
             color: #ffffff;
-            margin: 10px 0;
-            text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            margin: 12px 0;
+            text-shadow: 0 0 18px rgba(0, 212, 255, 0.6);
         }
 
         #toast {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(106, 13, 173, 0.9);
+            bottom: 25px;
+            right: 25px;
+            background: rgba(106, 13, 173, 0.95);
             border: 1px solid #00d4ff;
             color: #ffffff;
-            padding: 12px 20px;
-            border-radius: 12px;
+            padding: 14px 24px;
+            border-radius: 14px;
             font-size: 13px;
             font-weight: 600;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
             display: none;
             z-index: 1000;
         }
 
         .footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 45px;
             font-size: 13px;
             color: #796d9c;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 20px;
+            padding-top: 25px;
+        }
+
+        /* Stylizacja scrollbara */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(4, 2, 8, 0.8);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(106, 13, 173, 0.6);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00d4ff;
         }
     </style>
 </head>
@@ -381,14 +489,14 @@
                 <a href="#gry">Gry</a>
                 <a href="#administracja">Serwery</a>
                 <a href="#galeria">Galeria</a>
-                <a href="#sprzet">Sprzęt</a>
+                <a href="#sprzet">Specyfikacja</a>
                 <a href="#kontakt">Kontakt</a>
             </div>
         </div>
 
         <div class="profile-header">
             <div class="avatar-glass">
-                <img src="avatar.jpg" alt="Avatar" onerror="this.style.display='none'; this.parentNode.innerText='A';">
+                <img src="avatar.jpg" alt="Avatar arrelYT557" onerror="this.style.display='none'; this.parentNode.innerText='A';">
             </div>
             <h1 id="typewriter-title"></h1>
             <div class="status-badge">
@@ -400,17 +508,17 @@
         </div>
 
         <div class="quote-box" id="daily-quote">
-            💬 Ładowanie myśli dnia...
+            💬 Ładowanie cytatu dnia...
         </div>
 
         <!-- O Mnie -->
         <section id="o-mnie">
             <h2>📜 O mnie i Historia</h2>
-            <p style="margin-bottom: 10px;">
-                Cześć! Jestem twórcą i administratorem projektów sieciowych. Prowadzę własne serwery oraz pomagam w rozwoju większych społeczności.
+            <p style="margin-bottom: 12px;">
+                Cześć! Nazywam się <strong>arrelYT557</strong>. Jestem twórcą, moderatorem i administratorem zaangażowanym w projektowanie oraz prowadzenie nowoczesnych społeczności internetowych.
             </p>
             <p>
-                Moją największą pasją poza komputerem jest <strong>mechanika samochodowa</strong>, budowa silników oraz spędzanie czasu przy rozbudowanych symulatorach pojazdów.
+                W realnym świecie moją ogromną pasją jest <strong>mechanika samochodowa</strong>, budowa i zasada działania silników spalinowych oraz spędzanie godzin w zaawansowanych symulatorach pojazdów i technologii.
             </p>
         </section>
 
@@ -420,179 +528,257 @@
             <div class="grid-box">
                 <div class="expand-card">
                     <h3>💬 Discord</h3>
-                    <div class="short-desc">Pierwsze konto: <strong>12.06.2022 r.</strong></div>
+                    <div class="short-desc">Założenie pierwszego konta:</div>
+                    <p style="font-size: 15px; font-weight: 700; color: #00d4ff; margin-top: 5px;">12.06.2022 r.</p>
                 </div>
                 <div class="expand-card">
                     <h3>⛏️ MIGMC</h3>
-                    <div class="short-desc">Właściciel od: <strong>27.06.2024 r.</strong></div>
+                    <div class="short-desc">Właściciel serwera od:</div>
+                    <p style="font-size: 15px; font-weight: 700; color: #00d4ff; margin-top: 5px;">27.06.2024 r.</p>
                 </div>
                 <div class="expand-card">
                     <h3>📢 Dzielnica Promocji</h3>
-                    <div class="short-desc">Head Admin od: <strong>02.07.2026 r.</strong></div>
+                    <div class="short-desc">Młodszy Head Admin od:</div>
+                    <p style="font-size: 15px; font-weight: 700; color: #00d4ff; margin-top: 5px;">02.07.2026 r.</p>
                 </div>
                 <div class="expand-card">
                     <h3>🛠️ SWDT</h3>
-                    <div class="short-desc">Pomocnik od: <strong>31.10.2026 r.</strong></div>
+                    <div class="short-desc">Młodszy Pomocnik od:</div>
+                    <p style="font-size: 15px; font-weight: 700; color: #00d4ff; margin-top: 5px;">31.10.2026 r.</p>
                 </div>
             </div>
         </section>
 
-        <!-- PEŁNA LISTA GIER -->
+        <!-- Gry - Rozwijane Kafelki -->
         <section id="gry">
-            <h2>🎮 Ulubione Gry & Steam</h2>
+            <h2>🎮 Ulubione Gry & Steam (Kliknij, aby rozwinąć)</h2>
             <div class="grid-box">
-                <div class="expand-card">
-                    <h3>🚗 BeamNG.drive</h3>
-                    <div class="short-desc">Ulubiony symulator fizyki aut i zniszczeń.</div>
-                    <a href="https://store.steampowered.com/app/284160/BeamNGdrive/" target="_blank" class="btn-action btn-steam">
-                        🎮 Pokaż na Steam
-                    </a>
+                
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <h3>🚗 BeamNG.drive</h3>
+                        <span class="arrow-hint">▼ Rozwiń opis</span>
+                    </div>
+                    <div class="short-desc">Realistyczny symulator zniszczeń i fizyki aut</div>
+                    <div class="details-content">
+                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 12px;">
+                            Absolutny numer jeden wśród symulatorów motoryzacyjnych. Posiada zaawansowany silnik fizyki ciał miękkich (soft-body physics), odzwierciedlający zachowanie każdego elementu zawieszenia i ramy samochodu.
+                        </p>
+                        <a href="https://store.steampowered.com/app/284160/BeamNGdrive/" target="_blank" class="btn-action btn-steam" onclick="event.stopPropagation();">
+                            🎮 Pokaż na Steam
+                        </a>
+                    </div>
                 </div>
-                <div class="expand-card">
-                    <h3>🛠️ My Summer Car</h3>
-                    <div class="short-desc">Składanie auta śrubka po śrubce.</div>
-                    <a href="https://store.steampowered.com/app/516750/My_Summer_Car/" target="_blank" class="btn-action btn-steam">
-                        🎮 Pokaż na Steam
-                    </a>
+
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <h3>🛠️ My Summer Car</h3>
+                        <span class="arrow-hint">▼ Rozwiń opis</span>
+                    </div>
+                    <div class="short-desc">Składanie auta śrubka po śrubce</div>
+                    <div class="details-content">
+                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 12px;">
+                            Symulator budowania samochodu od podstaw. Wymaga dbałości o każdy dokręcony element silnika, płyny eksploatacyjne i przetrwanie w fińskim klimacie lat 90.
+                        </p>
+                        <a href="https://store.steampowered.com/app/516750/My_Summer_Car/" target="_blank" class="btn-action btn-steam" onclick="event.stopPropagation();">
+                            🎮 Pokaż na Steam
+                        </a>
+                    </div>
                 </div>
-                <div class="expand-card">
-                    <h3>🔧 Car Mechanic Simulator 2018</h3>
-                    <div class="short-desc">Warsztat i naprawa silników.</div>
-                    <a href="https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018/" target="_blank" class="btn-action btn-steam">
-                        🎮 Pokaż na Steam
-                    </a>
+
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <h3>🔧 Car Mechanic Simulator</h3>
+                        <span class="arrow-hint">▼ Rozwiń opis</span>
+                    </div>
+                    <div class="short-desc">Warsztat i diagnozowanie usterek</div>
+                    <div class="details-content">
+                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 12px;">
+                            Gra o prowadzeniu profesjonalnego warsztatu. Rozbieranie silników, wyważanie kół, naprawa układów hamulcowych i lakierowanie maszyn.
+                        </p>
+                        <a href="https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018/" target="_blank" class="btn-action btn-steam" onclick="event.stopPropagation();">
+                            🎮 Pokaż na Steam
+                        </a>
+                    </div>
                 </div>
-                <div class="expand-card">
-                    <h3>🚛 Euro Truck Simulator 2</h3>
-                    <div class="short-desc">Trasy ciężarówkami po całej Europie.</div>
-                    <a href="https://store.steampowered.com/app/227300/Euro_Truck_Simulator_2/" target="_blank" class="btn-action btn-steam">
-                        🎮 Pokaż na Steam
-                    </a>
+
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <h3>🚛 Euro Truck Simulator 2</h3>
+                        <span class="arrow-hint">▼ Rozwiń opis</span>
+                    </div>
+                    <div class="short-desc">Trasy ciężarówkami po całej Europie</div>
+                    <div class="details-content">
+                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 12px;">
+                            Kultowy symulator transportu drogowego. Przewożenie gabarytów, zarządzanie własną flotą pojazdów i rozbudowa firmy logistycznej.
+                        </p>
+                        <a href="https://store.steampowered.com/app/227300/Euro_Truck_Simulator_2/" target="_blank" class="btn-action btn-steam" onclick="event.stopPropagation();">
+                            🎮 Pokaż na Steam
+                        </a>
+                    </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- PEŁNA LISTA SERWERÓW -->
+        <!-- Administracja i Serwery - Pełne Kafelki z Przyciskami -->
         <section id="administracja">
-            <h2>🛡️ Administracja & Serwery</h2>
+            <h2>🛡️ Administracja & Serwery (Kliknij, aby rozwinąć)</h2>
             <div class="grid-box">
-                <div class="expand-card">
-                    <div class="card-title-group" style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
-                        <img src="migmc.png" alt="" style="width:30px;height:30px;border-radius:8px;" onerror="this.style.display='none';">
-                        <h3>1. MIGMC</h3>
+                
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <div class="card-title-group">
+                            <img src="migmc.png" alt="MIGMC" class="server-icon-img" onerror="this.style.display='none';">
+                            <h3>1. MIGMC</h3>
+                        </div>
+                        <span class="arrow-hint">▼ Szczegóły</span>
                     </div>
-                    <div class="short-desc">Właściciel & Realizator Partnerstw</div>
-                    <button class="btn-action btn-discord" onclick="copyText('migmc.pl', 'Skopiowano IP: migmc.pl')">⛏️ Skopiuj IP: migmc.pl</button>
-                    <a href="https://discord.gg/W3vyTXeG79" target="_blank" class="btn-action btn-discord">💬 Dołącz na Discord</a>
+                    <div class="short-desc">Rola: Właściciel & Realizator Partnerstw</div>
+                    <div class="details-content">
+                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 12px;">
+                            Autorski projekt i oficjalny serwer Minecraft połączony z dynamicznie rozwijaną społecznością Discord.
+                        </p>
+                        <button class="btn-action btn-discord" onclick="event.stopPropagation(); copyText('migmc.pl', 'Skopiowano IP serwera: migmc.pl');">
+                            ⛏️ Skopiuj IP: migmc.pl
+                        </button>
+                        <a href="https://discord.gg/W3vyTXeG79" target="_blank" class="btn-action btn-discord" onclick="event.stopPropagation();">
+                            💬 Dołącz na Discord
+                        </a>
+                    </div>
                 </div>
 
-                <div class="expand-card">
-                    <div class="card-title-group" style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
-                        <img src="dzienica.png" alt="" style="width:30px;height:30px;border-radius:8px;" onerror="this.style.display='none';">
-                        <h3>2. Dzielnica Promocji</h3>
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <div class="card-title-group">
+                            <img src="dzienica.png" alt="Dzielnica" class="server-icon-img" onerror="this.style.display='none';">
+                            <h3>2. Dzielnica Promocji</h3>
+                        </div>
+                        <span class="arrow-hint">▼ Szczegóły</span>
                     </div>
-                    <div class="short-desc">Młodszy Head Admin & Partnerstwa</div>
-                    <a href="https://discord.gg/nG32jzYY63" target="_blank" class="btn-action btn-discord">💬 Dołącz na Discord</a>
+                    <div class="short-desc">Rola: Młodszy Head Admin & Partnerstwa</div>
+                    <div class="details-content">
+                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 12px;">
+                            Centrum promowania serwerów Discord, kanałów YouTube oraz autorskich projektów internetowych.
+                        </p>
+                        <a href="https://discord.gg/nG32jzYY63" target="_blank" class="btn-action btn-discord" onclick="event.stopPropagation();">
+                            💬 Dołącz na Discord
+                        </a>
+                    </div>
                 </div>
 
-                <div class="expand-card">
-                    <div class="card-title-group" style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
-                        <img src="swdt.png" alt="" style="width:30px;height:30px;border-radius:8px;" onerror="this.style.display='none';">
-                        <h3>3. SWDT</h3>
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <div class="card-title-group">
+                            <img src="swdt.png" alt="SWDT" class="server-icon-img" onerror="this.style.display='none';">
+                            <h3>3. SWDT</h3>
+                        </div>
+                        <span class="arrow-hint">▼ Szczegóły</span>
                     </div>
-                    <div class="short-desc">Młodszy Pomocnik & Partnerstwa</div>
-                    <a href="https://discord.gg/pAFMdN4HdM" target="_blank" class="btn-action btn-discord">💬 Dołącz na Discord</a>
+                    <div class="short-desc">Rola: Młodszy Pomocnik & Partnerstwa</div>
+                    <div class="details-content">
+                        <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 12px;">
+                            Serwer Wsparcia Dla Techników – miejsce pomocy przy botach, strukturach serwerowych i sprawach IT.
+                        </p>
+                        <a href="https://discord.gg/pAFMdN4HdM" target="_blank" class="btn-action btn-discord" onclick="event.stopPropagation();">
+                            💬 Dołącz na Discord
+                        </a>
+                    </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- Galeria -->
+        <!-- Galeria Zdjęć z podglądem z folderu galeria/ -->
         <section id="galeria">
-            <h2>🖼️ Galeria Zdjęć</h2>
+            <h2>🖼️ Galeria Zrzutów i Zdjęć</h2>
             <div class="gallery-grid">
-                <img src="galeria/beamng.png" class="gallery-thumb" onclick="openLightbox(this.src)" alt="Zdjęcie 1">
+                <img src="galeria/beamng.png" class="gallery-thumb" onclick="openLightbox(this.src)" alt="BeamNG Screenshot">
             </div>
-            <p style="font-size:12px; color:#8578aa; margin-top:8px;">Kliknij w zdjęcie, aby powiększyć na cały ekran.</p>
+            <p style="font-size: 12px; color: #8578aa; margin-top: 8px;">Kliknij w zdjęcie w rzędzie, aby powiększyć je na pełny ekran.</p>
         </section>
 
-        <!-- Sprzęt i Specyfikacja -->
+        <!-- Sprzęt & Specyfikacja Sklepowa (x-kom / Media Expert) z Rozwijaniem -->
         <section id="sprzet">
-            <h2>💻 Sprzęt & Specyfikacja</h2>
+            <h2>💻 Sprzęt & Pełna Specyfikacja Sklepowa (Kliknij, aby rozwinąć)</h2>
             <div class="grid-box">
                 
                 <!-- Realme GT Neo 2 -->
-                <div class="expand-card">
-                    <h3>📱 Realme GT Neo 2</h3>
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <h3>📱 Realme GT Neo 2</h3>
+                        <span class="arrow-hint">▼ Pokaż specyfikację</span>
+                    </div>
                     <div class="short-desc">12 GB RAM / 256 GB / Chłodzenie VC</div>
-                    
-                    <button class="btn-card-action" onclick="toggleDetails(this)">📜 Rozwiń opis</button>
-                    <button class="btn-card-action" onclick="toggleFullSpec(this)">⚙️ Wyświetl 100% pełną specyfikację</button>
-
-                    <div class="hidden-details description-block">
-                        <p style="font-size:13px; margin-top:8px; color:#b5a9d6;">
-                            Flagowy smartfon o potężnej wydajności. Posiada zaawansowany diamentowy system chłodzenia parowego (Vapor Chamber), dzięki czemu zachowuje pełną płynność nawet podczas intensywnego korzystania i wielozadaniowości.
-                        </p>
-                    </div>
-
-                    <div class="hidden-details full-spec-block">
-                        <ul class="spec-list" style="margin-top:10px;">
+                    <div class="details-content">
+                        <div class="device-summary">
+                            📱 <strong>Opis urządzenia:</strong> Flagowy pogromca wydajności. Posiada zaawansowany diamentowy system chłodzenia parowego <strong>Vapor Chamber (VC)</strong>, zapobiegający nagrzewaniu się pod obciążeniem.
+                        </div>
+                        <p style="font-size:12px; color:#00d4ff; font-weight:700; margin-bottom:8px;">PEŁNA SPECYFIKACJA (x-kom / Media Expert):</p>
+                        <ul class="spec-list">
                             <li><span>Pamięć RAM:</span> <strong>12 GB LPDDR5</strong></li>
-                            <li><span>Pamięć wewnętrzna:</span> <strong>256 GB UFS 3.1</strong></li>
-                            <li><span>Procesor:</span> <strong>Snapdragon 870 5G (7 nm)</strong></li>
+                            <li><span>Pamięć wbudowana:</span> <strong>256 GB UFS 3.1</strong></li>
+                            <li><span>Procesor:</span> <strong>Qualcomm Snapdragon 870 5G (8 rdzeni, do 3.2 GHz)</strong></li>
                             <li><span>Układ graficzny:</span> <strong>Adreno 650</strong></li>
-                            <li><span>Chłodzenie:</span> <strong>Stalowa komora parowa VC (Diamentowe)</strong></li>
-                            <li><span>Ekran:</span> <strong>AMOLED E4 120Hz (6.62 cala, FHD+)</strong></li>
-                            <li><span>Bateria i ładowanie:</span> <strong>5000 mAh / SuperDart 65W</strong></li>
+                            <li><span>Chłodzenie:</span> <strong>Stalowe chłodzenie parowe VC (Diamentowa pasta)</strong></li>
+                            <li><span>Przekątna ekranu:</span> <strong>6.62" AMOLED E4 (Samsung)</strong></li>
+                            <li><span>Odświeżanie ekranu:</span> <strong>120 Hz (Dotyk 600 Hz)</strong></li>
+                            <li><span>Rozdzielczość:</span> <strong>2400 x 1080 px (FHD+)</strong></li>
+                            <li><span>Bateria:</span> <strong>5000 mAh</strong></li>
+                            <li><span>Ładowanie:</span> <strong>SuperDart Charge 65W (100% w ~36 min)</strong></li>
+                            <li><span>Aparaty tył:</span> <strong>64 Mpix + 8 Mpix (szerokokątny) + 2 Mpix (makro)</strong></li>
+                            <li><span>System:</span> <strong>realme UI (Android)</strong></li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- ASUS TUF Gaming F16 -->
-                <div class="expand-card">
-                    <h3>💻 ASUS TUF Gaming F16</h3>
-                    <div class="short-desc">Intel Core i5-1210H / RTX 3050 6GB</div>
-                    
-                    <button class="btn-card-action" onclick="toggleDetails(this)">📜 Rozwiń opis</button>
-                    <button class="btn-card-action" onclick="toggleFullSpec(this)">⚙️ Wyświetl 100% pełną specyfikację</button>
-
-                    <div class="hidden-details description-block">
-                        <p style="font-size:13px; margin-top:8px; color:#b5a9d6;">
-                            Wytrzymały laptop gamingowy stworzony do wymagających zadań i symulatorów. Konstrukcja spełnia wojskowe normy odporności MIL-STD-810H, a podwójne wentylatory Arc Flow dbają o idealne temperatury.
-                        </p>
+                <!-- ASUS TUF Gaming F16 z procesorem i5-1210H i RTX 3050 z Menedżera Urządzeń -->
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <h3>💻 ASUS TUF Gaming F16</h3>
+                        <span class="arrow-hint">▼ Pokaż specyfikację</span>
                     </div>
-
-                    <div class="hidden-details full-spec-block">
-                        <ul class="spec-list" style="margin-top:10px;">
-                            <li><span>Procesor:</span> <strong>Intel Core i5-1210H</strong></li>
+                    <div class="short-desc">Intel Core i5-1210H / RTX 3050 6GB / Arc Flow</div>
+                    <div class="details-content">
+                        <div class="device-summary">
+                            💻 <strong>Opis urządzenia:</strong> Pancerny laptop gamingowy stworzony do wyśrubowanych wymagań symulatorów. Przeszedł wojskowe testy wytrzymałościowe <strong>MIL-STD-810H</strong> i posiada wydajny system chłodzenia z wentylatorami Arc Flow.
+                        </div>
+                        <p style="font-size:12px; color:#00d4ff; font-weight:700; margin-bottom:8px;">PEŁNA SPECYFIKACJA (x-kom / Media Expert):</p>
+                        <ul class="spec-list">
+                            <li><span>Procesor:</span> <strong>Intel Core i5-1210H (12 wątków, do 4.4 GHz)</strong></li>
                             <li><span>Karta Graficzna:</span> <strong>NVIDIA GeForce RTX 3050 6GB Laptop GPU</strong></li>
-                            <li><span>Chłodzenie:</span> <strong>Podwójne Arc Flow Fans</strong></li>
-                            <li><span>Ekran:</span> <strong>16" FHD+ 165Hz (16:10)</strong></li>
-                            <li><span>Norma obudowy:</span> <strong>Wojskowa MIL-STD-810H</strong></li>
-                            <li><span>Klawiatura:</span> <strong>Podświetlana RGB (TUF Gaming)</strong></li>
+                            <li><span>Grafika zintegrowana:</span> <strong>Intel Graphics</strong></li>
+                            <li><span>Chłodzenie:</span> <strong>Podwójne wentylatory Arc Flow Fans + heatpipe'y</strong></li>
+                            <li><span>Ekran:</span> <strong>16" IPS WUXGA / FHD+ (16:10)</strong></li>
+                            <li><span>Odświeżanie:</span> <strong>165 Hz z technologią G-Sync</strong></li>
+                            <li><span>Standard odporności:</span> <strong>Wojskowy certyfikat MIL-STD-810H</strong></li>
+                            <li><span>Klawiatura:</span> <strong>Podświetlana RGB z sekcją numeryczną</strong></li>
+                            <li><span>Dźwięk:</span> <strong>Dolby Atmos / Hi-Res Audio</strong></li>
+                            <li><span>Złącza:</span> <strong>Thunderbolt 4 / USB 3.2 Gen 2 / HDMI 2.1</strong></li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Słuchawki -->
-                <div class="expand-card">
-                    <h3>🎧 Baseus Bass BH 1 Lite</h3>
-                    <div class="short-desc">Wokółuszne słuchawki bezprzewodowe</div>
-                    
-                    <button class="btn-card-action" onclick="toggleDetails(this)">📜 Rozwiń opis</button>
-                    <button class="btn-card-action" onclick="toggleFullSpec(this)">⚙️ Wyświetl 100% pełną specyfikację</button>
-
-                    <div class="hidden-details description-block">
-                        <p style="font-size:13px; margin-top:8px; color:#b5a9d6;">
-                            Bezprzewodowe słuchawki charakteryzujące się głębokim pasmem basowym oraz bardzo niskim opóźnieniem sygnału (latencją), doskonałe do grania i muzyk.
-                        </p>
+                <!-- Słuchawki Baseus -->
+                <div class="expand-card" onclick="toggleCard(this)">
+                    <div class="expand-header">
+                        <h3>🎧 Baseus Bass BH 1 Lite</h3>
+                        <span class="arrow-hint">▼ Pokaż specyfikację</span>
                     </div>
-
-                    <div class="hidden-details full-spec-block">
-                        <ul class="spec-list" style="margin-top:10px;">
+                    <div class="short-desc">Wokółuszne Słuchawki Bezprzewodowe</div>
+                    <div class="details-content">
+                        <div class="device-summary">
+                            🎧 <strong>Opis urządzenia:</strong> Lekkie i wygodne słuchawki nagłowne oferujące podbicie basowe Bass Boost oraz niski czas opóźnienia przydatny w grach symulacyjnych.
+                        </div>
+                        <p style="font-size:12px; color:#00d4ff; font-weight:700; margin-bottom:8px;">PEŁNA SPECYFIKACJA (x-kom / Media Expert):</p>
+                        <ul class="spec-list">
                             <li><span>Model:</span> <strong>Baseus Bass BH 1 Lite</strong></li>
+                            <li><span>Typ słuchawek:</span> <strong>Wokółuszne (Over-Ear)</strong></li>
                             <li><span>Łączność:</span> <strong>Bluetooth 5.3</strong></li>
                             <li><span>Przetworniki:</span> <strong> Dynamiczne 40 mm</strong></li>
-                            <li><span>Niska latencja:</span> <strong>Tryb Gaming Low Latency</strong></li>
+                            <li><span>Zasięg działania:</span> <strong>Do 10 metrów</strong></li>
+                            <li><span>Tryb niskiego opóźnienia:</span> <strong>Gaming Low Latency (0.038s)</strong></li>
+                            <li><span>Złącze ładowania:</span> <strong>USB Type-C</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -604,58 +790,51 @@
         <section id="kontakt">
             <h2>📬 Kontakt</h2>
             <div class="contact-box">
-                <p>Masz pytanie lub propozycję partnerstwa? Napisz śmiało!</p>
+                <p>Masz pytanie, propozycję partnerstwa lub chcesz porozmawiać?</p>
                 <div class="contact-nick">arrelYT557</div>
-                <p style="font-size: 13px; color: #00ff88; margin-bottom: 15px;">💬 DM otwarty – odpowiedź zazwyczaj natychmiastowa</p>
-                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                    <button class="btn-action btn-discord" style="max-width: 180px;" onclick="copyText('arrelYT557', 'Skopiowano nick Discord')">📋 Skopiuj nick</button>
-                    <a href="https://discord.com/users/1362042994781585678" target="_blank" class="btn-action btn-discord" style="max-width: 180px; text-decoration: none;">💬 Napisz do mnie</a>
+                <p style="font-size: 13px; color: #00ff88; margin-bottom: 18px;">💬 Wiadomości prywatne (DM) otwarte na Discordzie</p>
+                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn-action btn-discord" style="max-width: 200px;" onclick="copyText('arrelYT557', 'Skopiowano nick Discord: arrelYT557');">
+                        📋 Skopiuj nick
+                    </button>
+                    <a href="https://discord.com/users/1362042994781585678" target="_blank" class="btn-action btn-discord" style="max-width: 200px; text-decoration: none;">
+                        💬 Napisz do mnie
+                    </a>
                 </div>
             </div>
         </section>
 
         <div class="footer">
-            &copy; 2026 arrelYT557. Wszystkie prawa zastrzeżone. | Odwiedzin: <span id="visit-count">1</span>
+            &copy; 2026 arrelYT557. Liquid Glass Edition. | Odwiedzin strony: <span id="visit-count">1</span>
         </div>
     </div>
 
-    <!-- Lightbox podglądu zdjęć -->
+    <!-- Lightbox Modal -->
     <div id="lightbox" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" alt="Powiększenie">
+        <img id="lightbox-img" src="" alt="Powiększone zdjęcie">
     </div>
 
+    <!-- Toast Notification -->
     <div id="toast"></div>
 
     <script>
+        // Rozwijanie kafelków w całości po kliknięciu
+        function toggleCard(card) {
+            card.classList.toggle('open');
+        }
+
+        // Generowanie cytatu dnia
         const quotes = [
             "„Nie liczy się to, kim się urodziłeś, ale czym wyrastasz.”",
             "„Dobre projekty nie powstają z przypadku, lecz z zaangażowania.”",
             "„Mechanika i kod mają jedno wspólne: wszystko musi pasować co do milimetra.”",
-            "„Zawsze gotowy do pomocy i dalszego rozwoju.”"
+            "„Pasja do motoryzacji i technologii to najlepsze połączenie.”",
+            "„Zawsze gotowy do pomocy i budowania trwałej społeczności.”"
         ];
         const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
         document.getElementById("daily-quote").innerHTML = `💬 Cytat dnia: ${quotes[dayOfYear % quotes.length]}`;
 
-        function toggleDetails(btn) {
-            const desc = btn.parentElement.querySelector('.description-block');
-            desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
-            btn.innerText = desc.style.display === 'block' ? '📜 Ukryj opis' : '📜 Rozwiń opis';
-        }
-
-        function toggleFullSpec(btn) {
-            const spec = btn.parentElement.querySelector('.full-spec-block');
-            spec.style.display = spec.style.display === 'block' ? 'none' : 'block';
-            btn.innerText = spec.style.display === 'block' ? '⚙️ Ukryj pełną specyfikację' : '⚙️ Wyświetl 100% pełną specyfikację';
-        }
-
-        function openLightbox(src) {
-            document.getElementById("lightbox-img").src = src;
-            document.getElementById("lightbox").style.display = "flex";
-        }
-        function closeLightbox() {
-            document.getElementById("lightbox").style.display = "none";
-        }
-
+        // Efekt pisania tytulu
         const text = "arrelYT557";
         let index = 0;
         function typeWriter() {
@@ -665,11 +844,13 @@
                 setTimeout(typeWriter, 120);
             }
         }
+
         window.onload = function() {
             typeWriter();
             fetchDiscordStatus();
         };
 
+        // Kopiowanie do schowka z powiadomieniem Toast
         function copyText(textToCopy, message) {
             navigator.clipboard.writeText(textToCopy);
             const toast = document.getElementById("toast");
@@ -678,6 +859,16 @@
             setTimeout(() => { toast.style.display = "none"; }, 3000);
         }
 
+        // Lightbox
+        function openLightbox(src) {
+            document.getElementById("lightbox-img").src = src;
+            document.getElementById("lightbox").style.display = "flex";
+        }
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+
+        // Pobieranie statusu Discord przez Lanyard API
         function fetchDiscordStatus() {
             const discordID = "1362042994781585678";
             fetch(`https://api.lanyard.rest/v1/users/${discordID}`)
@@ -685,17 +876,39 @@
                 .then(data => {
                     const statusElem = document.getElementById("discord-status");
                     const dotElem = document.getElementById("status-dot-color");
+
                     if (data.success && data.data) {
                         const status = data.data.discord_status;
-                        if (status === "online") { statusElem.innerHTML = "Status: Online 🟢"; dotElem.style.background = "#00ff88"; }
-                        else if (status === "idle") { statusElem.innerHTML = "Status: Zaraz wracam 🌙"; dotElem.style.background = "#ffbb00"; }
-                        else if (status === "dnd") { statusElem.innerHTML = "Status: Nie przeszkadzać ⛔"; dotElem.style.background = "#ff4444"; }
-                        else { statusElem.innerHTML = "Status: Offline ⚪"; dotElem.style.background = "#888888"; }
-                    } else { statusElem.innerHTML = "Status: Zawsze gotowy do pomocy"; }
+                        let customText = "";
+
+                        if (data.data.activities && data.data.activities.length > 0) {
+                            const game = data.data.activities.find(act => act.type === 0);
+                            if (game) customText = ` (Gra w: ${game.name})`;
+                        }
+
+                        if (status === "online") {
+                            statusElem.innerHTML = `Status: Online 🟢${customText}`;
+                            dotElem.style.background = "#00ff88";
+                        } else if (status === "idle") {
+                            statusElem.innerHTML = `Status: Zaraz wracam 🌙${customText}`;
+                            dotElem.style.background = "#ffbb00";
+                        } else if (status === "dnd") {
+                            statusElem.innerHTML = `Status: Nie przeszkadzać ⛔${customText}`;
+                            dotElem.style.background = "#ff4444";
+                        } else {
+                            statusElem.innerHTML = "Status: Offline ⚪";
+                            dotElem.style.background = "#888888";
+                        }
+                    } else {
+                        statusElem.innerHTML = "Status: Zawsze gotowy do pomocy";
+                    }
                 })
-                .catch(() => { document.getElementById("discord-status").innerHTML = "Status: Zawsze gotowy do pomocy"; });
+                .catch(() => {
+                    document.getElementById("discord-status").innerHTML = "Status: Zawsze gotowy do pomocy";
+                });
         }
 
+        // Licznik odwiedzin
         let visits = localStorage.getItem("visits_count") || 1;
         visits = parseInt(visits) + 1;
         localStorage.setItem("visits_count", visits);
