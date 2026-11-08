@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>arrelYT557 | Official Portfolio</title>
+    <title>arrelYT557 | Official Portfolio & Liquid Glass Experience</title>
+    <!-- Blokada buforowania pamięci podręcznej przeglądarki -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        /* ==========================================================================
+           1. IMPORTY CZCIONEK ORAZ GLOBALNY RESET STYLÓW
+           ========================================================================== */
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap');
 
         * {
             box-sizing: border-box;
@@ -18,13 +22,16 @@
             scroll-behavior: smooth;
         }
 
+        /* ==========================================================================
+           2. KONFIGURACJA GŁÓWNA STRONY ORAZ PŁYNNE TŁO LIQUID MESH
+           ========================================================================== */
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background: #040208;
             color: #f0ecfc;
             display: flex;
             justify-content: center;
-            padding: 30px 15px;
+            padding: 35px 15px;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
@@ -44,54 +51,74 @@
         .blob {
             position: absolute;
             border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.55;
-            animation: floatBlob 14s infinite alternate ease-in-out;
+            filter: blur(120px);
+            opacity: 0.5;
+            animation: floatBlob 16s infinite alternate ease-in-out;
+            will-change: transform;
         }
 
-        .blob-1 { top: -10%; left: -10%; width: 550px; height: 550px; background: #6a0dad; }
-        .blob-2 { bottom: -15%; right: -10%; width: 600px; height: 600px; background: #00d4ff; animation-delay: -6s; }
-        .blob-3 { top: 45%; left: 25%; width: 450px; height: 450px; background: #b900b4; animation-delay: -3s; }
+        .blob-1 { top: -15%; left: -15%; width: 600px; height: 600px; background: #6a0dad; }
+        .blob-2 { bottom: -20%; right: -15%; width: 650px; height: 650px; background: #00d4ff; animation-delay: -5s; }
+        .blob-3 { top: 40%; left: 30%; width: 500px; height: 500px; background: #b900b4; animation-delay: -10s; }
 
         @keyframes floatBlob {
             0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(70px, 50px) scale(1.15); }
+            50% { transform: translate(40px, 60px) scale(1.1); }
+            100% { transform: translate(-50px, -40px) scale(0.95); }
         }
 
+        /* ==========================================================================
+           3. SZKLANY KONTENER GŁÓWNY (LIQUID GLASSMORPHISM)
+           ========================================================================== */
         .container {
-            background: rgba(18, 14, 33, 0.65);
-            backdrop-filter: blur(25px) saturate(180%);
-            -webkit-backdrop-filter: blur(25px) saturate(180%);
-            padding: 45px 35px;
-            border-radius: 32px;
-            max-width: 900px;
+            background: rgba(18, 14, 33, 0.62);
+            backdrop-filter: blur(30px) saturate(190%);
+            -webkit-backdrop-filter: blur(30px) saturate(190%);
+            padding: 50px 40px;
+            border-radius: 36px;
+            max-width: 960px;
             width: 100%;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            animation: containerAppear 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
+        @keyframes containerAppear {
+            from { opacity: 0; transform: translateY(40px) scale(0.97); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* ==========================================================================
+           4. PASEK NAWIGACJI (NAVBAR)
+           ========================================================================== */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 18px;
+            padding-bottom: 20px;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 15px;
         }
 
         .nav-logo {
             color: #ffffff;
             font-weight: 800;
-            font-size: 22px;
+            font-size: 24px;
             text-decoration: none;
-            text-shadow: 0 0 14px rgba(185, 0, 180, 0.7);
+            letter-spacing: -0.5px;
+            text-shadow: 0 0 16px rgba(185, 0, 180, 0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            transform: scale(1.03);
         }
 
         .nav-links {
             display: flex;
-            gap: 16px;
+            gap: 18px;
             flex-wrap: wrap;
         }
 
@@ -100,31 +127,58 @@
             text-decoration: none;
             font-size: 13px;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: #00d4ff;
+            transition: width 0.3s ease;
+            border-radius: 2px;
         }
 
         .nav-links a:hover {
             color: #00d4ff;
-            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
         }
 
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ==========================================================================
+           5. NAGŁÓWEK PROFILOWY ORAZ STATUS DISCORD NA ŻYWO
+           ========================================================================== */
         .profile-header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
         }
 
         .avatar-glass {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05));
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
+            border: 2px solid rgba(255, 255, 255, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px auto;
-            box-shadow: 0 0 35px rgba(185, 0, 180, 0.5);
+            margin: 0 auto 22px auto;
+            box-shadow: 0 0 45px rgba(185, 0, 180, 0.6);
             overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .avatar-glass:hover {
+            transform: scale(1.08) rotate(3deg);
+            box-shadow: 0 0 60px rgba(0, 212, 255, 0.8);
         }
 
         .avatar-glass img {
@@ -134,103 +188,127 @@
         }
 
         h1 {
-            font-size: 36px;
+            font-size: 38px;
             font-weight: 800;
             background: linear-gradient(135deg, #ffffff, #c0a8ff, #00d4ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 8px;
-            min-height: 44px;
+            min-height: 48px;
+            letter-spacing: -0.5px;
         }
 
         .status-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 7px 18px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            gap: 10px;
+            padding: 8px 20px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.18);
             font-size: 13px;
             font-weight: 600;
             color: #d8c7ff;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .status-dot {
-            width: 9px;
-            height: 9px;
+            width: 10px;
+            height: 10px;
             background: #00ff88;
             border-radius: 50%;
-            box-shadow: 0 0 10px #00ff88;
+            box-shadow: 0 0 12px #00ff88;
         }
 
         .bio-lead {
             font-size: 15px;
             color: #b5a9d6;
-            max-width: 640px;
+            max-width: 680px;
             margin: 0 auto;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .quote-box {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.035);
             border-left: 4px solid #00d4ff;
-            padding: 16px 22px;
+            padding: 18px 24px;
             border-radius: 14px;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
             font-style: italic;
             font-size: 14px;
             color: #d8c7ff;
-            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.25);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
+        /* ==========================================================================
+           6. SEKCJE GŁÓWNE ORAZ Kafelki (GRID & CARDS)
+           ========================================================================== */
         section {
-            margin-bottom: 42px;
+            margin-bottom: 45px;
         }
 
         h2 {
-            font-size: 22px;
+            font-size: 23px;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 22px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             padding-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            letter-spacing: -0.3px;
         }
 
         p {
             font-size: 14px;
-            line-height: 1.75;
+            line-height: 1.8;
             color: #b5a9d6;
         }
 
         .grid-box {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
         }
 
-        /* Standardowe rozwijanie kafelków jak w klasycznej wersji */
         .expand-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 22px;
-            border-radius: 20px;
-            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 24px;
+            border-radius: 22px;
+            backdrop-filter: blur(14px);
             cursor: pointer;
-            transition: all 0.35s ease;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
 
+        .expand-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #6a0dad, #00d4ff);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
         .expand-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(0, 212, 255, 0.45);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.09);
+            border-color: rgba(0, 212, 255, 0.5);
+            transform: translateY(-6px);
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+        }
+
+        .expand-card:hover::before {
+            opacity: 1;
         }
 
         .expand-header {
@@ -242,55 +320,63 @@
         .card-title-group {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
 
         .server-icon-img {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             border-radius: 12px;
             object-fit: cover;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
         .expand-card h3 {
             color: #00d4ff;
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 700;
         }
 
         .arrow-hint {
             font-size: 12px;
             color: #c0a8ff;
-            transition: transform 0.35s;
+            transition: transform 0.35s ease;
             font-weight: 600;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .expand-card.open .arrow-hint {
             transform: rotate(180deg);
             color: #00ff88;
+            background: rgba(0, 255, 136, 0.1);
+            border-color: rgba(0, 255, 136, 0.3);
         }
 
         .short-desc {
             font-size: 13px;
             color: #b5a9d6;
-            margin-top: 8px;
+            margin-top: 10px;
+            line-height: 1.5;
         }
 
         .details-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), margin-top 0.3s;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), margin-top 0.3s ease;
             margin-top: 0;
             border-top: 0px solid rgba(255, 255, 255, 0.1);
             padding-top: 0;
         }
 
         .expand-card.open .details-content {
-            max-height: 1200px;
-            margin-top: 16px;
+            max-height: 1500px;
+            margin-top: 18px;
             border-top-width: 1px;
-            padding-top: 14px;
+            padding-top: 16px;
             transition: max-height 0.7s ease-in-out;
         }
 
@@ -298,11 +384,14 @@
             font-size: 13px;
             color: #d8c7ff;
             margin-bottom: 14px;
-            line-height: 1.6;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 12px;
-            border-radius: 10px;
+            line-height: 1.65;
+            background: rgba(255, 255, 255, 0.035);
+            padding: 14px;
+            border-radius: 12px;
             border-left: 3px solid #00d4ff;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .spec-list {
@@ -312,12 +401,12 @@
         }
 
         .spec-list li {
-            margin-bottom: 8px;
+            margin-bottom: 9px;
             display: flex;
             justify-content: space-between;
             border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-            padding-bottom: 5px;
-            gap: 10px;
+            padding-bottom: 6px;
+            gap: 15px;
         }
 
         .spec-list li span {
@@ -327,23 +416,28 @@
 
         .spec-list li strong {
             text-align: right;
+            color: #ffffff;
         }
 
+        /* ==========================================================================
+           7. PRZYCISKI AKCJI (STEAM, DISCORD, KOPIOWANIE)
+           ========================================================================== */
         .btn-action {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
             width: 100%;
-            margin-top: 12px;
-            padding: 10px 16px;
-            border-radius: 12px;
+            margin-top: 14px;
+            padding: 11px 18px;
+            border-radius: 14px;
             text-decoration: none;
             font-size: 13px;
             font-weight: 700;
             border: 1px solid rgba(255, 255, 255, 0.2);
             cursor: pointer;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .btn-steam {
@@ -354,7 +448,8 @@
         .btn-steam:hover {
             background: linear-gradient(135deg, #2a475e, #66c0f4);
             color: #ffffff;
-            box-shadow: 0 4px 15px rgba(102, 192, 244, 0.4);
+            box-shadow: 0 6px 20px rgba(102, 192, 244, 0.5);
+            transform: translateY(-2px);
         }
 
         .btn-discord {
@@ -363,32 +458,34 @@
         }
 
         .btn-discord:hover {
-            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.5);
+            box-shadow: 0 6px 22px rgba(0, 212, 255, 0.6);
             transform: translateY(-2px);
         }
 
-        /* Galeria z podglądem w rzędzie */
+        /* ==========================================================================
+           8. GALERIA ZDJĘĆ ORAZ LIGHTBOX MODAL
+           ========================================================================== */
         .gallery-grid {
             display: flex;
-            gap: 14px;
+            gap: 16px;
             overflow-x: auto;
-            padding-bottom: 12px;
+            padding-bottom: 14px;
         }
 
         .gallery-thumb {
-            min-width: 160px;
-            height: 110px;
-            border-radius: 12px;
+            min-width: 180px;
+            height: 120px;
+            border-radius: 14px;
             object-fit: cover;
             cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            transition: all 0.35s ease;
         }
 
         .gallery-thumb:hover {
-            transform: scale(1.05);
+            transform: scale(1.06);
             border-color: #00d4ff;
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
         }
 
         #lightbox {
@@ -397,73 +494,81 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0, 0, 0, 0.92);
             display: none;
             justify-content: center;
             align-items: center;
             z-index: 2000;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
         }
 
         #lightbox img {
-            max-width: 90vw;
-            max-height: 90vh;
-            border-radius: 16px;
+            max-width: 92vw;
+            max-height: 92vh;
+            border-radius: 18px;
             border: 2px solid #00d4ff;
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
         }
 
+        /* ==========================================================================
+           9. SEKCJA KONTAKTOWA ORAZ POWIADOMIENIA TOAST
+           ========================================================================== */
         .contact-box {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 24px;
-            padding: 30px;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 26px;
+            padding: 35px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .contact-nick {
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 800;
             color: #ffffff;
-            margin: 12px 0;
-            text-shadow: 0 0 18px rgba(0, 212, 255, 0.6);
+            margin: 14px 0;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.7);
+            letter-spacing: 0.5px;
         }
 
         #toast {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: rgba(106, 13, 173, 0.95);
+            bottom: 30px;
+            right: 30px;
+            background: rgba(106, 13, 173, 0.96);
             border: 1px solid #00d4ff;
             color: #ffffff;
-            padding: 14px 24px;
-            border-radius: 14px;
+            padding: 16px 26px;
+            border-radius: 16px;
             font-size: 13px;
             font-weight: 600;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
             display: none;
             z-index: 1000;
+            backdrop-filter: blur(10px);
         }
 
         .footer {
             text-align: center;
-            margin-top: 45px;
+            margin-top: 50px;
             font-size: 13px;
             color: #796d9c;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 25px;
+            padding-top: 30px;
         }
 
-        /* Stylizacja scrollbara */
+        /* ==========================================================================
+           10. PASKI PRZEWIJANIA (CUSTOM SCROLLBAR)
+           ========================================================================== */
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: rgba(4, 2, 8, 0.8);
+            background: rgba(4, 2, 8, 0.9);
         }
         ::-webkit-scrollbar-thumb {
-            background: rgba(106, 13, 173, 0.6);
+            background: rgba(106, 13, 173, 0.7);
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
@@ -473,14 +578,17 @@
 </head>
 <body>
 
+    <!-- Animowane tło w stylu Liquid Mesh -->
     <div class="liquid-bg">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
         <div class="blob blob-3"></div>
     </div>
 
+    <!-- Główny kontener portfolia -->
     <div class="container">
         
+        <!-- Górny pasek nawigacyjny -->
         <div class="navbar">
             <a href="#" class="nav-logo">arrelYT557</a>
             <div class="nav-links">
@@ -494,62 +602,64 @@
             </div>
         </div>
 
+        <!-- Nagłówek profilu użytkownika -->
         <div class="profile-header">
             <div class="avatar-glass">
                 <img src="avatar.jpg" alt="Avatar arrelYT557" onerror="this.style.display='none'; this.parentNode.innerText='A';">
             </div>
             <h1 id="typewriter-title"></h1>
             <div class="status-badge">
-                <span class="status-dot" id="status-dot-color"></span> <span id="discord-status">Ładowanie statusu...</span>
+                <span class="status-dot" id="status-dot-color"></span> <span id="discord-status">Ładowanie statusu z Discorda...</span>
             </div>
             <p class="bio-lead">
-                Właściciel & Administrator Discord | Pasjonat Mechaniki Samochodowej oraz Nowych Technologii.
+                Właściciel & Administrator Discord | Pasjonat Mechaniki Samochodowej oraz Nowoczesnych Technologii.
             </p>
         </div>
 
+        <!-- Cytat dnia zmieniający się automatycznie -->
         <div class="quote-box" id="daily-quote">
-            💬 Ładowanie cytatu dnia...
+            💬 Ładowanie myśli dnia...
         </div>
 
-        <!-- O Mnie -->
+        <!-- Sekcja O mnie i historia -->
         <section id="o-mnie">
             <h2>📜 O mnie i Historia</h2>
             <p style="margin-bottom: 12px;">
-                Cześć! Nazywam się <strong>arrelYT557</strong>. Jestem twórcą, moderatorem i administratorem zaangażowanym w projektowanie oraz prowadzenie nowoczesnych społeczności internetowych.
+                Cześć! Nazywam się <strong>arrelYT557</strong>. Jestem twórcą, moderatorem oraz administratorem zaangażowanym w projektowanie, zarządzanie i rozwój nowoczesnych społeczności internetowych na platformie Discord.
             </p>
             <p>
-                W realnym świecie moją ogromną pasją jest <strong>mechanika samochodowa</strong>, budowa i zasada działania silników spalinowych oraz spędzanie godzin w zaawansowanych symulatorach pojazdów i technologii.
+                W realnym świecie moją ogromną pasją jest <strong>mechanika samochodowa</strong>, budowa silników spalinowych, naprawa podzespołów oraz spędzanie czasu przy najbardziej rozbudowanych symulatorach pojazdów.
             </p>
         </section>
 
-        <!-- Staż -->
+        <!-- Sekcja Staż z dokładnymi datami -->
         <section id="staz">
-            <h2>⏱️ Mój Staż</h2>
+            <h2>⏱️ Mój Staż i Doświadczenie</h2>
             <div class="grid-box">
                 <div class="expand-card">
                     <h3>💬 Discord</h3>
                     <div class="short-desc">Założenie pierwszego konta:</div>
-                    <p style="font-size: 15px; font-weight: 700; color: #00d4ff; margin-top: 5px;">12.06.2022 r.</p>
+                    <p style="font-size: 15px; font-weight: 700; color: #00d4ff; margin-top: 6px;">12.06.2022 r.</p>
                 </div>
                 <div class="expand-card">
                     <h3>⛏️ MIGMC</h3>
                     <div class="short-desc">Właściciel serwera od:</div>
-                    <p style="font-size: 15px; font-weight: 700; color: #00d4ff; margin-top: 5px;">27.06.2024 r.</p>
+                    <p style="font-size: 15px; font-weight: 700; color: #00d4ff; margin-top: 6px;">27.06.2024 r.[cite: 5]</p>
                 </div>
                 <div class="expand-card">
                     <h3>📢 Dzielnica Promocji</h3>
                     <div class="short-desc">Młodszy Head Admin od:</div>
-                    <p style="font-size: 15px; font-weight: 700; color: #00d4ff; margin-top: 5px;">02.07.2026 r.</p>
+                    <p style="font-size: 15px; font-weight: 700; color: #00d4ff; margin-top: 6px;">02.07.2026 r.[cite: 5]</p>
                 </div>
                 <div class="expand-card">
                     <h3>🛠️ SWDT</h3>
                     <div class="short-desc">Młodszy Pomocnik od:</div>
-                    <p style="font-size: 15px; font-weight: 700; color: #00d4ff; margin-top: 5px;">31.10.2026 r.</p>
+                    <p style="font-size: 15px; font-weight: 700; color: #00d4ff; margin-top: 6px;">31.10.2026 r.[cite: 5]</p>
                 </div>
             </div>
         </section>
 
-        <!-- Gry - Rozwijane Kafelki -->
+        <!-- Sekcja Ulubione Gry z przekierowaniem do Steam -->
         <section id="gry">
             <h2>🎮 Ulubione Gry & Steam (Kliknij, aby rozwinąć)</h2>
             <div class="grid-box">
@@ -557,12 +667,12 @@
                 <div class="expand-card" onclick="toggleCard(this)">
                     <div class="expand-header">
                         <h3>🚗 BeamNG.drive</h3>
-                        <span class="arrow-hint">▼ Rozwiń opis</span>
+                        <span class="arrow-hint">▼ Rozwiń</span>
                     </div>
                     <div class="short-desc">Realistyczny symulator zniszczeń i fizyki aut</div>
                     <div class="details-content">
                         <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 12px;">
-                            Absolutny numer jeden wśród symulatorów motoryzacyjnych. Posiada zaawansowany silnik fizyki ciał miękkich (soft-body physics), odzwierciedlający zachowanie każdego elementu zawieszenia i ramy samochodu.
+                            Absolutny numer jeden wśród symulatorów motoryzacyjnych. Posiada zaawansowany silnik fizyki ciał miękkich (soft-body physics), wiernie odwzorowujący zachowanie każdego elementu zawieszenia, ramy i nadwozia.
                         </p>
                         <a href="https://store.steampowered.com/app/284160/BeamNGdrive/" target="_blank" class="btn-action btn-steam" onclick="event.stopPropagation();">
                             🎮 Pokaż na Steam
@@ -573,12 +683,12 @@
                 <div class="expand-card" onclick="toggleCard(this)">
                     <div class="expand-header">
                         <h3>🛠️ My Summer Car</h3>
-                        <span class="arrow-hint">▼ Rozwiń opis</span>
+                        <span class="arrow-hint">▼ Rozwiń</span>
                     </div>
                     <div class="short-desc">Składanie auta śrubka po śrubce</div>
                     <div class="details-content">
                         <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 12px;">
-                            Symulator budowania samochodu od podstaw. Wymaga dbałości o każdy dokręcony element silnika, płyny eksploatacyjne i przetrwanie w fińskim klimacie lat 90.
+                            Unikalny symulator budowania samochodu od podstaw. Wymaga precyzji przy dokręcaniu każdej śrubki w silniku, dbałości o płyny eksploatacyjne i przetrwania w fińskim klimacie lat 90.
                         </p>
                         <a href="https://store.steampowered.com/app/516750/My_Summer_Car/" target="_blank" class="btn-action btn-steam" onclick="event.stopPropagation();">
                             🎮 Pokaż na Steam
@@ -589,12 +699,12 @@
                 <div class="expand-card" onclick="toggleCard(this)">
                     <div class="expand-header">
                         <h3>🔧 Car Mechanic Simulator</h3>
-                        <span class="arrow-hint">▼ Rozwiń opis</span>
+                        <span class="arrow-hint">▼ Rozwiń</span>
                     </div>
                     <div class="short-desc">Warsztat i diagnozowanie usterek</div>
                     <div class="details-content">
                         <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 12px;">
-                            Gra o prowadzeniu profesjonalnego warsztatu. Rozbieranie silników, wyważanie kół, naprawa układów hamulcowych i lakierowanie maszyn.
+                            Gra o prowadzeniu profesjonalnego warsztatu samochodowego. Rozbieranie bloków silnika, wymiana zużytych części, diagnostyka komputerowa i testowanie aut na torze.
                         </p>
                         <a href="https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018/" target="_blank" class="btn-action btn-steam" onclick="event.stopPropagation();">
                             🎮 Pokaż na Steam
@@ -605,12 +715,12 @@
                 <div class="expand-card" onclick="toggleCard(this)">
                     <div class="expand-header">
                         <h3>🚛 Euro Truck Simulator 2</h3>
-                        <span class="arrow-hint">▼ Rozwiń opis</span>
+                        <span class="arrow-hint">▼ Rozwiń</span>
                     </div>
                     <div class="short-desc">Trasy ciężarówkami po całej Europie</div>
                     <div class="details-content">
                         <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 12px;">
-                            Kultowy symulator transportu drogowego. Przewożenie gabarytów, zarządzanie własną flotą pojazdów i rozbudowa firmy logistycznej.
+                            Kultowy symulator transportu drogowego. Przewóz ładunków o dużej masie, zarządzanie własną flotą ciężarówek i rozbudowa firmy logistycznej na mapie Europy.
                         </p>
                         <a href="https://store.steampowered.com/app/227300/Euro_Truck_Simulator_2/" target="_blank" class="btn-action btn-steam" onclick="event.stopPropagation();">
                             🎮 Pokaż na Steam
@@ -621,7 +731,7 @@
             </div>
         </section>
 
-        <!-- Administracja i Serwery - Pełne Kafelki z Przyciskami -->
+        <!-- Sekcja Administracja i Serwery Discord (z poprawnym opisem Dzielnicy Promocji) -->
         <section id="administracja">
             <h2>🛡️ Administracja & Serwery (Kliknij, aby rozwinąć)</h2>
             <div class="grid-box">
@@ -637,7 +747,7 @@
                     <div class="short-desc">Rola: Właściciel & Realizator Partnerstw</div>
                     <div class="details-content">
                         <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 12px;">
-                            Autorski projekt i oficjalny serwer Minecraft połączony z dynamicznie rozwijaną społecznością Discord.
+                            Autorski projekt i oficjalny serwer Minecraft połączony z rozbudowaną społecznością na platformie Discord.
                         </p>
                         <button class="btn-action btn-discord" onclick="event.stopPropagation(); copyText('migmc.pl', 'Skopiowano IP serwera: migmc.pl');">
                             ⛏️ Skopiuj IP: migmc.pl
@@ -651,7 +761,7 @@
                 <div class="expand-card" onclick="toggleCard(this)">
                     <div class="expand-header">
                         <div class="card-title-group">
-                            <img src="dzienica.png" alt="Dzielnica" class="server-icon-img" onerror="this.style.display='none';">
+                            <img src="dzienica.png" alt="Dzielnica Promocji" class="server-icon-img" onerror="this.style.display='none';">
                             <h3>2. Dzielnica Promocji</h3>
                         </div>
                         <span class="arrow-hint">▼ Szczegóły</span>
@@ -659,7 +769,7 @@
                     <div class="short-desc">Rola: Młodszy Head Admin & Partnerstwa</div>
                     <div class="details-content">
                         <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 12px;">
-                            Centrum promowania serwerów Discord, kanałów YouTube oraz autorskich projektów internetowych.
+                            Wyspecjalizowana społeczność służąca do skutecznego promowania serwerów Discord oraz zawierania relacji partnerskich.
                         </p>
                         <a href="https://discord.gg/nG32jzYY63" target="_blank" class="btn-action btn-discord" onclick="event.stopPropagation();">
                             💬 Dołącz na Discord
@@ -678,7 +788,7 @@
                     <div class="short-desc">Rola: Młodszy Pomocnik & Partnerstwa</div>
                     <div class="details-content">
                         <p style="font-size: 13px; color: #b5a9d6; margin-bottom: 12px;">
-                            Serwer Wsparcia Dla Techników – miejsce pomocy przy botach, strukturach serwerowych i sprawach IT.
+                            Serwer Wsparcia Dla Techników – profesjonalne miejsce pomocy technicznej przy konfiguracji botów, uprawnień i struktur na Discordzie.
                         </p>
                         <a href="https://discord.gg/pAFMdN4HdM" target="_blank" class="btn-action btn-discord" onclick="event.stopPropagation();">
                             💬 Dołącz na Discord
@@ -689,16 +799,16 @@
             </div>
         </section>
 
-        <!-- Galeria Zdjęć z podglądem z folderu galeria/ -->
+        <!-- Sekcja Galeria (Pobieranie z folderu galeria/beamng.png) -->
         <section id="galeria">
             <h2>🖼️ Galeria Zrzutów i Zdjęć</h2>
             <div class="gallery-grid">
                 <img src="galeria/beamng.png" class="gallery-thumb" onclick="openLightbox(this.src)" alt="BeamNG Screenshot">
             </div>
-            <p style="font-size: 12px; color: #8578aa; margin-top: 8px;">Kliknij w zdjęcie w rzędzie, aby powiększyć je na pełny ekran.</p>
+            <p style="font-size: 12px; color: #8578aa; margin-top: 10px;">Kliknij w miniaturę w rzędzie, aby wyświetlić zdjęcie na pełnym ekranie.</p>
         </section>
 
-        <!-- Sprzęt & Specyfikacja Sklepowa (x-kom / Media Expert) z Rozwijaniem -->
+        <!-- Sekcja Sprzęt & Specyfikacja (Szczegółowa, sklepowa specyfikacja z x-kom / Media Expert) -->
         <section id="sprzet">
             <h2>💻 Sprzęt & Pełna Specyfikacja Sklepowa (Kliknij, aby rozwinąć)</h2>
             <div class="grid-box">
@@ -712,27 +822,27 @@
                     <div class="short-desc">12 GB RAM / 256 GB / Chłodzenie VC</div>
                     <div class="details-content">
                         <div class="device-summary">
-                            📱 <strong>Opis urządzenia:</strong> Flagowy pogromca wydajności. Posiada zaawansowany diamentowy system chłodzenia parowego <strong>Vapor Chamber (VC)</strong>, zapobiegający nagrzewaniu się pod obciążeniem.
+                            📱 <strong>Opis urządzenia:</strong> Flagowy smartfon o potężnej wydajności mobilnej. Posiada innowacyjny, diamentowy system chłodzenia parowego <strong>Vapor Chamber (VC)</strong>, który skutecznie odprowadza ciepło podczas intensywnego grania i zarządzania serwerami.
                         </div>
-                        <p style="font-size:12px; color:#00d4ff; font-weight:700; margin-bottom:8px;">PEŁNA SPECYFIKACJA (x-kom / Media Expert):</p>
+                        <p style="font-size:12px; color:#00d4ff; font-weight:700; margin-bottom:8px;">PEŁNA SPECYFIKACJA TECHNICZNA:</p>
                         <ul class="spec-list">
                             <li><span>Pamięć RAM:</span> <strong>12 GB LPDDR5</strong></li>
                             <li><span>Pamięć wbudowana:</span> <strong>256 GB UFS 3.1</strong></li>
-                            <li><span>Procesor:</span> <strong>Qualcomm Snapdragon 870 5G (8 rdzeni, do 3.2 GHz)</strong></li>
+                            <li><span>Procesor:</span> <strong>Qualcomm Snapdragon 870 5G (7 nm, do 3.2 GHz)</strong></li>
                             <li><span>Układ graficzny:</span> <strong>Adreno 650</strong></li>
-                            <li><span>Chłodzenie:</span> <strong>Stalowe chłodzenie parowe VC (Diamentowa pasta)</strong></li>
+                            <li><span>Chłodzenie:</span> <strong>Stalowa komora parowa VC z pastą diamentową</strong></li>
                             <li><span>Przekątna ekranu:</span> <strong>6.62" AMOLED E4 (Samsung)</strong></li>
-                            <li><span>Odświeżanie ekranu:</span> <strong>120 Hz (Dotyk 600 Hz)</strong></li>
+                            <li><span>Odświeżanie ekranu:</span> <strong>120 Hz (Próbkowanie dotyku 600 Hz)</strong></li>
                             <li><span>Rozdzielczość:</span> <strong>2400 x 1080 px (FHD+)</strong></li>
-                            <li><span>Bateria:</span> <strong>5000 mAh</strong></li>
-                            <li><span>Ładowanie:</span> <strong>SuperDart Charge 65W (100% w ~36 min)</strong></li>
+                            <li><span>Pojemność baterii:</span> <strong>5000 mAh</strong></li>
+                            <li><span>Szybkie ładowanie:</span> <strong>SuperDart Charge 65W (100% w ~36 min)</strong></li>
                             <li><span>Aparaty tył:</span> <strong>64 Mpix + 8 Mpix (szerokokątny) + 2 Mpix (makro)</strong></li>
-                            <li><span>System:</span> <strong>realme UI (Android)</strong></li>
+                            <li><span>System operacyjny:</span> <strong>realme UI (Android)</strong></li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- ASUS TUF Gaming F16 z procesorem i5-1210H i RTX 3050 z Menedżera Urządzeń -->
+                <!-- ASUS TUF Gaming F16 (z procesorem Intel Core i5-1210H oraz RTX 3050 6GB) -->
                 <div class="expand-card" onclick="toggleCard(this)">
                     <div class="expand-header">
                         <h3>💻 ASUS TUF Gaming F16</h3>
@@ -741,44 +851,44 @@
                     <div class="short-desc">Intel Core i5-1210H / RTX 3050 6GB / Arc Flow</div>
                     <div class="details-content">
                         <div class="device-summary">
-                            💻 <strong>Opis urządzenia:</strong> Pancerny laptop gamingowy stworzony do wyśrubowanych wymagań symulatorów. Przeszedł wojskowe testy wytrzymałościowe <strong>MIL-STD-810H</strong> i posiada wydajny system chłodzenia z wentylatorami Arc Flow.
+                            💻 <strong>Opis urządzenia:</strong> Wytrzymały laptop gamingowy zaprojektowany z myślą o bezkompromisowej stabilności w wymagających symulatorach. Spełnia surowe normy odporności militarnej <strong>MIL-STD-810H</strong>, a wentylatory Arc Flow dbają o kulturę pracy.
                         </div>
-                        <p style="font-size:12px; color:#00d4ff; font-weight:700; margin-bottom:8px;">PEŁNA SPECYFIKACJA (x-kom / Media Expert):</p>
+                        <p style="font-size:12px; color:#00d4ff; font-weight:700; margin-bottom:8px;">PEŁNA SPECYFIKACJA TECHNICZNA:</p>
                         <ul class="spec-list">
-                            <li><span>Procesor:</span> <strong>Intel Core i5-1210H (12 wątków, do 4.4 GHz)</strong></li>
-                            <li><span>Karta Graficzna:</span> <strong>NVIDIA GeForce RTX 3050 6GB Laptop GPU</strong></li>
-                            <li><span>Grafika zintegrowana:</span> <strong>Intel Graphics</strong></li>
-                            <li><span>Chłodzenie:</span> <strong>Podwójne wentylatory Arc Flow Fans + heatpipe'y</strong></li>
-                            <li><span>Ekran:</span> <strong>16" IPS WUXGA / FHD+ (16:10)</strong></li>
-                            <li><span>Odświeżanie:</span> <strong>165 Hz z technologią G-Sync</strong></li>
-                            <li><span>Standard odporności:</span> <strong>Wojskowy certyfikat MIL-STD-810H</strong></li>
-                            <li><span>Klawiatura:</span> <strong>Podświetlana RGB z sekcją numeryczną</strong></li>
-                            <li><span>Dźwięk:</span> <strong>Dolby Atmos / Hi-Res Audio</strong></li>
-                            <li><span>Złącza:</span> <strong>Thunderbolt 4 / USB 3.2 Gen 2 / HDMI 2.1</strong></li>
+                            <li><span>Procesor:</span> <strong>Intel Core i5-1210H (12 wątków, cache 18MB, do 4.4 GHz)[cite: 18]</strong></li>
+                            <li><span>Karta graficzna:</span> <strong>NVIDIA GeForce RTX 3050 6GB Laptop GPU[cite: 18]</strong></li>
+                            <li><span>Grafika zintegrowana:</span> <strong>Intel Iris Xe / UHD Graphics</strong></li>
+                            <li><span>System chłodzenia:</span> <strong>Podwójne wentylatory Arc Flow Fans + heatpipe'y</strong></li>
+                            <li><span>Matryca:</span> <strong>16" IPS WUXGA / FHD+ w proporcjach 16:10</strong></li>
+                            <li><span>Odświeżanie matrycy:</span> <strong>165 Hz z obsługą G-Sync</strong></li>
+                            <li><span>Norma wytrzymałości:</span> <strong>Certyfikacja wojskowa MIL-STD-810H</strong></li>
+                            <li><span>Klawiatura:</span> <strong>Podświetlana RGB z wydzieloną sekcją numeryczną</strong></li>
+                            <li><span>System audio:</span> <strong>Głośniki stereo z technologią Dolby Atmos</strong></li>
+                            <li><span>Porty i łączność:</span> <strong>Wi-Fi 6, Thunderbolt 4, USB 3.2 Gen 2, HDMI 2.1</strong></li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Słuchawki Baseus -->
+                <!-- Słuchawki Baseus Bass BH 1 Lite -->
                 <div class="expand-card" onclick="toggleCard(this)">
                     <div class="expand-header">
                         <h3>🎧 Baseus Bass BH 1 Lite</h3>
                         <span class="arrow-hint">▼ Pokaż specyfikację</span>
                     </div>
-                    <div class="short-desc">Wokółuszne Słuchawki Bezprzewodowe</div>
+                    <div class="short-desc">Wokółuszne słuchawki bezprzewodowe</div>
                     <div class="details-content">
                         <div class="device-summary">
-                            🎧 <strong>Opis urządzenia:</strong> Lekkie i wygodne słuchawki nagłowne oferujące podbicie basowe Bass Boost oraz niski czas opóźnienia przydatny w grach symulacyjnych.
+                            🎧 <strong>Opis urządzenia:</strong> Ergonomiczne słuchawki bezprzewodowe dedykowane do multimediów oraz długich sesji przed komputerem. Oferują potężne podbicie basowe oraz dedykowany tryb niskiej latencji.
                         </div>
-                        <p style="font-size:12px; color:#00d4ff; font-weight:700; margin-bottom:8px;">PEŁNA SPECYFIKACJA (x-kom / Media Expert):</p>
+                        <p style="font-size:12px; color:#00d4ff; font-weight:700; margin-bottom:8px;">PEŁNA SPECYFIKACJA TECHNICZNA:</p>
                         <ul class="spec-list">
-                            <li><span>Model:</span> <strong>Baseus Bass BH 1 Lite</strong></li>
-                            <li><span>Typ słuchawek:</span> <strong>Wokółuszne (Over-Ear)</strong></li>
-                            <li><span>Łączność:</span> <strong>Bluetooth 5.3</strong></li>
-                            <li><span>Przetworniki:</span> <strong> Dynamiczne 40 mm</strong></li>
-                            <li><span>Zasięg działania:</span> <strong>Do 10 metrów</strong></li>
-                            <li><span>Tryb niskiego opóźnienia:</span> <strong>Gaming Low Latency (0.038s)</strong></li>
-                            <li><span>Złącze ładowania:</span> <strong>USB Type-C</strong></li>
+                            <li><span>Model urządzenia:</span> <strong>Baseus Bass BH 1 Lite</strong></li>
+                            <li><span>Konstrukcja słuchawek:</span> <strong>Wokółuszne zamknięte (Over-Ear)</strong></li>
+                            <li><span>Interfejs bezprzewodowy:</span> <strong>Bluetooth 5.3</strong></li>
+                            <li><span>Przetworniki akustyczne:</span> <strong>Dynamiczne membrany 40 mm</strong></li>
+                            <li><span>Zasięg bezprzewodowy:</span> <strong>Do 10 metrów</strong></li>
+                            <li><span>Tryb niskiego opóźnienia:</span> <strong>Gaming Low Latency (bardzo niska latencja)</strong></li>
+                            <li><span>Port ładowania:</span> <strong>USB Type-C</strong></li>
                         </ul>
                     </div>
                 </div>
@@ -786,44 +896,48 @@
             </div>
         </section>
 
-        <!-- Kontakt -->
+        <!-- Sekcja Kontakt z bezpośrednim linkiem do profilu Discord -->
         <section id="kontakt">
             <h2>📬 Kontakt</h2>
             <div class="contact-box">
                 <p>Masz pytanie, propozycję partnerstwa lub chcesz porozmawiać?</p>
                 <div class="contact-nick">arrelYT557</div>
-                <p style="font-size: 13px; color: #00ff88; margin-bottom: 18px;">💬 Wiadomości prywatne (DM) otwarte na Discordzie</p>
-                <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-                    <button class="btn-action btn-discord" style="max-width: 200px;" onclick="copyText('arrelYT557', 'Skopiowano nick Discord: arrelYT557');">
+                <p style="font-size: 13px; color: #00ff88; margin-bottom: 20px;">💬 Wiadomości prywatne (DM) na Discordzie są otwarte dla każdego</p>
+                <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn-action btn-discord" style="max-width: 210px;" onclick="copyText('arrelYT557', 'Skopiowano nick Discord: arrelYT557');">
                         📋 Skopiuj nick
                     </button>
-                    <a href="https://discord.com/users/1362042994781585678" target="_blank" class="btn-action btn-discord" style="max-width: 200px; text-decoration: none;">
+                    <a href="https://discord.com/users/1362042994781585678" target="_blank" class="btn-action btn-discord" style="max-width: 210px; text-decoration: none;">
                         💬 Napisz do mnie
                     </a>
                 </div>
             </div>
         </section>
 
+        <!-- Stopka strony -->
         <div class="footer">
             &copy; 2026 arrelYT557. Liquid Glass Edition. | Odwiedzin strony: <span id="visit-count">1</span>
         </div>
     </div>
 
-    <!-- Lightbox Modal -->
+    <!-- Okno modalne podglądu zdjęć (Lightbox) -->
     <div id="lightbox" onclick="closeLightbox()">
-        <img id="lightbox-img" src="" alt="Powiększone zdjęcie">
+        <img id="lightbox-img" src="" alt="Powiększone zdjęcie w galerii">
     </div>
 
-    <!-- Toast Notification -->
+    <!-- Komunikat powiadomień Toast -->
     <div id="toast"></div>
 
+    <!-- ==========================================================================
+       11. SKRYPTY JAVASCRIPT (OBSŁUGA ROZWIJANIA, LANYARD API, TYPWRITER, TOAST)
+       ========================================================================== -->
     <script>
-        // Rozwijanie kafelków w całości po kliknięciu
+        /* Funkcja rozwijająca kafelki po kliknięciu */
         function toggleCard(card) {
             card.classList.toggle('open');
         }
 
-        // Generowanie cytatu dnia
+        /* Automatyczna rotacja cytatów dnia w zależności od dnia roku */
         const quotes = [
             "„Nie liczy się to, kim się urodziłeś, ale czym wyrastasz.”",
             "„Dobre projekty nie powstają z przypadku, lecz z zaangażowania.”",
@@ -834,7 +948,7 @@
         const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
         document.getElementById("daily-quote").innerHTML = `💬 Cytat dnia: ${quotes[dayOfYear % quotes.length]}`;
 
-        // Efekt pisania tytulu
+        /* Efekt pisania maszyny do pisania w tytule nagłówka */
         const text = "arrelYT557";
         let index = 0;
         function typeWriter() {
@@ -845,12 +959,13 @@
             }
         }
 
+        /* Inicjalizacja skryptów po załadowaniu okna */
         window.onload = function() {
             typeWriter();
             fetchDiscordStatus();
         };
 
-        // Kopiowanie do schowka z powiadomieniem Toast
+        /* Funkcja kopiująca tekst do schowka z powiadomieniem Toast */
         function copyText(textToCopy, message) {
             navigator.clipboard.writeText(textToCopy);
             const toast = document.getElementById("toast");
@@ -859,7 +974,7 @@
             setTimeout(() => { toast.style.display = "none"; }, 3000);
         }
 
-        // Lightbox
+        /* Obsługa okna Lightbox dla galerii */
         function openLightbox(src) {
             document.getElementById("lightbox-img").src = src;
             document.getElementById("lightbox").style.display = "flex";
@@ -868,7 +983,7 @@
             document.getElementById("lightbox").style.display = "none";
         }
 
-        // Pobieranie statusu Discord przez Lanyard API
+        /* Integracja ze statusem Discord przez Lanyard API (ID: 1362042994781585678) */
         function fetchDiscordStatus() {
             const discordID = "1362042994781585678";
             fetch(`https://api.lanyard.rest/v1/users/${discordID}`)
@@ -883,7 +998,7 @@
 
                         if (data.data.activities && data.data.activities.length > 0) {
                             const game = data.data.activities.find(act => act.type === 0);
-                            if (game) customText = ` (Gra w: ${game.name})`;
+                            if (game) customText = ` (Aktywność: ${game.name})`;
                         }
 
                         if (status === "online") {
@@ -908,7 +1023,7 @@
                 });
         }
 
-        // Licznik odwiedzin
+        /* Lokalny licznik odwiedzin strony */
         let visits = localStorage.getItem("visits_count") || 1;
         visits = parseInt(visits) + 1;
         localStorage.setItem("visits_count", visits);
