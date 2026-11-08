@@ -30,7 +30,6 @@
             position: relative;
         }
 
-        /* Dynamiczne tło Liquid */
         .liquid-bg {
             position: fixed;
             top: 0;
@@ -269,6 +268,17 @@
             margin-top: 14px;
             border-top-width: 1px;
             padding-top: 12px;
+        }
+
+        .device-summary {
+            font-size: 13px;
+            color: #d8c7ff;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 3px solid #00d4ff;
         }
 
         .spec-list {
@@ -548,21 +558,24 @@
             </div>
         </section>
 
-        <!-- Galeria -->
+        <!-- Galeria (zgodnie ze strukturą folderu galeria/beamng.png) -->
         <section id="galeria">
             <h2>🖼️ Galeria Zrzutów i Zdjęć</h2>
             <div class="grid-box">
-                <div class="expand-card">
-                    <img src="galeria/foto1.jpg" alt="Screen 1" style="width:100%; border-radius:10px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div style="display:none; font-size:13px; color:#8578aa;">📁 Galeria</div>
+                <div class="expand-card" style="text-align: center;">
+                    <img src="galeria/beamng.png" alt="BeamNG Screenshot" style="width:100%; max-height: 250px; object-fit: cover; border-radius:12px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div style="display:none; font-size:13px; color:#8578aa; padding: 20px;">Brak podglądu pliku beamng.png w folderze galeria/</div>
+                    <p style="margin-top: 10px; font-size: 13px; color: #00d4ff;">Zrzut ekranu z gry BeamNG.drive</p>
                 </div>
             </div>
         </section>
 
-        <!-- Sprzęt -->
+        <!-- Sprzęt i Pełna Specyfikacja -->
         <section id="sprzet">
-            <h2>💻 Sprzęt & Specyfikacja (Kliknij, aby rozwinąć)</h2>
+            <h2>💻 Sprzęt & Pełna Specyfikacja (Kliknij, aby rozwinąć)</h2>
             <div class="grid-box">
+                
+                <!-- Realme GT Neo 2 -->
                 <div class="expand-card" onclick="toggleCard(this)">
                     <div class="expand-header">
                         <h3>📱 Realme GT Neo 2</h3>
@@ -570,34 +583,42 @@
                     </div>
                     <div class="short-desc">12 GB RAM / 256 GB / Chłodzenie VC</div>
                     <div class="details-content">
+                        <div class="device-summary">
+                            📱 <strong>Opis:</strong> Wydajny smartfon stworzony do gier i płynnego zarządzania projektami, wyposażony w zaawansowany diamentowy system chłodzenia parowego (Vapor Chamber).
+                        </div>
                         <ul class="spec-list">
                             <li><span>RAM:</span> <strong>12 GB LPDDR5</strong></li>
                             <li><span>Pamięć:</span> <strong>256 GB UFS 3.1</strong></li>
-                            <li><span>Chłodzenie:</span> <strong>Stalowe parowe (VC)</strong></li>
                             <li><span>Procesor:</span> <strong>Snapdragon 870 5G</strong></li>
+                            <li><span>Chłodzenie:</span> <strong>Stalowa komora parowa (VC)</strong></li>
                             <li><span>Ekran:</span> <strong>AMOLED 120Hz (6.62")</strong></li>
                             <li><span>Bateria:</span> <strong>5000 mAh (SuperDart 65W)</strong></li>
                         </ul>
                     </div>
                 </div>
 
+                <!-- ASUS TUF Gaming F16 (zaktualizowany procesor Intel Core i5-1210H i RTX 3050) -->
                 <div class="expand-card" onclick="toggleCard(this)">
                     <div class="expand-header">
                         <h3>💻 ASUS TUF Gaming F16</h3>
                         <span class="arrow-hint">▼ Kliknij</span>
                     </div>
-                    <div class="short-desc">NVIDIA RTX 3050 / Arc Flow Fans</div>
+                    <div class="short-desc">Intel Core i5-1210H / RTX 3050 6GB</div>
                     <div class="details-content">
+                        <div class="device-summary">
+                            💻 <strong>Opis:</strong> Solidny laptop gamingowy o militarnej wytrzymałości, napędzany procesorem Intel Core i5 oraz grafiką NVIDIA RTX 3050. Zapewnia stabilną pracę w symulatorach i aplikacjach.
+                        </div>
                         <ul class="spec-list">
-                            <li><span>Karta Graficzna:</span> <strong>NVIDIA GeForce RTX 3050</strong></li>
-                            <li><span>Chłodzenie:</span> <strong>Arc Flow Fans</strong></li>
-                            <li><span>Procesor:</span> <strong>Intel Core i7 / i5</strong></li>
-                            <li><span>Ekran:</span> <strong>16" FHD+ 165Hz</strong></li>
-                            <li><span>Obudowa:</span> <strong>MIL-STD-810H</strong></li>
+                            <li><span>Procesor:</span> <strong>Intel Core i5-1210H</strong></li>
+                            <li><span>Karta Graficzna:</span> <strong>NVIDIA GeForce RTX 3050 6GB</strong></li>
+                            <li><span>Chłodzenie:</span> <strong>Podwójne Arc Flow Fans</strong></li>
+                            <li><span>Ekran:</span> <strong>16" FHD+ 165Hz (16:10)</strong></li>
+                            <li><span>Standard obudowy:</span> <strong>Wojskowy MIL-STD-810H</strong></li>
                         </ul>
                     </div>
                 </div>
 
+                <!-- Słuchawki -->
                 <div class="expand-card" onclick="toggleCard(this)">
                     <div class="expand-header">
                         <h3>🎧 Słuchawki</h3>
@@ -605,13 +626,17 @@
                     </div>
                     <div class="short-desc">Baseus Bass BH 1 Lite</div>
                     <div class="details-content">
+                        <div class="device-summary">
+                            🎧 <strong>Opis:</strong> Wygodne słuchawki bezprzewodowe oferujące głęboki bas i niską latencję podczas rozgrywki oraz słuchania muzyki.
+                        </div>
                         <ul class="spec-list">
                             <li><span>Model:</span> <strong>Baseus Bass BH 1 Lite</strong></li>
                             <li><span>Typ:</span> <strong>Bezprzewodowe / Wokółuszne</strong></li>
-                            <li><span>Brzmienie:</span> <strong>Głęboki bass / Niska latencja</strong></li>
+                            <li><span>Charakterystyka:</span> <strong>Głęboki bass / Niska latencja</strong></li>
                         </ul>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -631,16 +656,21 @@
             </div>
         </section>
 
-        <!-- Kontakt -->
+        <!-- Kontakt z linkiem do Discorda -->
         <section id="kontakt">
             <h2>📬 Kontakt</h2>
             <div class="contact-box">
                 <p>Masz pytanie lub propozycję partnerstwa? Napisz śmiało!</p>
                 <div class="contact-nick">arrelYT557</div>
                 <p style="font-size: 13px; color: #00ff88; margin-bottom: 15px;">💬 DM otwarty – odpowiedź zazwyczaj natychmiastowa</p>
-                <button class="btn-action btn-discord" style="max-width: 250px; margin: 0 auto;" onclick="copyText('arrelYT557', 'Skopiowano nick Discord: arrelYT557');">
-                    📋 Skopiuj nick Discord
-                </button>
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn-action btn-discord" style="max-width: 200px;" onclick="copyText('arrelYT557', 'Skopiowano nick Discord: arrelYT557');">
+                        📋 Skopiuj nick
+                    </button>
+                    <a href="https://discord.com/users/1362042994781585678" target="_blank" class="btn-action btn-discord" style="max-width: 200px; text-decoration: none;">
+                        🔗 Otwórz profil Discord
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -678,7 +708,6 @@
             setTimeout(() => { toast.style.display = "none"; }, 3000);
         }
 
-        /* Status z Twoim podmienionym ID */
         function fetchDiscordStatus() {
             const discordID = "1362042994781585678";
             fetch(`https://api.lanyard.rest/v1/users/${discordID}`)
