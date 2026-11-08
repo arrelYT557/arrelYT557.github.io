@@ -3,40 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>arrelYT557 | Official Portfolio</title>
+    <title>arrelYT557 | Official Portfolio & Professional Showcase</title>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        /* ==========================================================================
+           1. IMPORTY CZCIONEK I RESET STYLÓW
+           ========================================================================== */
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap');
 
-        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
 
+        /* ==========================================================================
+           2. TŁO I CANVASY DYNAMICZNE
+           ========================================================================== */
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background: #040208;
             color: #f0ecfc;
             display: flex;
             justify-content: center;
-            padding: 30px 15px;
+            padding: 35px 15px;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
         }
 
         #particles-canvas {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            pointer-events: none;
         }
 
         .liquid-bg {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -3; overflow: hidden; background: #040208;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -3;
+            overflow: hidden;
+            background: #040208;
         }
 
         .blob {
-            position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.45; animation: floatBlob 16s infinite alternate ease-in-out;
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.45;
+            animation: floatBlob 16s infinite alternate ease-in-out;
+            will-change: transform;
         }
-        .blob-1 { top: -15%; left: -15%; width: 600px; height: 600px; background: #6a0dad; }
-        .blob-2 { bottom: -20%; right: -15%; width: 650px; height: 650px; background: #00d4ff; animation-delay: -5s; }
-        .blob-3 { top: 40%; left: 30%; width: 500px; height: 500px; background: #b900b4; animation-delay: -10s; }
+
+        .blob-1 { top: -15%; left: -15%; width: 650px; height: 650px; background: #6a0dad; }
+        .blob-2 { bottom: -20%; right: -15%; width: 700px; height: 700px; background: #00d4ff; animation-delay: -5s; }
+        .blob-3 { top: 40%; left: 30%; width: 550px; height: 550px; background: #b900b4; animation-delay: -10s; }
 
         @keyframes floatBlob {
             0% { transform: translate(0, 0) scale(1); }
@@ -44,13 +76,16 @@
             100% { transform: translate(-50px, -40px) scale(0.95); }
         }
 
-        /* Neonowe animowane obramowanie kontenera */
+        /* ==========================================================================
+           3. GŁÓWNY KONTENER KODU
+           ========================================================================== */
         .container {
             background: rgba(18, 14, 33, 0.65);
             backdrop-filter: blur(30px) saturate(190%);
+            -webkit-backdrop-filter: blur(30px) saturate(190%);
             padding: 45px 35px;
             border-radius: 36px;
-            max-width: 950px;
+            max-width: 980px;
             width: 100%;
             border: 1px solid rgba(255, 255, 255, 0.14);
             box-shadow: 0 0 25px rgba(106, 13, 173, 0.3), 0 0 50px rgba(0, 212, 255, 0.2);
@@ -63,133 +98,461 @@
             100% { box-shadow: 0 0 35px rgba(0, 212, 255, 0.5), 0 0 60px rgba(185, 0, 180, 0.3); }
         }
 
+        /* ==========================================================================
+           4. NAWIGACJA
+           ========================================================================== */
         .navbar {
-            display: flex; justify-content: space-between; align-items: center; margin-bottom: 35px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 18px; flex-wrap: wrap; gap: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 18px;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
-        .nav-logo { color: #ffffff; font-weight: 800; font-size: 22px; text-decoration: none; text-shadow: 0 0 14px rgba(185, 0, 180, 0.8); }
-        .nav-links { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-        .nav-links a { color: #b5a9d6; text-decoration: none; font-size: 13px; font-weight: 600; transition: 0.3s; }
-        .nav-links a:hover { color: #00d4ff; text-shadow: 0 0 8px rgba(0, 212, 255, 0.5); }
+        .nav-logo {
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 24px;
+            text-decoration: none;
+            text-shadow: 0 0 14px rgba(185, 0, 180, 0.8);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #b5a9d6;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+        }
 
         .btn-toggle {
-            background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15);
-            color: #00d4ff; padding: 5px 10px; border-radius: 8px; font-size: 11px; font-weight: 700; cursor: pointer;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #00d4ff;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
         }
-        .btn-toggle:hover { background: rgba(0, 212, 255, 0.2); }
 
-        .profile-header { text-align: center; margin-bottom: 35px; }
+        .btn-toggle:hover {
+            background: rgba(0, 212, 255, 0.2);
+        }
+
+        /* ==========================================================================
+           5. HEADER PROFILOWY
+           ========================================================================== */
+        .profile-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
 
         .avatar-glass {
-            width: 125px; height: 125px; border-radius: 50%;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
-            border: 2px solid rgba(255, 255, 255, 0.35); display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 20px auto; box-shadow: 0 0 45px rgba(185, 0, 180, 0.6); overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 0 45px rgba(185, 0, 180, 0.6);
+            overflow: hidden;
+            transition: transform 0.3s ease;
         }
-        .avatar-glass img { width: 100%; height: 100%; object-fit: cover; }
+
+        .avatar-glass:hover {
+            transform: scale(1.05);
+        }
+
+        .avatar-glass img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
         h1 {
-            font-size: 36px; font-weight: 800;
+            font-size: 38px;
+            font-weight: 800;
             background: linear-gradient(135deg, #ffffff, #c0a8ff, #00d4ff);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; min-height: 44px;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+            min-height: 48px;
         }
 
         .status-badge {
-            display: inline-flex; align-items: center; gap: 8px; padding: 7px 18px; border-radius: 24px;
-            background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.18);
-            font-size: 13px; font-weight: 600; color: #d8c7ff; margin-bottom: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            font-size: 13px;
+            font-weight: 600;
+            color: #d8c7ff;
+            margin-bottom: 15px;
         }
-        .status-dot { width: 9px; height: 9px; background: #00ff88; border-radius: 50%; box-shadow: 0 0 10px #00ff88; }
 
-        .bio-lead { font-size: 15px; color: #b5a9d6; max-width: 650px; margin: 0 auto; line-height: 1.6; }
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #00ff88;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ff88;
+        }
+
+        .bio-lead {
+            font-size: 15px;
+            color: #b5a9d6;
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
 
         .quote-box {
-            background: rgba(255, 255, 255, 0.035); border-left: 4px solid #00d4ff; padding: 16px 22px;
-            border-radius: 14px; margin-bottom: 30px; font-style: italic; font-size: 14px; color: #d8c7ff;
+            background: rgba(255, 255, 255, 0.035);
+            border-left: 4px solid #00d4ff;
+            padding: 16px 22px;
+            border-radius: 14px;
+            margin-bottom: 30px;
+            font-style: italic;
+            font-size: 14px;
+            color: #d8c7ff;
         }
 
-        /* Odtwarzacz muzyki Lo-Fi */
-        .audio-player-box {
-            background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 12px 20px; border-radius: 16px; margin-bottom: 35px; display: flex;
-            justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+        /* ==========================================================================
+           6. SEKCJE I GRID KAFELKÓW
+           ========================================================================== */
+        section {
+            margin-bottom: 40px;
         }
 
-        section { margin-bottom: 40px; }
-        h2 { font-size: 22px; font-weight: 700; color: #ffffff; margin-bottom: 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.12); padding-bottom: 8px; }
-        p { font-size: 14px; line-height: 1.75; color: #b5a9d6; }
+        h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-        .grid-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+        p {
+            font-size: 14px;
+            line-height: 1.75;
+            color: #b5a9d6;
+        }
+
+        .grid-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
 
         .expand-card {
-            background: rgba(255, 255, 255, 0.045); border: 1px solid rgba(255, 255, 255, 0.12);
-            padding: 22px; border-radius: 20px; backdrop-filter: blur(14px); cursor: pointer; transition: 0.3s ease; position: relative;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 24px;
+            border-radius: 20px;
+            backdrop-filter: blur(14px);
+            cursor: pointer;
+            transition: 0.3s ease;
+            position: relative;
         }
-        .expand-card:hover { background: rgba(255, 255, 255, 0.09); border-color: rgba(0, 212, 255, 0.5); transform: translateY(-5px); }
 
-        .expand-header { display: flex; justify-content: space-between; align-items: center; }
-        .card-title-group { display: flex; align-items: center; gap: 12px; }
-        .server-icon-img { width: 40px; height: 40px; border-radius: 12px; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.2); }
-        .expand-card h3 { color: #00d4ff; font-size: 16px; font-weight: 700; }
-        .arrow-hint { font-size: 12px; color: #c0a8ff; transition: 0.35s; font-weight: 600; background: rgba(255,255,255,0.05); padding: 4px 8px; border-radius: 6px; }
-        .expand-card.open .arrow-hint { transform: rotate(180deg); color: #00ff88; }
-        .short-desc { font-size: 13px; color: #b5a9d6; margin-top: 8px; }
+        .expand-card:hover {
+            background: rgba(255, 255, 255, 0.09);
+            border-color: rgba(0, 212, 255, 0.5);
+            transform: translateY(-5px);
+        }
 
-        .details-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease, margin-top 0.3s; margin-top: 0; }
-        .expand-card.open .details-content { max-height: 1200px; margin-top: 14px; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 12px; }
+        .expand-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-        .device-summary { font-size: 13px; color: #d8c7ff; margin-bottom: 12px; line-height: 1.6; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border-left: 3px solid #00d4ff; }
-        .spec-list { list-style: none; font-size: 13px; color: #e0d8f7; }
-        .spec-list li { margin-bottom: 7px; display: flex; justify-content: space-between; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 5px; gap: 10px; }
-        .spec-list li span { color: #8578aa; }
-        .spec-list li strong { text-align: right; color: #ffffff; }
+        .card-title-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
+        .server-icon-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .expand-card h3 {
+            color: #00d4ff;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .arrow-hint {
+            font-size: 12px;
+            color: #c0a8ff;
+            transition: 0.35s;
+            font-weight: 600;
+            background: rgba(255,255,255,0.05);
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+
+        .expand-card.open .arrow-hint {
+            transform: rotate(180deg);
+            color: #00ff88;
+        }
+
+        .short-desc {
+            font-size: 13px;
+            color: #b5a9d6;
+            margin-top: 8px;
+        }
+
+        .details-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s ease, margin-top 0.3s;
+            margin-top: 0;
+        }
+
+        .expand-card.open .details-content {
+            max-height: 2000px;
+            margin-top: 16px;
+            border-top: 1px dashed rgba(255,255,255,0.1);
+            padding-top: 14px;
+        }
+
+        .device-summary {
+            font-size: 13px;
+            color: #d8c7ff;
+            margin-bottom: 14px;
+            line-height: 1.6;
+            background: rgba(255,255,255,0.035);
+            padding: 14px;
+            border-radius: 12px;
+            border-left: 3px solid #00d4ff;
+        }
+
+        .spec-list {
+            list-style: none;
+            font-size: 13px;
+            color: #e0d8f7;
+        }
+
+        .spec-list li {
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+            padding-bottom: 6px;
+            gap: 12px;
+        }
+
+        .spec-list li span {
+            color: #8578aa;
+        }
+
+        .spec-list li strong {
+            text-align: right;
+            color: #ffffff;
+        }
+
+        /* ==========================================================================
+           7. PRZYCISKI I AKCJE
+           ========================================================================== */
         .btn-action {
-            display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; margin-top: 12px;
-            padding: 10px 16px; border-radius: 12px; text-decoration: none; font-size: 13px; font-weight: 700;
-            border: 1px solid rgba(255, 255, 255, 0.2); cursor: pointer; transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            margin-top: 12px;
+            padding: 10px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: 0.3s;
         }
-        .btn-steam { background: linear-gradient(135deg, #171a21, #2a475e); color: #c6d4df; }
-        .btn-steam:hover { background: linear-gradient(135deg, #2a475e, #66c0f4); color: #fff; }
-        .btn-discord { background: linear-gradient(135deg, #6a0dad, #00d4ff); color: #ffffff; }
-        .btn-discord:hover { box-shadow: 0 4px 20px rgba(0, 212, 255, 0.5); transform: translateY(-2px); }
 
-        /* Pasek postępu (Roadmap) */
-        .progress-bar-bg { background: rgba(255,255,255,0.08); border-radius: 10px; height: 12px; width: 100%; overflow: hidden; margin-top: 6px; }
-        .progress-fill { background: linear-gradient(90deg, #6a0dad, #00d4ff); height: 100%; border-radius: 10px; }
+        .btn-steam {
+            background: linear-gradient(135deg, #171a21, #2a475e);
+            color: #c6d4df;
+        }
 
-        /* Galeria z filtrowaniem */
-        .gallery-filter { display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; }
-        .gallery-grid { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 10px; }
-        .gallery-thumb { min-width: 170px; height: 115px; border-radius: 12px; object-fit: cover; cursor: pointer; border: 1px solid rgba(255,255,255,0.2); transition: 0.3s; }
-        .gallery-thumb:hover { transform: scale(1.05); border-color: #00d4ff; }
+        .btn-steam:hover {
+            background: linear-gradient(135deg, #2a475e, #66c0f4);
+            color: #fff;
+        }
+
+        .btn-discord {
+            background: linear-gradient(135deg, #6a0dad, #00d4ff);
+            color: #ffffff;
+        }
+
+        .btn-discord:hover {
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .progress-bar-bg {
+            background: rgba(255,255,255,0.08);
+            border-radius: 10px;
+            height: 12px;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #6a0dad, #00d4ff);
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .gallery-filter {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-grid {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .gallery-thumb {
+            min-width: 170px;
+            height: 115px;
+            border-radius: 12px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: 0.3s;
+        }
+
+        .gallery-thumb:hover {
+            transform: scale(1.05);
+            border-color: #00d4ff;
+        }
 
         #lightbox {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.9);
-            display: none; justify-content: center; align-items: center; z-index: 2000; backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            backdrop-filter: blur(10px);
         }
-        #lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 16px; border: 2px solid #00d4ff; }
 
-        /* Popup Ogłoszeń */
+        #lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 16px;
+            border: 2px solid #00d4ff;
+        }
+
         .popup-overlay {
-            position: fixed; top:0; left:0; width:100vw; height:100vh; background: rgba(0,0,0,0.8);
-            display: flex; justify-content: center; align-items: center; z-index: 3000; backdrop-filter: blur(8px);
-        }
-        .popup-box {
-            background: rgba(18, 14, 33, 0.95); border: 1px solid #00d4ff; border-radius: 24px; padding: 30px;
-            max-width: 450px; text-align: center; box-shadow: 0 0 30px rgba(0,212,255,0.4);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+            backdrop-filter: blur(8px);
         }
 
-        .contact-box { background: rgba(255, 255, 255, 0.045); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 24px; padding: 30px; text-align: center; }
-        .contact-nick { font-size: 28px; font-weight: 800; color: #ffffff; margin: 10px 0; text-shadow: 0 0 18px rgba(0, 212, 255, 0.6); }
+        .popup-box {
+            background: rgba(18, 14, 33, 0.95);
+            border: 1px solid #00d4ff;
+            border-radius: 24px;
+            padding: 30px;
+            max-width: 450px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(0,212,255,0.4);
+        }
+
+        .contact-box {
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 24px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .contact-nick {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 10px 0;
+            text-shadow: 0 0 18px rgba(0, 212, 255, 0.6);
+        }
 
         #toast {
-            position: fixed; bottom: 25px; right: 25px; background: rgba(106, 13, 173, 0.95); border: 1px solid #00d4ff;
-            color: #ffffff; padding: 14px 24px; border-radius: 14px; font-size: 13px; font-weight: 600; display: none; z-index: 1000;
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: rgba(106, 13, 173, 0.95);
+            border: 1px solid #00d4ff;
+            color: #ffffff;
+            padding: 14px 24px;
+            border-radius: 14px;
+            font-size: 13px;
+            font-weight: 600;
+            display: none;
+            z-index: 1000;
         }
 
-        .footer { text-align: center; margin-top: 45px; font-size: 13px; color: #796d9c; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 25px; }
+        .footer {
+            text-align: center;
+            margin-top: 45px;
+            font-size: 13px;
+            color: #796d9c;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 25px;
+        }
     </style>
 </head>
 <body>
@@ -202,7 +565,7 @@
         <div class="blob blob-3"></div>
     </div>
 
-    <!-- Wyskakujące okienko ogłoszeń (Popup edytowalny) -->
+    <!-- Ogłoszenie Popup -->
     <div id="announcement-popup" class="popup-overlay" style="display: none;">
         <div class="popup-box">
             <h3 style="color:#00d4ff; margin-bottom:10px;">📢 Ogłoszenie!</h3>
@@ -212,6 +575,7 @@
     </div>
 
     <div class="container">
+        <!-- Nawigacja -->
         <div class="navbar">
             <a href="#" class="nav-logo">arrelYT557</a>
             <div class="nav-links">
@@ -228,6 +592,7 @@
             </div>
         </div>
 
+        <!-- Profil -->
         <div class="profile-header">
             <div class="avatar-glass">
                 <img src="avatar.jpg" alt="Avatar" onerror="this.style.display='none'; this.parentNode.innerText='A';">
@@ -243,13 +608,7 @@
 
         <div class="quote-box" id="daily-quote">💬 Ładowanie myśli dnia...</div>
 
-        <!-- Odtwarzacz muzyki w tle -->
-        <div class="audio-player-box">
-            <span style="font-size:13px; font-weight:600; color:#d8c7ff;">🎵 Stacja Lo-Fi / Chill Beats:</span>
-            <button class="btn-toggle" onclick="toggleMusic()" id="music-btn">▶️ Odtwarzaj muzykę</button>
-            <audio id="bg-audio" loop src="https://stream.zeno.fm/f3wvbbqmdg8uv"></audio>
-        </div>
-
+        <!-- O mnie -->
         <section id="o-mnie">
             <h2 data-lang-pl="📜 O mnie i Historia" data-lang-en="📜 About Me & Story">📜 O mnie i Historia</h2>
             <p style="margin-bottom: 10px;" data-lang-pl="Cześć! Jestem administratorem i twórcą społeczności internetowych. Zarządzam projektami na Discordzie i dbam o ich rozwój." data-lang-en="Hi! I am an administrator and creator of online communities. I manage Discord projects and ensure their growth.">
@@ -260,7 +619,7 @@
             </p>
         </section>
 
-        <!-- Pasek Postępu (Roadmap) -->
+        <!-- Roadmap -->
         <section id="roadmap">
             <h2>🎯 Moje Cele i Projekty (Roadmap 2026)</h2>
             <div style="margin-bottom: 12px;">
@@ -273,6 +632,7 @@
             </div>
         </section>
 
+        <!-- Staż -->
         <section id="staz">
             <h2 data-lang-pl="⏱️ Mój Staż i Doświadczenie" data-lang-en="⏱️ Experience">⏱️ Mój Staż i Doświadczenie</h2>
             <div class="grid-box">
@@ -283,6 +643,7 @@
             </div>
         </section>
 
+        <!-- Gry -->
         <section id="gry">
             <h2>🎮 Ulubione Gry & Steam (Kliknij, aby rozwinąć)</h2>
             <div class="grid-box">
@@ -321,6 +682,7 @@
             </div>
         </section>
 
+        <!-- Serwery -->
         <section id="administracja">
             <h2>🛡️ Administracja & Serwery (Kliknij, aby rozwinąć)</h2>
             <div class="grid-box">
@@ -361,7 +723,7 @@
             </div>
         </section>
 
-        <!-- Galeria z kategoryzacją -->
+        <!-- Galeria -->
         <section id="galeria">
             <h2>🖼️ Galeria Zdjęć i Zrzutów</h2>
             <div class="gallery-filter">
@@ -374,52 +736,103 @@
             <p style="font-size:12px; color:#8578aa; margin-top:8px;">Kliknij w miniaturę, aby powiększyć zdjęcie na cały ekran.</p>
         </section>
 
+        <!-- Rozwinięte Specyfikacje Sklepowe 100% Dokładności -->
         <section id="sprzet">
-            <h2>💻 Sprzęt & Specyfikacja Sklepowa</h2>
+            <h2>💻 Sprzęt & Pełna Specyfikacja Sklepowa (x-kom / Media Expert)</h2>
             <div class="grid-box">
-                <div class="expand-card" onclick="toggleCard(this)">
-                    <div class="expand-header"><h3>📱 Realme GT Neo 2</h3><span class="arrow-hint">▼ Specyfikacja</span></div>
-                    <div class="short-desc">12 GB RAM / 256 GB / Chłodzenie VC</div>
+                
+                <!-- Realme GT Neo 2 -->
+                <div class="expand-card open">
+                    <div class="expand-header">
+                        <h3>📱 Realme GT Neo 2</h3>
+                        <span class="arrow-hint">▲ Zwiń</span>
+                    </div>
+                    <div class="short-desc">12 GB RAM / 256 GB / Komora VC</div>
                     <div class="details-content">
-                        <div class="device-summary">Flagowy smartfon z diamentowym chłodzeniem parowym (VC).</div>
+                        <div class="device-summary">
+                            📱 Flagowy pogromca wydajności. Wyposażony w diamentowy system chłodzenia parowego Vapor Chamber (VC), gwarantujący płynność w najwyższych obciążeniach.
+                        </div>
                         <ul class="spec-list">
-                            <li><span>RAM:</span> <strong>12 GB LPDDR5</strong></li>
-                            <li><span>Pamięć:</span> <strong>256 GB UFS 3.1</strong></li>
-                            <li><span>Procesor:</span> <strong>Snapdragon 870 5G</strong></li>
-                            <li><span>Ekran:</span> <strong>AMOLED 120Hz (6.62")</strong></li>
-                            <li><span>Bateria:</span> <strong>5000 mAh (65W)</strong></li>
+                            <li><span>Procesor:</span> <strong>Qualcomm Snapdragon 870 5G (8 rdzeni, do 3.2 GHz)</strong></li>
+                            <li><span>Układ graficzny:</span> <strong>Adreno 650</strong></li>
+                            <li><span>Pamięć RAM:</span> <strong>12 GB LPDDR5</strong></li>
+                            <li><span>Pamięć wbudowana:</span> <strong>256 GB UFS 3.1</strong></li>
+                            <li><span>Typ ekranu:</span> <strong>AMOLED E4 (Samsung)</strong></li>
+                            <li><span>Przekątna ekranu:</span> <strong>6,62"</strong></li>
+                            <li><span>Rozdzielczość ekranu:</span> <strong>2400 x 1080 px (FHD+)</strong></li>
+                            <li><span>Częstotliwość odświeżania:</span> <strong>120 Hz (Dotyk 600 Hz)</strong></li>
+                            <li><span>Pojemność baterii:</span> <strong>5000 mAh</strong></li>
+                            <li><span>Szybkie ładowanie:</span> <strong>SuperDart Charge 65W (100% w ~36 min)</strong></li>
+                            <li><span>Aparaty tył:</span> <strong>64.0 Mpix + 8.0 Mpix (szerokokątny) + 2.0 Mpix (makro)</strong></li>
+                            <li><span>Aparat przód:</span> <strong>16.0 Mpix</strong></li>
+                            <li><span>Łączność:</span> <strong>5G, Wi-Fi 6, Bluetooth 5.2, NFC</strong></li>
+                            <li><span>System nawigacji:</span> <strong>GPS, A-GPS, Beidou, GLONASS, Galileo</strong></li>
+                            <li><span>Dźwięk:</span> <strong>Głośniki stereo z Dolby Atmos, Hi-Res Audio</strong></li>
+                            <li><span>System operacyjny:</span> <strong>realme UI (Android)</strong></li>
                         </ul>
                     </div>
                 </div>
-                <div class="expand-card" onclick="toggleCard(this)">
-                    <div class="expand-header"><h3>💻 ASUS TUF Gaming F16</h3><span class="arrow-hint">▼ Specyfikacja</span></div>
-                    <div class="short-desc">Intel Core i5-1210H / RTX 3050 6GB</div>
+
+                <!-- ASUS TUF Gaming F16 z i5-1210H i RTX 3050 6GB -->
+                <div class="expand-card open">
+                    <div class="expand-header">
+                        <h3>💻 ASUS TUF Gaming F16</h3>
+                        <span class="arrow-hint">▲ Zwiń</span>
+                    </div>
+                    <div class="short-desc">Intel Core i5-1210H / RTX 3050 6GB / Arc Flow</div>
                     <div class="details-content">
-                        <div class="device-summary">Laptop gamingowy zgodny z normą MIL-STD-810H.</div>
+                        <div class="device-summary">
+                            💻 Wzmocniony laptop gamingowy z normą wytrzymałości wojskowej MIL-STD-810H oraz zaawansowanym chłodzeniem podwójnymi wentylatorami Arc Flow.
+                        </div>
                         <ul class="spec-list">
-                            <li><span>Procesor:</span> <strong>Intel Core i5-1210H</strong></li>
-                            <li><span>Grafika:</span> <strong>NVIDIA RTX 3050 6GB</strong></li>
-                            <li><span>Ekran:</span> <strong>16" FHD+ 165Hz</strong></li>
-                            <li><span>Chłodzenie:</span> <strong>Arc Flow Fans</strong></li>
+                            <li><span>Procesor:</span> <strong>Intel Core i5-1210H (12 wątków, 18MB Cache, do 4.40 GHz)[cite: 18]</strong></li>
+                            <li><span>Karta graficzna:</span> <strong>NVIDIA GeForce RTX 3050 6GB Laptop GPU[cite: 18]</strong></li>
+                            <li><span>Moc GPU (TGP):</span> <strong>Do 95W z Dynamic Boost</strong></li>
+                            <li><span>Grafika zintegrowana:</span> <strong>Intel Graphics / Iris Xe</strong></li>
+                            <li><span>Typ ekranu:</span> <strong>16" IPS WUXGA (1920 x 1200), format 16:10</strong></li>
+                            <li><span>Odświeżanie ekranu:</span> <strong>165 Hz z obsługą G-Sync</strong></li>
+                            <li><span>System chłodzenia:</span> <strong>Podwójne wentylatory Arc Flow Fans + 4 wyloty powietrza</strong></li>
+                            <li><span>Certyfikat wytrzymałości:</span> <strong>Wojskowa norma MIL-STD-810H</strong></li>
+                            <li><span>Klawiatura:</span> <strong>Podświetlana RGB z sekcją numeryczną (Klawisze WASD)</strong></li>
+                            <li><span>Łączność bezprzewodowa:</span> <strong>Wi-Fi 6 (802.11ax) + Bluetooth 5.2</strong></li>
+                            <li><span>Złącza / Porty:</span> <strong>1x Thunderbolt 4, 1x USB-C 3.2 Gen 2, 2x USB 3.2 Gen 1</strong></li>
+                            <li><span>Wyjścia wideo:</span> <strong>HDMI 2.1 FRL</strong></li>
+                            <li><span>Audio:</span> <strong>Dolby Atmos, technologia dwukierunkowej redukcji szumów AI</strong></li>
                         </ul>
                     </div>
                 </div>
-                <div class="expand-card" onclick="toggleCard(this)">
-                    <div class="expand-header"><h3>🎧 Baseus Bass BH 1 Lite</h3><span class="arrow-hint">▼ Specyfikacja</span></div>
-                    <div class="short-desc">Bezprzewodowe słuchawki wokółuszne</div>
+
+                <!-- Baseus Bass BH 1 Lite -->
+                <div class="expand-card open">
+                    <div class="expand-header">
+                        <h3>🎧 Baseus Bass BH 1 Lite</h3>
+                        <span class="arrow-hint">▲ Zwiń</span>
+                    </div>
+                    <div class="short-desc">Wokółuszne słuchawki bezprzewodowe</div>
                     <div class="details-content">
-                        <div class="device-summary">Wygodne słuchawki z trybem niskiej latencji.</div>
+                        <div class="device-summary">
+                            🎧 Ergonomiczne słuchawki bezprzewodowe z głębokim podbiciem basowym oraz trybem ultra-niskiego opóźnienia do gier.
+                        </div>
                         <ul class="spec-list">
-                            <li><span>Typ:</span> <strong>Wokółuszne (Over-Ear)</strong></li>
-                            <li><span>Bluetooth:</span> <strong>Wersja 5.3</strong></li>
-                            <li><span>Przetworniki:</span> <strong>Dynamiczne 40 mm</strong></li>
+                            <li><span>Model:</span> <strong>Baseus Bass BH 1 Lite</strong></li>
+                            <li><span>Typ słuchawek:</span> <strong>Wokółuszne, zamknięte (Over-Ear)</strong></li>
+                            <li><span>Łączność:</span> <strong>Bluetooth 5.3</strong></li>
+                            <li><span>Zasięg transmisji:</span> <strong>Do 10 metrów</strong></li>
+                            <li><span>Średnica przetworników:</span> <strong>Dynamiczne 40 mm</strong></li>
+                            <li><span>Pasmo przenoszenia:</span> <strong>20 Hz - 20 000 Hz</strong></li>
+                            <li><span>Tryb niskiego opóźnienia:</span> <strong>Gaming Low Latency (0.038s)</strong></li>
+                            <li><span>Redukcja szumów:</span> <strong>Pasywne wygłuszenie wokółuszne</strong></li>
+                            <li><span>Czas pracy:</span> <strong>Do 40-50 godzin odtwarzania</strong></li>
+                            <li><span>Złącze ładowania:</span> <strong>USB Type-C</strong></li>
+                            <li><span>Materiał wykonania:</span> <strong>Wysokiej jakości kompozyt + miękka pianka memory</strong></li>
                         </ul>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- Osiągnięcia i Motto z dopiskiem Wkrótce -->
+        <!-- Motto -->
         <section id="motto">
             <h2>⭐ Motto i Osiągnięcia</h2>
             <div class="expand-card">
@@ -428,6 +841,7 @@
             </div>
         </section>
 
+        <!-- FAQ -->
         <section id="faq">
             <h2>❓ Często Zadawane Pytania (FAQ)</h2>
             <div class="grid-box">
@@ -438,13 +852,14 @@
             </div>
         </section>
 
-        <!-- System Polubień strony (Like Button) -->
+        <!-- Polubienia -->
         <div style="text-align: center; margin-bottom: 35px;">
             <button class="btn-action btn-discord" style="max-width: 220px; margin: 0 auto;" onclick="likePage()">
                 ❤️ Polub stronę (<span id="like-count">0</span>)
             </button>
         </div>
 
+        <!-- Kontakt i Zgłoszenia -->
         <section id="kontakt">
             <h2>📬 Kontakt & Zgłoszenia</h2>
             <div class="contact-box">
@@ -485,7 +900,6 @@
         function toggleCard(card) { playSound(); card.classList.toggle('open'); }
         function toggleSoundFX() { soundEnabled = !soundEnabled; copyText('', soundEnabled ? "Dźwięki włączone 🔊" : "Dźwięki wyłączone 🔇"); }
 
-        // Przełącznik języka PL / EN
         let currentLang = 'pl';
         function toggleLanguage() {
             currentLang = currentLang === 'pl' ? 'en' : 'pl';
@@ -495,18 +909,6 @@
             copyText('', currentLang === 'pl' ? "Język: Polski 🇵🇱" : "Language: English 🇬🇧");
         }
 
-        // Odtwarzacz Muzyki
-        function toggleMusic() {
-            const audio = document.getElementById("bg-audio");
-            const btn = document.getElementById("music-btn");
-            if (audio.paused) {
-                audio.play(); btn.innerText = "⏸️ Wstrzymaj muzykę";
-            } else {
-                audio.pause(); btn.innerText = "▶️ Odtwarzaj muzykę";
-            }
-        }
-
-        // System Like
         let likes = parseInt(localStorage.getItem("page_likes") || "0");
         document.getElementById("like-count").innerText = likes;
         function likePage() {
@@ -582,13 +984,12 @@
         localStorage.setItem("visits_count", visits);
         document.getElementById("visit-count").innerText = visits;
 
-        // Cząsteczki (Particles Canvas)
         function initParticles() {
             const canvas = document.getElementById('particles-canvas');
             const ctx = canvas.getContext('2d');
             canvas.width = window.innerWidth; canvas.height = window.innerHeight;
             let particles = [];
-            for(let i=0; i<40; i++) {
+            for(let i=0; i<45; i++) {
                 particles.push({
                     x: Math.random()*canvas.width, y: Math.random()*canvas.height,
                     vx: (Math.random()-0.5)*0.5, vy: (Math.random()-0.5)*0.5, size: Math.random()*2+1
