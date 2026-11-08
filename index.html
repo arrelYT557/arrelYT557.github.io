@@ -170,7 +170,6 @@
             line-height: 1.6;
         }
 
-        /* Cytat Dnia */
         .quote-box {
             background: rgba(255, 255, 255, 0.03);
             border-left: 4px solid #00d4ff;
@@ -235,7 +234,6 @@
             margin-bottom: 12px;
         }
 
-        /* Przyciski wewnątrz kart */
         .btn-card-action {
             display: inline-block;
             background: rgba(0, 212, 255, 0.15);
@@ -275,7 +273,6 @@
 
         .spec-list li span { color: #8578aa; }
 
-        /* Galeria rząd i podgląd */
         .gallery-grid {
             display: flex;
             gap: 12px;
@@ -294,7 +291,6 @@
         }
         .gallery-thumb:hover { transform: scale(1.05); border-color: #00d4ff; }
 
-        /* Lightbox Modal */
         #lightbox {
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
@@ -403,7 +399,6 @@
             </p>
         </div>
 
-        <!-- Cytat Dnia -->
         <div class="quote-box" id="daily-quote">
             💬 Ładowanie myśli dnia...
         </div>
@@ -442,13 +437,13 @@
             </div>
         </section>
 
-        <!-- Gry -->
+        <!-- PEŁNA LISTA GIER -->
         <section id="gry">
             <h2>🎮 Ulubione Gry & Steam</h2>
             <div class="grid-box">
                 <div class="expand-card">
                     <h3>🚗 BeamNG.drive</h3>
-                    <div class="short-desc">Ulubiony symulator fizyki aut i wypadków.</div>
+                    <div class="short-desc">Ulubiony symulator fizyki aut i zniszczeń.</div>
                     <a href="https://store.steampowered.com/app/284160/BeamNGdrive/" target="_blank" class="btn-action btn-steam">
                         🎮 Pokaż na Steam
                     </a>
@@ -460,10 +455,24 @@
                         🎮 Pokaż na Steam
                     </a>
                 </div>
+                <div class="expand-card">
+                    <h3>🔧 Car Mechanic Simulator 2018</h3>
+                    <div class="short-desc">Warsztat i naprawa silników.</div>
+                    <a href="https://store.steampowered.com/app/645630/Car_Mechanic_Simulator_2018/" target="_blank" class="btn-action btn-steam">
+                        🎮 Pokaż na Steam
+                    </a>
+                </div>
+                <div class="expand-card">
+                    <h3>🚛 Euro Truck Simulator 2</h3>
+                    <div class="short-desc">Trasy ciężarówkami po całej Europie.</div>
+                    <a href="https://store.steampowered.com/app/227300/Euro_Truck_Simulator_2/" target="_blank" class="btn-action btn-steam">
+                        🎮 Pokaż na Steam
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- Administracja -->
+        <!-- PEŁNA LISTA SERWERÓW -->
         <section id="administracja">
             <h2>🛡️ Administracja & Serwery</h2>
             <div class="grid-box">
@@ -472,9 +481,27 @@
                         <img src="migmc.png" alt="" style="width:30px;height:30px;border-radius:8px;" onerror="this.style.display='none';">
                         <h3>1. MIGMC</h3>
                     </div>
-                    <div class="short-desc">Właściciel & Partnerstwa</div>
+                    <div class="short-desc">Właściciel & Realizator Partnerstw</div>
                     <button class="btn-action btn-discord" onclick="copyText('migmc.pl', 'Skopiowano IP: migmc.pl')">⛏️ Skopiuj IP: migmc.pl</button>
                     <a href="https://discord.gg/W3vyTXeG79" target="_blank" class="btn-action btn-discord">💬 Dołącz na Discord</a>
+                </div>
+
+                <div class="expand-card">
+                    <div class="card-title-group" style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                        <img src="dzienica.png" alt="" style="width:30px;height:30px;border-radius:8px;" onerror="this.style.display='none';">
+                        <h3>2. Dzielnica Promocji</h3>
+                    </div>
+                    <div class="short-desc">Młodszy Head Admin & Partnerstwa</div>
+                    <a href="https://discord.gg/nG32jzYY63" target="_blank" class="btn-action btn-discord">💬 Dołącz na Discord</a>
+                </div>
+
+                <div class="expand-card">
+                    <div class="card-title-group" style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+                        <img src="swdt.png" alt="" style="width:30px;height:30px;border-radius:8px;" onerror="this.style.display='none';">
+                        <h3>3. SWDT</h3>
+                    </div>
+                    <div class="short-desc">Młodszy Pomocnik & Partnerstwa</div>
+                    <a href="https://discord.gg/pAFMdN4HdM" target="_blank" class="btn-action btn-discord">💬 Dołącz na Discord</a>
                 </div>
             </div>
         </section>
@@ -484,12 +511,11 @@
             <h2>🖼️ Galeria Zdjęć</h2>
             <div class="gallery-grid">
                 <img src="galeria/beamng.png" class="gallery-thumb" onclick="openLightbox(this.src)" alt="Zdjęcie 1">
-                <img src="galeria/foto2.jpg" class="gallery-thumb" onclick="openLightbox(this.src)" onerror="this.style.display='none'" alt="Zdjęcie 2">
             </div>
             <p style="font-size:12px; color:#8578aa; margin-top:8px;">Kliknij w zdjęcie, aby powiększyć na cały ekran.</p>
         </section>
 
-        <!-- Sprzęt z przyciskami pełnej specyfikacji i rozwijania opisu -->
+        <!-- Sprzęt i Specyfikacja -->
         <section id="sprzet">
             <h2>💻 Sprzęt & Specyfikacja</h2>
             <div class="grid-box">
@@ -547,10 +573,34 @@
                     </div>
                 </div>
 
+                <!-- Słuchawki -->
+                <div class="expand-card">
+                    <h3>🎧 Baseus Bass BH 1 Lite</h3>
+                    <div class="short-desc">Wokółuszne słuchawki bezprzewodowe</div>
+                    
+                    <button class="btn-card-action" onclick="toggleDetails(this)">📜 Rozwiń opis</button>
+                    <button class="btn-card-action" onclick="toggleFullSpec(this)">⚙️ Wyświetl 100% pełną specyfikację</button>
+
+                    <div class="hidden-details description-block">
+                        <p style="font-size:13px; margin-top:8px; color:#b5a9d6;">
+                            Bezprzewodowe słuchawki charakteryzujące się głębokim pasmem basowym oraz bardzo niskim opóźnieniem sygnału (latencją), doskonałe do grania i muzyk.
+                        </p>
+                    </div>
+
+                    <div class="hidden-details full-spec-block">
+                        <ul class="spec-list" style="margin-top:10px;">
+                            <li><span>Model:</span> <strong>Baseus Bass BH 1 Lite</strong></li>
+                            <li><span>Łączność:</span> <strong>Bluetooth 5.3</strong></li>
+                            <li><span>Przetworniki:</span> <strong> Dynamiczne 40 mm</strong></li>
+                            <li><span>Niska latencja:</span> <strong>Tryb Gaming Low Latency</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- Kontakt z linkiem do profilu Discord -->
+        <!-- Kontakt -->
         <section id="kontakt">
             <h2>📬 Kontakt</h2>
             <div class="contact-box">
@@ -577,7 +627,6 @@
     <div id="toast"></div>
 
     <script>
-        // Cytaty codzienne
         const quotes = [
             "„Nie liczy się to, kim się urodziłeś, ale czym wyrastasz.”",
             "„Dobre projekty nie powstają z przypadku, lecz z zaangażowania.”",
@@ -585,9 +634,8 @@
             "„Zawsze gotowy do pomocy i dalszego rozwoju.”"
         ];
         const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
-        document.getElementById("daily-quote").innerHTML = `💬 „Cytat dnia: ${quotes[dayOfYear % quotes.length]}”`;
+        document.getElementById("daily-quote").innerHTML = `💬 Cytat dnia: ${quotes[dayOfYear % quotes.length]}`;
 
-        // Funkcje rozwijania opisu i pełnej specyfikacji
         function toggleDetails(btn) {
             const desc = btn.parentElement.querySelector('.description-block');
             desc.style.display = desc.style.display === 'block' ? 'none' : 'block';
@@ -600,7 +648,6 @@
             btn.innerText = spec.style.display === 'block' ? '⚙️ Ukryj pełną specyfikację' : '⚙️ Wyświetl 100% pełną specyfikację';
         }
 
-        // Lightbox galeria
         function openLightbox(src) {
             document.getElementById("lightbox-img").src = src;
             document.getElementById("lightbox").style.display = "flex";
@@ -609,7 +656,6 @@
             document.getElementById("lightbox").style.display = "none";
         }
 
-        // Typewriter title
         const text = "arrelYT557";
         let index = 0;
         function typeWriter() {
